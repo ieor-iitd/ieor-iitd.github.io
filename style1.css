@@ -1,0 +1,1017 @@
+/* Original CSS */
+
+/* Global Styles */
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.topmost {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    /* background-color: #C40C0C; */
+    color: black;
+}
+.home {
+    text-decoration: none;
+    color: black;
+}
+
+.image {
+    margin-right: 20px;
+}
+
+.image img {
+    height: 100px;
+    width: auto;
+}
+
+.text {
+    flex-grow: 1;
+}
+
+.text h1, .text h2 {
+    margin: 0;
+}
+
+.text h1 {
+    font-size: 1.5em;
+}
+
+.text h2 {
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+.navbar {
+    background-color: #C40C0C;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+.navlist {
+    list-style: none;
+    display: flex;
+    /* gap: 20px; */
+    padding: 0;
+    margin: 0;
+}
+
+.navitem {
+    position: relative;
+}
+
+.dropdown-container {
+    display: inline-block;
+}
+
+.dropdown-button {
+    /* background-color: #C40C0C; */
+    background-color: #C40C0C;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+    padding: 10px 15px;
+}
+
+.dropdown-button::after {
+    content: "▼";
+    font-size: 0.6em;
+    /* margin-left: 5px; */
+}
+
+.no-dropdown-sign::after {
+    content: none; /* Hide the dropdown arrow */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+    left: 0;
+    top: 100%;
+    font-weight: 900px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #DDDDDD;
+    color: black;
+}
+
+.dropdown-container:hover .dropdown-content {
+    display: block;
+}
+
+/* Sub-dropdown container */
+.dropdown-subcontainer {
+    position: relative;
+}
+
+/* Sub-dropdown button */
+.dropdown-subbutton::after {
+    content: "▶"; /* Right arrow for sub-dropdown */
+    font-size: 0.6em;
+    margin-left: 5px;
+    float: right;
+}
+
+/* Sub-dropdown content */
+.dropdown-subcontent {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+    left: 100%; /* Position to the right of the parent dropdown */
+    top: 0;
+}
+
+/* Show sub-dropdown content on hover */
+.dropdown-subcontainer:hover .dropdown-subcontent {
+    display: block;
+}
+
+/* Sub-dropdown content links */
+.dropdown-subcontent a {
+    color: black;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+/* Sub-dropdown content hover */
+.dropdown-subcontent a:hover {
+    background-color: #DDDD;
+    color: black;
+}
+
+/* Hover color for main navigation items */
+.navitem:not(.dropdown-container):hover .dropdown-button {
+    background-color: #ECCA9C;
+    color: black;
+}
+
+.box1 {
+    margin: 10px;
+    width: 72%;
+    height: 150px;
+    border: 2px solid #4C0027;
+    padding: 5vh;
+    background-color: #ffffff;
+    float: left;
+    margin-top: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* .box2, .box3, .box4 are commented out */
+
+/* Contact Section */
+.contact-section {
+    margin: 10px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid  #C40C0C; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.contact-section h1 {
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.address {
+    width: 60%;
+}
+
+.contact-image img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid  #C40C0C;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Styles for the contact form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid  #C40C0C;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 10px 15px;
+    background-color: #C40C0C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #ECCA9C;
+    color: black;
+}
+
+.slider {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    clear: both;
+}
+
+.slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 450px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slider img.active {
+    z-index: 1;
+    opacity: 1;
+}
+
+.navigation-button {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+button.prev,
+button.next {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 2;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+/* Research Section */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+}
+
+.main-content {
+    width: 70%;
+}
+
+.sidebar {
+    width: 28%;
+}
+
+.topic_head h1 {
+    font-size: 2em;
+    color: #C40C0C;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.para {
+    margin: 10px 10px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+}
+
+.research_topic_list {
+    margin: 20px 0;
+}
+
+.research_topic_list ul {
+    list-style-type: disc; 
+    margin-left: 20px;
+    padding-left: 20px; 
+}
+
+.research_topic_list li {
+    margin: 10px 0; 
+}
+
+.research_topic_list a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.research_topic_list a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.box1 {
+    border: 2px;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    min-height: 200px;
+    margin-top: 30px; 
+}
+
+.box2 {
+    border: 2px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.box2 ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.box2 li {
+    margin: 10px 0;
+}
+
+/* Project Section */
+.project-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.project-name {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    align-items: center;
+}
+
+.project-image {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+}
+
+.project-info {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.project-info h3 {
+    margin: 10px 0 5px;
+}
+
+.project-info p {
+    margin: 5px 0;
+}
+
+.project-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.project-info a:hover {
+    text-decoration: underline;
+}
+
+.section-heading {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 35px; 
+    color: #C40C0C;
+    font-weight: 1000;
+}
+
+/* Footer */
+.footer {
+    background-color: #C40C0C;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto; 
+}
+
+.footer p {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* News Section */
+.news-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.news-topic {
+    display: flex; /* Use flexbox for horizontal layout */
+    flex-direction: column; /* Stack items vertically within each member */
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    /* width: 100%;
+    height: auto; */
+    /* border-radius: 50%; */
+}
+
+.news-info {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.news-info p {
+    margin: 10px 0 5px;
+}
+
+.news-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.news-info a:hover {
+    text-decoration: underline;
+}
+
+/* Faculty Section */
+.faculty-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.faculty-member {
+    display: flex; /* Use flexbox for horizontal layout */
+    flex-direction: column; /* Stack items vertically within each member */
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.faculty-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    /* width: 100%;
+    height: auto; */
+    /* border-radius: 50%; */
+}
+
+.faculty-info {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.faculty-info h3 {
+    margin: 10px 0 5px;
+}
+
+.faculty-info p {
+    margin: 5px 0;
+    word-wrap: break-word; /* Ensures long URLs break within the container */
+    word-break: break-all;
+}
+
+.faculty-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.faculty-info a:hover {
+    text-decoration: underline;
+}
+
+/* Student Section */
+.student-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.student-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Add some space between rows */
+}
+
+.student-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.student-info {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.student-info h3 {
+    margin: 10px 0 5px;
+}
+
+.student-info p {
+    margin: 5px 0;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.student-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.student-info a:hover {
+    text-decoration: underline;
+}
+
+.header-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.header-title {
+    font-size: 2em;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-line {
+    flex: 1;
+    height: 1px;
+    background-color: #000;
+    margin: 0 70px;
+    /* margin: 0 10px; */
+    /* margin-left: 100px;  */
+    /* Add padding to the start and end */
+}
+
+.phd-info h2 {
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.phd-info p, strong {
+    margin-top: 10px;
+    margin-left: 10%;
+    margin-bottom: 5px;
+    margin-right: 12%;
+    font-weight: 550;
+    word-wrap: break-word; /* Break long words */
+    word-break: break-word; /* Break long words */
+    overflow-wrap: break-word; /* Break long words */
+}
+
+.phd-info table {
+    width: 90%; /* Reduce the width to make sure it fits within the margins */
+    max-width: 800px; /* Optional: set a maximum width */
+    border-collapse: collapse;
+    margin: 20px auto; /* Center the table and add margins on both sides */
+}
+
+.phd-info table th, td {
+    border: 1.5px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+.phd-info table th {
+    background-color: #f2f2f2;
+}
+
+.phd-info .topmost-heading th {
+    background-color: #C40C0C;
+    color: white;
+}
+
+/* Contact Section (Duplicate removed) */
+
+.contact-section {
+    margin: 10px;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.contact-section h1 {
+    margin-bottom: 10px;
+    font-size: 35px; 
+    color: #C40C0C;
+    font-weight: 1000;
+}
+
+.contact-section p {
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.address {
+    width: 60%;
+}
+
+.contact-image img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.contact-content {
+    padding: 40px 0;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #C40C0C;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.contact-card {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact-card-content {
+    display: flex;
+    align-items: center;
+}
+
+.contact-card-content img {
+    width: 50px; /* Adjust the size as needed */
+    height: 50px; /* Adjust the size as needed */
+    margin-right: 20px; /* Space between image and text */
+}
+
+.contact-card-text h3 {
+    margin: 0;
+}
+
+.contact-card-text p {
+    margin: 0;
+}
+
+.contact-card img {
+    width: 80px; /* Adjust the width to your desired size */
+    height: auto; /* Keep the aspect ratio intact */
+    margin-bottom: 10px; /* Optional: Add some space below the image */
+}
+
+#map {
+    height: 400px; /* Set the height of the map */
+    width: 100%; /* Set the width of the map */
+    margin-top: 20px; /* Add some space between the contact cards and the map */
+}
+
+/* Duplicate Slider Styles Removed */
+
+/* Responsive Styles */
+
+/* Tablet Devices */
+@media (max-width: 1024px) {
+    .topmost {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navlist {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navitem {
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+    }
+
+    .dropdown-subcontent {
+        position: static;
+        width: 100%;
+    }
+
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-content, .sidebar {
+        width: 100%;
+    }
+
+    .project-name, .news-topic, .faculty-member, .student-member {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .address {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .phd-info table {
+        width: 100%;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .topmost {
+        padding: 5px;
+    }
+
+    .image img {
+        height: 80px;
+    }
+
+    .text h1 {
+        font-size: 1.2em;
+    }
+
+    .text h2 {
+        font-size: 1em;
+    }
+
+    .navlist {
+        display: none; /* Hide navigation on mobile */
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    /* Add a hamburger menu for mobile */
+    .navbar::after {
+        content: "☰";
+        font-size: 1.5em;
+        color: white;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        cursor: pointer;
+    }
+
+    .navbar.active .navlist {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: #C40C0C;
+    }
+
+    .dropdown-content, .dropdown-subcontent {
+        display: none;
+    }
+
+    .dropdown-container:hover .dropdown-content,
+    .dropdown-subcontainer:hover .dropdown-subcontent {
+        display: none;
+    }
+
+    .box1, .box2, .box3, .box4 {
+        width: 100%;
+        float: none;
+        margin: 10px 0;
+    }
+
+    .project-name, .news-topic, .faculty-member, .student-member {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .slider {
+        height: 250px;
+    }
+
+    .slider img {
+        height: 250px;
+    }
+
+    button.prev, button.next {
+        padding: 5px;
+    }
+
+    .section-heading {
+        font-size: 25px;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-card img {
+        width: 60px;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+    .topmost {
+        padding: 5px;
+    }
+
+    .image img {
+        height: 60px;
+    }
+
+    .text h1 {
+        font-size: 1em;
+    }
+
+    .text h2 {
+        font-size: 0.9em;
+    }
+
+    .dropdown-button {
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+
+    .contact-form button {
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+
+    .project-image, .news-image, .faculty-image, .student-image {
+        height: 150px;
+    }
+
+    .slider {
+        height: 200px;
+    }
+
+    .slider img {
+        height: 200px;
+    }
+
+    .section-heading {
+        font-size: 20px;
+    }
+
+    .contact-card img {
+        width: 50px;
+    }
+
+    #map {
+        height: 300px;
+    }
+}
+
+/* Optional: Hamburger Menu Toggle Script */
+/* Add this script to your HTML to toggle the navigation menu on mobile */
+/*
+<script>
+    document.querySelector('.navbar::after').addEventListener('click', function() {
+        document.querySelector('.navbar').classList.toggle('active');
+    });
+</script>
+*/

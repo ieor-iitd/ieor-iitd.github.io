@@ -32,7 +32,7 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-  res.sendFile("ieor.html",{root:__dirname})
+  res.sendFile("index.html",{root:__dirname})
 })
 
 app.listen(port, () => {

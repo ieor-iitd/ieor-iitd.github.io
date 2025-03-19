@@ -1,0 +1,98 @@
+/* Title Styling */
+
+.topic_head h1 {
+    text-align: center;/* Center align text */
+    margin: 20px auto;  /* Center with auto margin */
+    font-weight: bold;  /* Make it bold for emphasis */
+    display: block;     /* Ensure it behaves like a block */
+}
+
+/* Form Controls */
+label {
+    font-weight: bold;
+    margin: 10px 10px 5px;
+    display: inline-block;
+}
+
+select, input {
+    padding: 8px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Table Styling */
+.studentdata {
+    margin-left: 5%; /* Align table to the left */
+}
+
+table {
+    width: 60%; /* Adjust as needed */
+    border-collapse: collapse;
+    background: white;
+}
+
+/* Table Headings */
+th {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+/* Table Data */
+td {
+    padding: 10px;
+    text-align: left;
+    border: none; /* Removes all table borders */
+}
+
+/* Alternate Row Colors */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    table {
+        width: 90%;
+    }
+}
+
+/* Fix Table Heading Spacing */
+#studentsTable th {
+    padding: 10px 20px; /* Increase padding */
+    text-align: left; /* Align text properly */
+    font-size: 18px; /* Adjust font size */
+    font-weight: bold;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Ensure Table Data is Properly Spaced */
+#studentsTable td {
+    padding: 10px 20px; /* Match heading padding */
+    text-align: left;
+}
+
+/* Adjust overall table layout */
+#studentsTable {
+    width: 80%; /* Adjust width */
+    margin-left: 5%; /* Align properly */
+    border-collapse: collapse;
+}
+/* Style table heading */
+#tableheading th {
+    background-color: rgb(128, 128, 128); /* Set background color */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Adjust padding */
+    text-align: left; /* Align text to the left */
+    font-weight: bold; /* Make text bold */
+    border: 1px solid white; /* Add a border */
+}
+
+
+/* Center align Degree Program and Year of Admission */
+.research_topic_list {
+    text-align: center;
+    margin: 20px auto;
+}

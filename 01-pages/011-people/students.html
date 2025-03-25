@@ -5,127 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>IEOR - website</title>
-    <link href="../style1.css" rel="stylesheet">
+    <link href="../../02-resources/021-css/style1.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../02-resources/021-css/students.css">
     <link rel="stylesheet" href="pages/stylespages.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="../images/icons/IITD_LOGO.svg" />
-    <link rel="stylesheet" href="students.css">
-
-
+    <base href="/">
+    <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
 </head>
 <body>
-    <div class="topmost">
-        <div class="image">
-            <a href="http://home.iitd.ac.in" target="_blank">
-                <img class="IITD_LOGO" src="../images/icons/IITD_LOGO.svg" alt="IITD Logo">
-            </a>
-        </div>
-        <a class="home" href="index.html">
-            <div class="text">
-                <h1>Industrial Engineering and Operations Research</h1>
-                <h1>Mechanical Engineering</h1>
-                <h2>Indian Institute of Technology Delhi</h2>
-            </div>
-        </a>
-    </div>
 
-    <nav class="navbar">
-        <ul class="navlist">
-            <li class="navitem">
-                <div class="dropdown-container">
-                    <a href="index.html">
-                        <button class="dropdown-button no-dropdown-sign">Home</button>
-                    </a>
-                </div>
-            </li>
-            <li class="navitem">
-                <div class="dropdown-container">
-                    <a href="../news">
-                        <button class="dropdown-button no-dropdown-sign">News & Events</button>
-                    </a>
-                    <!-- <div class="dropdown-content">
-                        <a href="#">Option 1</a>
-                        <a href="#">Option 2</a>
-                        <a href="#">Option 3</a>
-                    </div> -->
-                </div>
-            </li>
-            <li class="navitem">
-                <div class="dropdown-container">
-                    <button class="dropdown-button">People</button>
-                    <div class="dropdown-content">
-                        <a href="faculty.html">Faculty</a>
-                        <a href="students.html" >Students</a>
-                            <!-- <div class="dropdown-subcontent">
-                                <a href="students.html">M.S.(Research)</a>
-                                <a href="#">M.Tech</a>
-                                <a href="#">Ph.D.</a>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="navitem">
-                <div class="dropdown-container">
-                    <a href="project.html">
-                        <button class="dropdown-button no-dropdown-sign">Projects</button>
-                    </a>
-                    <!-- <div class="dropdown-content">
-                        <a href="#">Option 1</a>
-                        <a href="#">Option 2</a>
-                        <a href="#">Option 3</a>
-                    </div> -->
-                </div>
-            </li>
-            <li class="navitem">
-                <div class="dropdown-container">
-                    <button class="dropdown-button">Research</button>
-                    <div class="dropdown-content">
-                        <a href="research.html">Research Topics</a>
-                        <a href="#">Publications</a>
-                        <a href="#">Awards</a>
-                        
-                    </div>
-                </div>
-            </li>
-            <!-- <li class="navitem">
-                <div class="dropdown-container">
-                    <button class="dropdown-button">Publications & Awards</button>
-                    <div class="dropdown-content">
-                        <a href="#">Option 1</a>
-                        <a href="#">Option 2</a>
-                        <a href="#">Option 3</a>
-                    </div>
-                </div>
-            </li> -->
-            <li class="navitem">
-                <div class="dropdown-container">
-                    <button class="dropdown-button">Join Us!</button>
-                    <div class="dropdown-content">
-                        <a href="Ph.D._opportunity.html">Ph.D.</a>
-                        <a href="#">Post Doc.</a>
-                        <a href="#">Faculty</a>
-                        <a href="#">Staff</a>
-                        <a href="#">Internship</a>
-                    </div>
+    <div id="header"></div> <!-- Header will be loaded dynamically all the header code is inside of components_hed_fot, header.html-->
 
-                    <!-- <a href="opportunity.html">
-                        <button class="dropdown-button no-dropdown-sign">Join Us!</button>
-                    </a> -->
-                    <!-- No dropdown content here -->
-                </div>
-            </li>
-            <li class="navitem">
-                <div class="dropdown-container">
-                    <a href="contact.html">
-                        <button class="dropdown-button no-dropdown-sign">Contact Us</button>
-                    </a>
-                </div>
-            </li>
-        </ul>
-    </nav>
     <div class="students">
         <div class="main-content">
             <div class="topic_head">
@@ -435,7 +328,7 @@
         </div>
     </div>
 
-    <div id="footer"></div> 
-    <script src="students.js"></script>
+    <div id="footer"></div> <!-- Footer will be loaded dynamically all the footer code is inside of components_hed_fot, footer.html -->
+    <script src="../../02-resources/022-scripts/students.js"></script>
 </body>
 </html>

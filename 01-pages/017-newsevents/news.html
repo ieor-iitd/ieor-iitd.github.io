@@ -1,36 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IEOR - website</title>
-    <link href="./02-resources/021-css/style1.css" rel="stylesheet">
-    <link rel="stylesheet" href="pages/stylespages.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - IEOR</title>
+    <link href="../../02-resources/021-css/style1.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="stylespages.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="images/icons/IITD_LOGO.svg" />
-    <script src="./02-resources/022-scripts/loadheaderfooter.js" defer></script>
+    <link rel="icon" type="image/svg+xml" href="IITD_LOGO.svg" />
+    <base href="/">
+    <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
 </head>
-
 <body>
     <div id="header"></div> <!-- Header will be loaded dynamically all the header code is inside of components_hed_fot, header.html-->
-
-    <section class="sliders">
-        <div class="slider">
-            <img id="img-1" src="./02-resources/023-images/other/WhatsApp Image 2024-06-26 at 13.47.20_0b5700b1.jpg" alt="Image 1"/>
-            <img id="img-2" src="./02-resources/023-images/other/WhatsApp Image 2024-06-26 at 13.47.20_0b5700b1.jpg" alt="Image 2"/>
-        </div>
-        <div class="navigation-button">
-            <span class="dot active" onclick="changeSlide(0)"></span>
-            <span class="dot" onclick="changeSlide(1)"></span>
-        </div>
-        <button class="prev" onclick="prevSlide()">❮</button>
-        <button class="next" onclick="nextSlide()">❯</button>
-    </section>
-    
-    <script src="./02-resources/022-scripts/herochange.js"></script>
 
     <div class="news-container" style="margin-top: 50px;">
         <div class="news-topic">
@@ -42,7 +26,7 @@
             </div>
         </div>
         <div class="news-topic">
-            <img src="https://globalgreenews.com/wp-content/uploads/2024/05/cliamate-1-750x430.jpg" alt="News 2" class="news-image">
+            <img src="news2.webp" alt="News 2" class="news-image">
             <div class="news-info">
                 <a href="#">
                     <p>Amber Srivastava, Shaurya Shriyam and Prashant Palkar participated in the Climate Change Conclave</p>
@@ -60,12 +44,11 @@
     </div>
 
     <div id="footer"></div> <!-- Footer will be loaded dynamically all the footer code is inside of components_hed_fot, footer.html -->
-    
-    <!-- <footer class="footer">
+
+    <!-- <footer class="footer" style="margin-top: 50px;">
         <div class="container">
             <p>&copy; 2025 Industrial Engineering & Operations Research. All rights reserved.</p>
         </div>
     </footer> -->
-
 </body>
 </html>

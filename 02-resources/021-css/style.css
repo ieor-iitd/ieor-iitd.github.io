@@ -734,6 +734,107 @@
     color: white;
 }
 
+/*CODE FOR M.Tech/MSR SECTION*/
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #ffffff;
+    font-size: 1.6em;
+    margin-left: 10%;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  h2 u {
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #ffffff; /* Bold white underline */
+  }
+  
+  .M\.Tech_MSR-info p, strong {
+    margin-top: 10px;
+    margin-left: 10%;
+    margin-bottom: 5px;
+    margin-right: 12%;
+    font-weight: 550;
+    font-size: 1.1em;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    color: #ffffff;
+  }
+  
+  .M\.Tech_MSR-info a {
+    color: #00bfff;
+    text-decoration: none;
+  }
+  
+  .M\.Tech_MSR-info a:hover {
+    text-decoration: underline;
+  }
+  
+  .M\.Tech_MSR-info table {
+    width: 80%;
+    margin-left: 10%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: #ffffff;
+  }
+  
+  .M\.Tech_MSR-info table th, 
+  .M\.Tech_MSR-info table td {
+    border: 1px solid #ffffff;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .M\.Tech_MSR-info table th {
+    background-color: #d90429;
+    color: white;
+  }
+  
+  .M\.Tech_MSR-info table tr:nth-child(even) {
+    background-color: #333333;
+  }
+  
+  .M\.Tech_MSR-info table tr:nth-child(odd) {
+    background-color: #444444;
+  }
+  
+  .footer {
+    background-color: #d90429;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  p[style*="font-weight: bolder"] {
+    font-size: 1.2em;
+    margin-top: 30px;
+  }
+  
+  a[target="_blank"] {
+    font-weight: bold;
+  }
+  
+  .M\.Tech_MSR-info .topmost-heading th {
+    background-color: #d90429;
+  }
+
 /*contact*/
 .contact-section {
     margin: 10px;

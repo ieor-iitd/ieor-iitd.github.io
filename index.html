@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +12,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="images/icons/IITD_LOGO.svg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="./02-resources/022-scripts/loadheaderfooter.js" defer></script>
+    <script src="./02-resources/022-scripts/herochange.js"></script>
+
 </head>
 
 <body>
@@ -32,42 +36,158 @@
         <button class="next" onclick="nextSlide()">❯</button>
     </section>
     
-    <script src="./02-resources/022-scripts/herochange.js"></script>
+<!-- Main Content Container -->
+    <div class="main-container">
 
-    <div class="news-container" style="margin-top: 50px;">
-        <div class="news-topic">
-            <img src="news1.jpeg" alt="News 1" class="news-image">
-            <div class="news-info">
-                <a href="#">
-                    <p>Prof. Varun Ramamohan visits University of Exeter</p>
+<!-- Welcome Section -->
+        <section class="welcome-section">
+            <h2 style="text-align: center;">Welcome to IEOR </h2>
+            <p>The Industrial Engineering and Operations Research (IEOR) focuses on optimizing complex systems through mathematical modeling, data analytics, and decision sciences. It integrates engineering, management, and computational techniques to improve efficiency in manufacturing, supply chains, logistics, and service industries. The program emphasizes operations research, artificial intelligence, optimization, and statistical modeling, equipping students with analytical and problem-solving skills for real-world challenges.</p>
+            <!--  <a href="about/vision.html" class="read-more-btn">Read More</a>   -->
+        </section>
+
+<!-- News topic -->
+        <section class="news-section">
+            <div class="section-header">
+                <h2>News & Announcements</h2>
+                <a href="news.html" class="view-all">
+                    <span class="circle-arrow">
+                         <i class="fa-solid fa-angle-right arrow-icon"></i>
+                    </span>  
+                    View All
                 </a>
             </div>
-        </div>
-        <div class="news-topic">
-            <img src="https://globalgreenews.com/wp-content/uploads/2024/05/cliamate-1-750x430.jpg" alt="News 2" class="news-image">
-            <div class="news-info">
-                <a href="#">
-                    <p>Amber Srivastava, Shaurya Shriyam and Prashant Palkar participated in the Climate Change Conclave</p>
+            <div class="news-grid">
+                <div class="news-item">
+                    <div class="news-date">
+                        <span class="day1">25</span>
+                        <span class="month1">Mar</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Prof. Varun Ramamohan visits University of Exeter</h3>
+                        <p>Prof. Ramamohan presented his research on healthcare operations management during his visit...</p>
+                        <a href="01-pages/017-newsevents/news.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">
+                        <span class="day1">18</span>
+                        <span class="month1">Mar</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Students participate in Climate Change Conclave</h3>
+                        <p>Amber Srivastava, Shaurya Shriyam and Prashant Palkar represented IEOR at the international conclave...</p>
+                        <a href="01-pages/017-newsevents/news.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">
+                        <span class="day1">10</span>
+                        <span class="month1">Mar</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>IEOR Seminar Series: Dr. Rajesh Kumar on Supply Chain Resilience</h3>
+                        <p>Join us for an insightful seminar on building resilient supply chains in uncertain times...</p>
+                        <a href="01-pages/017-newsevents/news.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Upcoming Events Section -->
+        <section class="events-section">
+            <div class="section-header">
+                <h2>Upcoming Events</h2>
+                <a href="events.html" class="view-all">
+                    <span class="circle-arrow">
+                         <i class="fa-solid fa-angle-right arrow-icon"></i>
+                    </span>  
+                    View All
                 </a>
             </div>
-        </div>
-        <div class="news-topic">
-            <img src="news1.jpeg" alt="News 1" class="news-image">
-            <div class="news-info">
-                <a href="#">
-                    <p>Prof. Varun Ramamohan visits University of Exeter</p>
-                </a>
+            <div class="events-container">
+                <!-- Event 1 -->
+                <div class="event-row">
+                    <div class="date-box">
+                        <span class="month">Mar</span>
+                        <span class="day">29</span>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-name">Tech Conference 2025</div>
+                        <div class="divider"></div>
+                        <div class="event-location">
+                            <span class="loaction-icon">
+                                <i class="fa-solid fa-map-location-dot loc-icon"></i>
+                           </span>  
+                           Seminar Hall
+                        </div>
+                        <div class="event-year">2023</div>
+                        <div class="event-time">9:00 AM - 5:00 PM</div>
+                    </div>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="event-row">
+                    <div class="date-box">
+                        <span class="month">Apr</span>
+                        <span class="day">15</span>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-name">Guest lecture</div>
+                        <div class="divider"></div>
+                        <div class="event-location">
+                            <span class="loaction-icon">
+                                <i class="fa-solid fa-map-location-dot loc-icon"></i>
+                           </span>  
+                           Committee Room
+                        </div>
+                        <div class="event-year">2023</div>
+                        <div class="event-time">2:00 PM - 4:30 PM</div>
+                    </div>
+                </div>
             </div>
-        </div>
+
+<!-- Academics at IIT Delhi Section -->
+        <section class="academics-section">
+            <div class="section-header">
+                <h2>Academics at IIT Delhi</h2>
+            </div>
+            <div class="academics-grid">
+                <div class="academic-item">
+                    <h3>M.Tech in IEOR</h3>
+                    <p>A two-year program with a structured curriculum that combines optimization, machine learning, and data-driven decision-making for industrial applications.</p>
+                    <a href="01-pages/012-academics/mtech.html" class="read-more">Explore More</a>
+                </div>
+                <div class="academic-item">
+                    <h3>MS (Research) in IEOR</h3>
+                    <p>A research-intensive program for students interested in explore advanced topics in operations research, analytics, and system optimization.</p>
+                    <a href="01-pages/012-academics/msr.html" class="read-more">Explore More</a>
+                </div>
+                <div class="academic-item">
+                    <h3>Ph.D. in IEOR</h3>
+                    <p>A doctoral program for students looking to advance research in operations research, optimization and stochastic modeling for complex systems..</p>
+                    <a href="01-pages/012-academics/phd.html" class="read-more">Explore More</a>
+                </div>
+            </div>
+        </section>
+
+
     </div>
+<!-- IEOR highlight-->
+        <div class="scroll-container">
+            <h2>IEOR HIGHLIGHTS</h2>
+            <div class="scroll-wrapper">
+                <ul class="scroll-list" id="scroll-list">
+                    <li><span class="number">30</span><span class="label">Number of MTech Students</span></li>
+                    <li><span class="number">11</span><span class="label">Number of PhD Students</span></li>
+                    <li><span class="number">4</span><span class="label">Number of MSR Students</span></li>
+                    <li><span class="number">5</span><span class="label">Number of Research Papers</span></li>
+                    <li><span class="number">9</span><span class="label">Number of Faculty</span></li>
+                </ul>
+            </div>
+        </div>
 
     <div id="footer"></div> <!-- Footer will be loaded dynamically all the footer code is inside of components_hed_fot, footer.html -->
     
-    <!-- <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Industrial Engineering & Operations Research. All rights reserved.</p>
-        </div>
-    </footer> -->
-
 </body>
 </html>

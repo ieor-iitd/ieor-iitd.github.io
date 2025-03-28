@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ph.D. Opportunity - IEOR</title>
+    <link href="../../02-resources/021-css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="images/icons/IITD_LOGO.svg" />
+    <base href="/">
+    <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
+
+    <style>
+        /* Flexbox container for two-column layout */
+        .content-container {
+            display: flex;
+            gap: 20px; /* Adds space between columns */
+            margin-top: 20px;
+        }
+
+        /* Left column (main content) */
+        .main-content {
+            flex: 2; /* Takes 2/3 of the available space */
+        }
+
+        /* Right column (gallery) */
+        .gallery {
+            flex: 1; /* Takes 1/3 of the available space */
+            display: flex;
+            flex-direction: column; /* Arranges images vertically */
+            gap: 10px; /* Adds space between images */
+        }
+
+        .gallery img {
+            width: 100%; /* Makes images responsive */
+            border-radius: 5px; /* Optional: Adds rounded corners */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header"></div> <!-- Header will be loaded dynamically -->
+
+    <!-- Two-column layout -->
+    <div class="content-container">
+        <!-- Left column (main content) -->
+        <div class="main-content">
+            <h2><u>Prof. Varun Ramamohan visits University of Exeter</u></h2>
+            <p>
+                Admission to the Ph.D. programmes is normally made on
+                the basis of an interview of eligible candidates conducted by the Department/Centre/School
+                concerned, through its Department Research Committee (DRC) / Centre Research Committee
+                (CRC)/ School Research Committee (SRC). DRC/CRC/SRC may decide to conduct a written test as
+                well, or multiple interviews, or other ways or testing, in order to screen the candidates.
+                Applications are invited from candidates by advertising the programmes in Employment
+                News/web portals in March for the first semester and in October for the second semester every
+                year.
+            </p>
+
+            <p style="font-weight: bolder; margin-top: 30px;">
+                For more information please follow the link:
+                <a href="https://home.iitd.ac.in/pg-admissions.php" target="_blank">https://home.iitd.ac.in/pg-admissions.php</a>
+            </p>
+        </div>
+
+        <!-- Right column (gallery) -->
+        <div class="gallery">
+            <img src="images/gallery/image1.jpg" alt="Image related to news event">
+            <img src="images/gallery/image2.jpg" alt="Another image related to news event">
+        </div>
+    </div>
+
+    <div id="footer"></div> <!-- Footer will be loaded dynamically -->
+</body>
+
+</html>

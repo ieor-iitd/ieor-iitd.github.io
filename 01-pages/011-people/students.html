@@ -5,19 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>IEOR - website</title>
+    <!-- Your CSS links -->
     <link href="../../02-resources/021-css/style1.css" rel="stylesheet">
     <link rel="stylesheet" href="../../02-resources/021-css/students.css">
     <link rel="stylesheet" href="pages/stylespages.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="../images/icons/IITD_LOGO.svg" />
     <base href="/">
+
+    <!-- By default, hide the Thesis column -->
+    <!-- <style>
+      th.thesis, td.thesis {
+        display: none;
+      }
+    </style> -->
+
+    <!-- Loads your site’s header/footer if needed -->
     <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
 </head>
 <body>
 
-    <div id="header"></div> <!-- Header will be loaded dynamically all the header code is inside of components_hed_fot, header.html-->
+    <div id="header"></div> <!-- Header will be loaded dynamically -->
 
     <div class="students">
         <div class="main-content">
@@ -42,293 +53,435 @@
             <table id="studentsTable">
                 <thead>
                     <tr id="tableheading">
-                        <th>Name</th>
-                        <th>Roll Number</th>
-                        <th>Program</th>
-                        <th>Batch</th>
+                        <th class="name">Name</th>
+                        <th class="roll">Roll Number</th>
+                        <th class="program">Program</th>
+                        <th class="batch">Batch</th>
+                        <!-- Thesis column (hidden by default, shown for Ph.D) -->
+                        <th class="thesis">Thesis</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Student Rows -->
                     <!-- first year m tech students -->
                     <tr>
+<<<<<<< HEAD
+                        <td class="name"><a href="students_info/template.html" target="_blank">Saurav Kumar</a></td>
+                        <td class="roll">2024MEE2621</td>
+=======
                         <td>Saurav Kumar</td>
                         <td>2024MEE2621</td>
+>>>>>>> 9c9fc87fca22dc0c1bef307c71f4ba3bdf8427b2
                         <td class="program">M.Tech</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Phaningmi Kasar</td>
-                        <td>2024MEE2649</td>
+                        <td class="name">Phaningmi Kasar</td>
+                        <td class="roll">2024MEE2649</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>G Mahesh Kumar</td>
-                        <td>2024MEE2658</td>
+                        <td class="name">G Mahesh Kumar</td>
+                        <td class="roll">2024MEE2658</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Vishwa Patel</td>
-                        <td>2024MEE2803</td>
+                        <td class="name">Vishwa Patel</td>
+                        <td class="roll">2024MEE2803</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Vipin Kumar</td>
-                        <td>2024MEE2651</td>
+                        <td class="name">Vipin Kumar</td>
+                        <td class="roll">2024MEE2651</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Vijay Sharma</td>
-                        <td>2024MEE2656</td>
+                        <td class="name">Vijay Sharma</td>
+                        <td class="roll">2024MEE2656</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Vishak Jayakumar</td>
-                        <td>2024MEE2629</td>
+                        <td class="name">Vishak Jayakumar</td>
+                        <td class="roll">2024MEE2629</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Aditya Marathe</td>
-                        <td>2024MEE2653</td>
+                        <td class="name">Aditya Marathe</td>
+                        <td class="roll">2024MEE2653</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Aish Singh</td>
-                        <td>2024MEE2868</td>
+                        <td class="name">Aish Singh</td>
+                        <td class="roll">2024MEE2868</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Pavan Sai Kumbha</td>
-                        <td>2024MEE2562</td>
+                        <td class="name">Pavan Sai Kumbha</td>
+                        <td class="roll">2024MEE2562</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>MOHD NAVEED</td>
-                        <td>2024MEE2896</td>
+                        <td class="name">MOHD NAVEED</td>
+                        <td class="roll">2024MEE2896</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Sudhir Singh</td>
-                        <td>2024MEE2622</td>
+                        <td class="name">Sudhir Singh</td>
+                        <td class="roll">2024MEE2622</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Ankush Upadhyay</td>
-                        <td>2024MEE2650</td>
+                        <td class="name">Ankush Upadhyay</td>
+                        <td class="roll">2024MEE2650</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Mukesh Kumar</td>
-                        <td>2024MEE2648</td>
+                        <td class="name">Mukesh Kumar</td>
+                        <td class="roll">2024MEE2648</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Sailander Tak</td>
-                        <td>2024MEE2627</td>
+                        <td class="name">Sailander Tak</td>
+                        <td class="roll">2024MEE2627</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Upasana</td>
-                        <td>2024MEE2893</td>
+                        <td class="name">Upasana</td>
+                        <td class="roll">2024MEE2893</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Virat Kewal</td>
-                        <td>2024MEE2655</td>
+                        <td class="name">Virat Kewal</td>
+                        <td class="roll">2024MEE2655</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Pratiksha Prabhakar</td>
-                        <td>2024MEE2647</td>
+                        <td class="name">Pratiksha Prabhakar</td>
+                        <td class="roll">2024MEE2647</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
+
                     <!-- second year m tech students  -->
                     <tr>
-                        <td>Harshit Kumar</td>
-                        <td>2023MEE2085</td>
+                        <td class="name">Harshit Kumar</td>
+                        <td class="roll">2023MEE2085</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2023</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Himanshu</td>
-                        <td>2023MEE2086</td>
+                        <td class="name">Himanshu</td>
+                        <td class="roll">2023MEE2086</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2023</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Vishal Verma</td>
-                        <td>2023MEE2087</td>
+                        <td class="name">Vishal Verma</td>
+                        <td class="roll">2023MEE2087</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2023</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Niraj Chhagan Bhandarwar</td>
-                        <td>2023MEE2088</td>
+                        <td class="name">Niraj Chhagan Bhandarwar</td>
+                        <td class="roll">2023MEE2088</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2023</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Sunil Tiwari</td>
-                        <td>2023MEE2090</td>
+                        <td class="name">Sunil Tiwari</td>
+                        <td class="roll">2023MEE2090</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2023</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Mohit Masiwal</td>
-                        <td>2023MEE2097</td>
+                        <td class="name">Mohit Masiwal</td>
+                        <td class="roll">2023MEE2097</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2023</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Lige Nyodu</td>
-                        <td>2023MEE2099</td>
+                        <td class="name">Lige Nyodu</td>
+                        <td class="roll">2023MEE2099</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2023</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Stanzin Tsognis</td>
-                        <td>2023MEE2643</td>
+                        <td class="name">Stanzin Tsognis</td>
+                        <td class="roll">2023MEE2643</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2023</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Rahul Goyal</td>
-                        <td>2023MEE2644</td>
+                        <td class="name">Rahul Goyal</td>
+                        <td class="roll">2023MEE2644</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2023</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Nilotpol Patra</td>
-                        <td>2023MEE2645</td>
+                        <td class="name">Nilotpol Patra</td>
+                        <td class="roll">2023MEE2645</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2023</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Aman Verma</td>
-                        <td>2023MEE2716</td>
+                        <td class="name">Aman Verma</td>
+                        <td class="roll">2023MEE2716</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2023</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Vikramjeet Singh</td>
-                        <td>2023MEE2727</td>
+                        <td class="name">Vikramjeet Singh</td>
+                        <td class="roll">2023MEE2727</td>
                         <td class="program">M.Tech</td>
                         <td class="batch">2023</td>
+                        <td class="thesis"></td>
                     </tr>
-                    <!--msr students  -->
+
+                    <!-- msr students -->
                     <tr>
-                        <td>Anurag Mishra</td>
-                        <td>2022MEY7573</td>
+                        <td class="name">Anurag Mishra</td>
+                        <td class="roll">2022MEY7573</td>
                         <td class="program">M.S. Research</td>
                         <td class="batch">2022</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Amey Siddheshwar Varangaonkar</td>
-                        <td>2023MEY7533</td>
+                        <td class="name">Amey Siddheshwar Varangaonkar</td>
+                        <td class="roll">2023MEY7533</td>
                         <td class="program">M.S. Research</td>
                         <td class="batch">2023</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Satish Jadhav</td>
-                        <td>2024MEY7551</td>
+                        <td class="name">Satish Jadhav</td>
+                        <td class="roll">2024MEY7551</td>
                         <td class="program">M.S. Research</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
                     <tr>
-                        <td>Nayan Kumar Lal Das</td>
-                        <td>2024MEY7593</td>
+                        <td class="name">Nayan Kumar Lal Das</td>
+                        <td class="roll">2024MEY7593</td>
                         <td class="program">M.S. Research</td>
                         <td class="batch">2024</td>
+                        <td class="thesis"></td>
                     </tr>
+
+                    <!-- PhD students (thesis = "Research") -->
                     <tr>
-                        <td>Avni Sharma</td>
-                        <td>2024MEZ8604</td>
+                        <td class="name">Avni Sharma</td>
+                        <td class="roll">2024MEZ8604</td>
                         <td class="program">Ph.D</td>
                         <td class="batch">2024</td>
+                        <td class="thesis">Research</td>
                     </tr>
                     <tr>
-                        <td>S Gurpreet Singh Bali</td>
-                        <td>2024MEZ8594</td>
+                        <td class="name">S Gurpreet Singh Bali</td>
+                        <td class="roll">2024MEZ8594</td>
                         <td class="program">Ph.D</td>
                         <td class="batch">2024</td>
+                        <td class="thesis">Research</td>
                     </tr>
                     <tr>
+<<<<<<< HEAD
+                        <td class="name">Kishan</td>
+                        <td class="roll">2024QIZ8205</td>
+=======
                         <td><a href="../../01-pages/011-people/kishan.html">Kishan</a></td>
                         <td>2024QIZ8205</td>
+>>>>>>> 9c9fc87fca22dc0c1bef307c71f4ba3bdf8427b2
                         <td class="program">Ph.D</td>
                         <td class="batch">2024</td>
+                        <td class="thesis">Research</td>
                     </tr>
                     <tr>
+<<<<<<< HEAD
+                        <td class="name">Manoj Kumar</td>
+                        <td class="roll">2024QIZ8201</td>
+=======
                         <td><a href="../../01-pages/011-people/manoj.html">Manoj Kumar</a></td>
                         <td>2024QIZ8201</td>
+>>>>>>> 9c9fc87fca22dc0c1bef307c71f4ba3bdf8427b2
                         <td class="program">Ph.D</td>
                         <td class="batch">2024</td>
+                        <td class="thesis">Research</td>
                     </tr>
                     <tr>
-                        <td>Arvind Patidar</td>
-                        <td>2024MEZ8222</td>
+                        <td class="name">Arvind Patidar</td>
+                        <td class="roll">2024MEZ8222</td>
                         <td class="program">Ph.D</td>
                         <td class="batch">2024</td>
+                        <td class="thesis">Research</td>
                     </tr>
                     <tr>
-                        <td>Abhisek Kumar Panda</td>
-                        <td>2023NRZ8619</td>
+                        <td class="name">Abhisek Kumar Panda</td>
+                        <td class="roll">2023NRZ8619</td>
                         <td class="program">Ph.D</td>
                         <td class="batch">2023</td>
+                        <td class="thesis">Research</td>
                     </tr>
                     <tr>
-                        <td>PUSHKAR SHARMA</td>
-                        <td>2023MEZ8612</td>
+                        <td class="name">PUSHKAR SHARMA</td>
+                        <td class="roll">2023MEZ8612</td>
                         <td class="program">Ph.D</td>
                         <td class="batch">2023</td>
+                        <td class="thesis">Research</td>
                     </tr>
                     <tr>
-                        <td>Akhilesh Kumar Kanik</td>
-                        <td>2023MEZ8615</td>
+                        <td class="name">Akhilesh Kumar Kanik</td>
+                        <td class="roll">2023MEZ8615</td>
                         <td class="program">Ph.D</td>
                         <td class="batch">2023</td>
+                        <td class="thesis">Research</td>
                     </tr>
                     <tr>
-                        <td>DHEERAJ SONI</td>
-                        <td>2021MEZ8488</td>
+                        <td class="name">DHEERAJ SONI</td>
+                        <td class="roll">2021MEZ8488</td>
                         <td class="program">Ph.D</td>
                         <td class="batch">2021</td>
+                        <td class="thesis">Research</td>
                     </tr>
                     <tr>
-                        <td>Aparna V</td>
-                        <td>2021QIZ8235</td>
+                        <td class="name">Aparna V</td>
+                        <td class="roll">2021QIZ8235</td>
                         <td class="program">Ph.D</td>
                         <td class="batch">2021</td>
+                        <td class="thesis">Research</td>
                     </tr>
                     <tr>
-                        <td>Pratik Badgujar</td>
-                        <td>2018MEZ8594</td>
+                        <td class="name">Pratik Badgujar</td>
+                        <td class="roll">2018MEZ8594</td>
                         <td class="program">Ph.D</td>
                         <td class="batch">2018</td>
+                        <td class="thesis">Research</td>
                     </tr>
                 </tbody> 
             </table>
         </div>
     </div>
 
-    <div id="footer"></div> <!-- Footer will be loaded dynamically all the footer code is inside of components_hed_fot, footer.html -->
+    <div id="footer"></div> <!-- Footer will be loaded dynamically -->
+
+    <!-- Your existing script reference -->
     <script src="../../02-resources/022-scripts/students.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+    const programSelect = document.getElementById("programSelect");
+    const yearInput = document.getElementById("yearInput");
+    const rows = document.querySelectorAll("#studentsTable tbody tr");
+
+    // Column sets we want to show/hide
+    const programCols = document.querySelectorAll("th.program, td.program");
+    const batchCols = document.querySelectorAll("th.batch, td.batch");
+    const thesisCols = document.querySelectorAll("th.thesis, td.thesis");
+
+    // Ensure the Thesis column is correctly toggled on load
+    toggleColumns();
+
+    // Listen for changes to dropdown & year
+    programSelect.addEventListener("change", function() {
+        toggleColumns();
+        filterTable();
+    });
+    yearInput.addEventListener("input", filterTable);
+
+    // Show/hide columns based on selected program
+    function toggleColumns() {
+        const chosenProgram = programSelect.value.trim();
+
+        if (chosenProgram === "Ph.D") {
+            // Show Thesis column for Ph.D.
+            thesisCols.forEach(el => el.style.display = "");
+            // Hide Program & Batch columns for Ph.D.
+            programCols.forEach(el => el.style.display = "none");
+            batchCols.forEach(el => el.style.display = "none");
+        } else {
+            // Show Program & Batch columns for other programs
+            programCols.forEach(el => el.style.display = "");
+            batchCols.forEach(el => el.style.display = "");
+            // Hide Thesis column for non-Ph.D. programs
+            thesisCols.forEach(el => el.style.display = "none");
+        }
+    }
+
+    // Filter rows based on user's input (Program and Year)
+    function filterTable() {
+        const chosenProgram = programSelect.value.trim();
+        const chosenYear = yearInput.value.trim();
+
+        rows.forEach(row => {
+            const programCell = row.querySelector(".program");
+            const batchCell = row.querySelector(".batch");
+            if (!programCell || !batchCell) return;
+
+            const rowProgram = programCell.textContent.trim();
+            const rowYear = batchCell.textContent.trim();
+
+            // We only show a row if:
+            // 1) The user picked something other than "-Any-" AND rowProgram matches chosenProgram
+            // 2) The user typed a year AND rowYear matches chosenYear
+            const programMatches = (chosenProgram !== "-Any-" && rowProgram === chosenProgram);
+            const yearMatches = (chosenYear !== "" && rowYear === chosenYear);
+
+            // Show or hide row
+            if (programMatches && yearMatches) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        });
+    }
+
+    // Make sure columns are correct on page load
+    toggleColumns();
+});
+
+    </script>
+    <div id="footer"></div>
 </body>
 </html>

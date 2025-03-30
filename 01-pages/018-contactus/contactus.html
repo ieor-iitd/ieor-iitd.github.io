@@ -14,57 +14,60 @@
     <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
 </head>
 <body>
-    <div id="header"></div> <!-- Header will be loaded dynamically all the header code is inside of components_hed_fot, header.html-->
 
-    <section class="contact-section">
-        <main class="contact-content">
-            <section class="section">
-                <div class="container">
-                    <h2>Contact us</h2>
-                        <div class="contact-grid">
-                            <div class="contact-card">
-                                <div class="contact-card-content">
-                                    <img src="images/icons/3.png" alt="contact 1">
-                                    <div class="contact-card-text">
-                                        <h3>Address</h3>
-                                        <p>Department of Industrial Engineering and Operations Research
-                                            Mechanical Engineering
-                                            Indian Institute of Technology Delhi
-                                            Hauz Khas, New Delhi, Delhi 110016, India</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="contact-card">
-                                <div class="contact-card-content">
-                                    <img src="images/icons/1.png" alt="contact 2">
-                                    <div class="contact-card-text">
-                                        <h3>Phone</h3>
-                                        <p>Phone: <a href="tel: +91-11-2659-7135 ">+91-11-2659-7135</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="contact-card">
-                                <div class="contact-card-content">
-                                    <img src="images/icons/2.png" alt="contact 3">
-                                    <div class="contact-card-text">
-                                        <h3>E-mail</h3>
-                                        <p><a href="mailto:ieor_office@iitd.ac.in">ieor_office@iitd.ac.in</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="map"></div>
-                    <script src= “https://maps.googleapis.com/maps/api/js?key=AIzaSyA8v542kzTkar-kl6gi5RPsXttPftzkSbc&callback=initMap&libraries=&v=weekly” async> </script>
-</section>
-</main>
+    <div id="header"></div> 
 
-<div id="footer"></div> <!-- Footer will be loaded dynamically all the footer code is inside of components_hed_fot, footer.html -->
-
-<!-- <footer class="footer">
     <div class="container">
-        <p>&copy; 2025 Industrial Engineering & Operations Research. All rights reserved.</p>
+        <div class="contact-header">
+            <h2><i class="fas fa-map-marker-alt"></i> Our Location</h2>
+            <p>Industrial Engineering and Operations Research</p>
+            <p>Mechanical Engineering, Indian Institute of Technology Delhi</p>
+            <p>Hauz Khas, New Delhi, Delhi 110016, India</p>
+        </div>
+        
+        <div class="contact-main">
+            <h2 class="section-title">CONTACT US</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Website Administration</h3>
+                    <p><i class="fas fa-phone"></i> +91-11-2659-1234</p>
+                    <p><i class="fas fa-phone"></i> +91-11-2659-5678</p>
+                    <p><i class="fas fa-envelope"></i> admin.ieor@iitd.ac.in</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>Faculty Representative</h3>
+                    <p><i class="fas fa-phone"></i> +91-11-2659-4321</p>
+                    <p><i class="fas fa-phone"></i> +91-11-2659-8765</p>
+                    <p><i class="fas fa-envelope"></i> faculty.ieor@iitd.ac.in</p>
+                </div>
+            
+                <div class="contact-card">
+                    <h3>IEOR Representative</h3>
+                    <p><i class="fas fa-phone"></i> +91-11-2659-2468</p>
+                    <p><i class="fas fa-phone"></i> +91-11-2659-1357</p>
+                    <p><i class="fas fa-envelope"></i> rep.ieor@iitd.ac.in</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="map-section">
+            <h2 class="section-title">Find Us on Google Maps</h2>
+            <div class="map-wrapper">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1752.3970467176148!2d77.19159982223584!3d28.545908134984124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce209ea4fb5e5%3A0x284dcb6bb0d51484!2sDepartment%20of%20Mechanical%20Engineering!5e0!3m2!1sen!2sin!4v1743257224957!5m2!1sen!2sin"
+                    width="100%" 
+                    height="450" 
+                    style="border:0;"
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
     </div>
-</footer> -->
+
+    <div id="footer"></div> <!-- Footer will be loaded dynamically all the footer code is inside of components_hed_fot, footer.html -->
+
 </body>
 </html>

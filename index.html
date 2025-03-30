@@ -7,44 +7,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>IEOR - website</title>
     <link href="./02-resources/021-css/style1.css" rel="stylesheet">
-    <link rel="stylesheet" href="pages/stylespages.css">
+    <link href="./02-resources/021-css/DiffMediaStyle.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="images/icons/IITD_LOGO.svg" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="./02-resources/022-scripts/loadheaderfooter.js" defer></script>
-    <script src="./02-resources/022-scripts/herochange.js"></script>
-
+    
 </head>
 
 <body>
-    <div id="header"></div> <!-- Header will be loaded dynamically all the header code is inside of components_hed_fot, header.html-->
+<!-- Header will be loaded dynamically all the header code is inside of components_hed_fot, header.html-->
+    <div id="header"></div> 
 
-    <section class="sliders">
-        <div class="slider">
-            <img id="img-1" src="./02-resources/023-images/other/gallery-lg1.jpg" alt="Image 1"/>
-            <img id="img-2" src="./02-resources/023-images/other/gallery-lg7.jpg" alt="Image 2"/>
-            <img id="img-3" src="./02-resources/023-images/other/gallery-lg8.jpg" alt="Image 2"/>
-        </div>
-        <div class="navigation-button">
-            <span class="dot active" onclick="changeSlide(0)"></span>
-            <span class="dot" onclick="changeSlide(1)"></span>
-            <span class="dot" onclick="changeSlide(2)"></span>
-        </div>
-        <button class="prev" onclick="prevSlide()">❮</button>
-        <button class="next" onclick="nextSlide()">❯</button>
-    </section>
-    
-<!-- Main Content Container -->
+<!-- Main container -->    
     <div class="main-container">
-
 <!-- Welcome Section -->
         <section class="welcome-section">
-            <h2 style="text-align: center;">Welcome to IEOR </h2>
-            <p>The Industrial Engineering and Operations Research (IEOR) focuses on optimizing complex systems through mathematical modeling, data analytics, and decision sciences. It integrates engineering, management, and computational techniques to improve efficiency in manufacturing, supply chains, logistics, and service industries. The program emphasizes operations research, artificial intelligence, optimization, and statistical modeling, equipping students with analytical and problem-solving skills for real-world challenges.</p>
-            <!--  <a href="about/vision.html" class="read-more-btn">Read More</a>   -->
+            <div class="text-content">
+                <h2>Welcome to IEOR</h2>
+                <p>The Industrial Engineering & Operations Research (IEOR) focuses on optimizing complex systems through mathematical modeling, data analytics, and decision sciences. It integrates engineering, management, and computational techniques to improve efficiency in manufacturing, supply chains, logistics, and service industries. The program emphasizes operations research, artificial intelligence, optimization, and statistical modeling, equipping students with analytical and problem-solving skills for real-world challenges.</p>
+            </div>
+<!-- Image slider -->
+            <div class="image-slider">
+                <div class="slider">
+                    <img id="img-1" src="02-resources/023-images/other/gallery-lg1.jpg" alt="Image 1"/>
+                    <img id="img-2" src="02-resources/023-images/other/gallery-lg7.jpg" alt="Image 2"/>
+                    <img id="img-3" src="02-resources/023-images/other/gallery-lg8.jpg" alt="Image 3"/>
+                </div>
+                <div class="navigation-button">
+                    <span class="dot active" onclick="changeSlide(0)"></span>
+                    <span class="dot" onclick="changeSlide(1)"></span>
+                    <span class="dot" onclick="changeSlide(2)"></span>
+                </div>
+                <button class="prev" onclick="prevSlide()">❮</button>
+                <button class="next" onclick="nextSlide()">❯</button>
+            </div>
         </section>
+
+<!-- Upcoming Events Section -->
+        <section class="events-section">
+            <div class="section-header">
+                <h2>Upcoming Events</h2>
+                <a href="events.html" class="view-all">
+                    <span class="circle-arrow">
+                        <i class="fa-solid fa-angle-right arrow-icon"></i>
+                    </span>  
+                    View All
+                </a>
+            </div>
+            <div class="events-container">
+                <!-- Event 1 -->
+                <div class="event-row">
+                    <div class="date-box">
+                        <span class="month">Mar</span>
+                        <span class="day">29</span>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-name">Tech Conference 2025</div>
+                        <div class="divider"></div>
+                        <div class="event-location">
+                            <span class="loaction-icon">
+                                <i class="fa-solid fa-map-location-dot loc-icon"></i>
+                        </span>  
+                        Seminar Hall
+                        </div>
+                        <div class="event-year">2023</div>
+                        <div class="event-time">9:00 AM - 5:00 PM</div>
+                    </div>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="event-row">
+                    <div class="date-box">
+                        <span class="month">Apr</span>
+                        <span class="day">15</span>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-name">Guest lecture</div>
+                        <div class="divider"></div>
+                        <div class="event-location">
+                            <span class="loaction-icon">
+                                <i class="fa-solid fa-map-location-dot loc-icon"></i>
+                        </span>  
+                        Committee Room
+                        </div>
+                        <div class="event-year">2023</div>
+                        <div class="event-time">2:00 PM - 4:30 PM</div>
+                    </div>
+                </div>
+            </div>
 
 <!-- News topic -->
         <section class="news-section">
@@ -94,59 +147,6 @@
             </div>
         </section>
 
-<!-- Upcoming Events Section -->
-        <section class="events-section">
-            <div class="section-header">
-                <h2>Upcoming Events</h2>
-                <a href="events.html" class="view-all">
-                    <span class="circle-arrow">
-                         <i class="fa-solid fa-angle-right arrow-icon"></i>
-                    </span>  
-                    View All
-                </a>
-            </div>
-            <div class="events-container">
-                <!-- Event 1 -->
-                <div class="event-row">
-                    <div class="date-box">
-                        <span class="month">Mar</span>
-                        <span class="day">29</span>
-                    </div>
-                    <div class="event-details">
-                        <div class="event-name">Tech Conference 2025</div>
-                        <div class="divider"></div>
-                        <div class="event-location">
-                            <span class="loaction-icon">
-                                <i class="fa-solid fa-map-location-dot loc-icon"></i>
-                           </span>  
-                           Seminar Hall
-                        </div>
-                        <div class="event-year">2023</div>
-                        <div class="event-time">9:00 AM - 5:00 PM</div>
-                    </div>
-                </div>
-                
-                <!-- Event 2 -->
-                <div class="event-row">
-                    <div class="date-box">
-                        <span class="month">Apr</span>
-                        <span class="day">15</span>
-                    </div>
-                    <div class="event-details">
-                        <div class="event-name">Guest lecture</div>
-                        <div class="divider"></div>
-                        <div class="event-location">
-                            <span class="loaction-icon">
-                                <i class="fa-solid fa-map-location-dot loc-icon"></i>
-                           </span>  
-                           Committee Room
-                        </div>
-                        <div class="event-year">2023</div>
-                        <div class="event-time">2:00 PM - 4:30 PM</div>
-                    </div>
-                </div>
-            </div>
-
 <!-- Academics at IIT Delhi Section -->
         <section class="academics-section">
             <div class="section-header">
@@ -173,19 +173,19 @@
 
 
     </div>
-<!-- IEOR highlight-->
+<!-- IEOR highlight
         <div class="scroll-container">
             <h2>IEOR HIGHLIGHTS</h2>
             <div class="scroll-wrapper">
                 <ul class="scroll-list" id="scroll-list">
-                    <li><span class="number">30</span><span class="label">Number of MTech Students</span></li>
-                    <li><span class="number">11</span><span class="label">Number of PhD Students</span></li>
-                    <li><span class="number">4</span><span class="label">Number of MSR Students</span></li>
+                    <li><span class="number">45</span><span class="label">Number of Students</span></li>
                     <li><span class="number">5</span><span class="label">Number of Research Papers</span></li>
                     <li><span class="number">9</span><span class="label">Number of Faculty</span></li>
                 </ul>
             </div>
         </div>
+-->
+        <script src="./02-resources/022-scripts/herochange.js"></script>
 
     <div id="footer"></div> <!-- Footer will be loaded dynamically all the footer code is inside of components_hed_fot, footer.html -->
     

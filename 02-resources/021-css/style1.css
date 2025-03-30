@@ -1,5 +1,3 @@
-/* Original CSS */
-
 /* Global Styles */
 :root {
     --primary-color: #c41e3a; /* Rich red for primary color */
@@ -19,7 +17,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Header & Logo Area */
+/*--------------- Header & Logo Area --------------------*/
 .topmost {
     background-color: var(--white);
     display: flex;
@@ -70,7 +68,7 @@
     padding-left: 30px;
   }
 
-/* Navigation Bar*/
+/* ----------------------Navigation Bar---------------------*/
 /*dropdown content*/
 .navbar {
     background-color: var(--primary-color);
@@ -192,136 +190,117 @@
     color: black;
 }
 
-
-/*.box1 {
-    margin: 10px;
-    width: 72%;
-    height: 150px;
-    border: 2px solid #4C0027;
-    padding: 5vh;
-    background-color: #ffffff;
-    float: left;
-    margin-top: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+/* ---------------------image slider ----------------------*/
+.image-slider {
+  width: 70%;
+  position: relative;
+  overflow: hidden;
+  height: 400px;
 }
 
- .box2, .box3, .box4 are commented out */
+.slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
 
-/* image slider */
-.sliders {
-    position: relative;
-    margin-bottom: 30px;
-    overflow: hidden;
-    height: 500px;
-  }
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slider img:first-child {
+  opacity: 1;
+}
+
+.navigation-button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  background-color: var(--white);
+  border-radius: 50%;
+}
+
+.dot.active, .dot:hover {
+  background-color: var(--primary-color);
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--white);
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: var(--primary-color);
+}
   
-  .slider {
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
-  
-  .slider img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
-  
-  .slider img:first-child {
-    opacity: 1;
-  }
-  
-  .navigation-button {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-  }
-  
-  .dot {
-    cursor: pointer;
-    height: 12px;
-    width: 12px;
-    background-color: var(--white);
-    border-radius: 50%;
-    display: inline-block;
-    transition: var(--transition);
-  }
-  
-  .dot.active, .dot:hover {
-    background-color: var(--primary-color);
-  }
-  
-  .prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.3);
-    color: var(--white);
-    border: none;
-    padding: 15px;
-    font-size: 24px;
-    cursor: pointer;
-    transition: var(--transition);
-  }
-  
-  .prev {
-    left: 10px;
-  }
-  
-  .next {
-    right: 10px;
-  }
-  
-  .prev:hover, .next:hover {
-    background-color: var(--primary-color);
-  }
-  
-/* HOME PAGE*/
+/* ------------------------HOME PAGE------------------------*/
  /* Main Content Container */
- .main-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Welcome Section */
-  .welcome-section {
-    text-align: center;
-    padding: 40px 20px;
-    margin-bottom: 30px;
-    background-color: var(--light-gray);
-    border-radius: 8px;
-  }
-  
-  .welcome-section h2 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    font-size: 28px;
-    position: relative;
-  }
-  
-  .welcome-section h2:after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: -10px;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background-color: var(--primary-color);
-  }
-  
-  .welcome-section p {
-    max-width: 800px;
-    margin: 0 auto 20px;
-    font-size: 16px;
-  }
+
+.main-container {
+max-width: 1200px;
+margin: 0 auto;
+}
+
+ .welcome-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--light-gray);
+  padding-left: 40px;
+  padding-top: 30px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-radius: 8px;
+}
+
+.text-content {
+  width: 50%;
+}
+
+.text-content h2 {
+  color: black;
+  font-size: 35px;
+  margin-bottom: 160px;
+  border-bottom: 2px solid black; /* Adjust thickness and color */
+  padding-bottom: 8px; /* Adds space between text and line */
+}
+
+.text-content p {
+  font-size: 16px;
+  text-align: justify;
+  padding-right: 5%;
+  position: relative;
+  bottom: 120px; /* Moves it down */
+}
   
   /* Section Headers */
   .section-header {
@@ -469,7 +448,7 @@
   .events-section {
     margin-bottom: 40px;
   }
-  /*bah bah bah */
+
   .events-container {
     display: flex;
     flex-direction: row; /* Changed to row for horizontal layout */
@@ -685,7 +664,7 @@
     100% { transform: translateY(-100%); }
 }
 
-/* Contact Section */
+/* Contact Section */         /* doubt*/
 .contact-section {
     margin: 10px;
     padding: 20px;
@@ -720,7 +699,7 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Styles for the contact form */
+/* Styles for the contact form */      /* doubt*/
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -760,7 +739,7 @@
     color: black;
 }
 
-/* Research Section */
+/* ------------------Research Section ----------------*/
 .content-container {
     display: flex;
     justify-content: space-between;
@@ -843,7 +822,7 @@
     margin: 10px 0;
 }
 
-/* Project Section */
+/* -------------------------Project Section ---------------------*/
 .project-container {
     display: flex;
     justify-content: center;
@@ -902,7 +881,7 @@
     font-weight: 1000;
 }
 
-/* Footer */
+/* -----------------------Footer -------------------------*/
 footer {
     background-color: var(--secondary-color);
     color: var(--white);
@@ -980,7 +959,7 @@ footer {
   }
   
 
-/* News Section */
+/* ----------------------------News Section--------------------------- */
 .news-container {
     display: flex;
     justify-content: center;
@@ -1028,7 +1007,7 @@ footer {
     text-decoration: underline;
 }
 
-/* Faculty Section */
+/*------------------------- Faculty Section------------------------- */
 .faculty-container {
     display: flex;
     justify-content: center;
@@ -1082,7 +1061,7 @@ footer {
     text-decoration: underline;
 }
 
-/* Student Section */
+/*---------------------- Student Section ----------------------*/
 .student-container {
     display: flex;
     justify-content: center;
@@ -1198,101 +1177,10 @@ footer {
     color: white;
 }
 
-/* Contact Section (Duplicate removed) */
 
-.contact-section {
-    margin: 10px;
-    padding: 20px;
-    background-color: #ffffff;
-}
+/*------------------- Responsive Styles --------------------*/
 
-.contact-section h1 {
-    margin-bottom: 10px;
-    font-size: 35px; 
-    color: #C40C0C;
-    font-weight: 1000;
-}
-
-.contact-section p {
-    margin-bottom: 20px;
-}
-
-.contact-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 20px;
-}
-
-.address {
-    width: 60%;
-}
-
-.contact-image img {
-    max-width: 100%;
-    height: auto;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-
-.contact-content {
-    padding: 40px 0;
-}
-
-.section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #C40C0C;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.contact-card {
-    background-color: #ffffff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.contact-card-content {
-    display: flex;
-    align-items: center;
-}
-
-.contact-card-content img {
-    width: 50px; /* Adjust the size as needed */
-    height: 50px; /* Adjust the size as needed */
-    margin-right: 20px; /* Space between image and text */
-}
-
-.contact-card-text h3 {
-    margin: 0;
-}
-
-.contact-card-text p {
-    margin: 0;
-}
-
-.contact-card img {
-    width: 80px; /* Adjust the width to your desired size */
-    height: auto; /* Keep the aspect ratio intact */
-    margin-bottom: 10px; /* Optional: Add some space below the image */
-}
-
-#map {
-    height: 400px; /* Set the height of the map */
-    width: 100%; /* Set the width of the map */
-    margin-top: 20px; /* Add some space between the contact cards and the map */
-}
-
-/* Duplicate Slider Styles Removed */
-
-/* Responsive Styles */
-
-/* Tablet Devices */
+/* --------------Tablet Devices
 @media (max-width: 1024px) {
     .topmost {
         flex-direction: column;
@@ -1355,97 +1243,10 @@ footer {
         width: 100%;
     }
 }
+ */
+/*---------------------- Mobile Devices */
 
-/* Mobile Devices */
-@media (max-width: 768px) {
-    .topmost {
-        padding: 5px;
-    }
-
-    .image img {
-        height: 80px;
-    }
-
-    .text h1 {
-        font-size: 1.2em;
-    }
-
-    .text h2 {
-        font-size: 1em;
-    }
-
-    .navlist {
-        display: none; /* Hide navigation on mobile */
-    }
-
-    .navbar {
-        position: relative;
-    }
-
-    /* Add a hamburger menu for mobile */
-    .navbar::after {
-        content: "☰";
-        font-size: 1.5em;
-        color: white;
-        position: absolute;
-        right: 20px;
-        top: 10px;
-        cursor: pointer;
-    }
-
-    .navbar.active .navlist {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        background-color: #C40C0C;
-    }
-
-    .dropdown-content, .dropdown-subcontent {
-        display: none;
-    }
-
-    .dropdown-container:hover .dropdown-content,
-    .dropdown-subcontainer:hover .dropdown-subcontent {
-        display: none;
-    }
-
-    .box1, .box2, .box3, .box4 {
-        width: 100%;
-        float: none;
-        margin: 10px 0;
-    }
-
-    .project-name, .news-topic, .faculty-member, .student-member {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .slider {
-        height: 250px;
-    }
-
-    .slider img {
-        height: 250px;
-    }
-
-    button.prev, button.next {
-        padding: 5px;
-    }
-
-    .section-heading {
-        font-size: 25px;
-    }
-
-    .contact-form {
-        width: 100%;
-    }
-
-    .contact-card img {
-        width: 60px;
-    }
-}
-
-/* Extra Small Devices */
+/*--------------------- Extra Small Devices 
 @media (max-width: 480px) {
     .topmost {
         padding: 5px;
@@ -1496,15 +1297,251 @@ footer {
     #map {
         height: 300px;
     }
+}*/
+/*---------------------contact us section----------------------- */ 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
 }
 
+/* Header Section */
+.contact-header {
+  text-align: left;
+  margin-bottom: 40px;
+  padding: 25px;
+  background-color: var(--light-gray);
+  border-left: 5px solid rgb(182, 138, 80);
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
 
-/* Optional: Hamburger Menu Toggle Script */
-/* Add this script to your HTML to toggle the navigation menu on mobile */
-/*
-<script>
-    document.querySelector('.navbar::after').addEventListener('click', function() {
-        document.querySelector('.navbar').classList.toggle('active');
-    });
-</script>
-*/
+.contact-header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-header p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+  color: black;
+}
+
+/* Main Contact Section */
+.contact-main {
+  margin-bottom: 50px;
+}
+
+.contact-main h2{
+  text-align: left;
+  padding-left: 40px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #d32f2f;
+  text-align: center;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.contact-card {
+  background-color: var(--light-gray);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.contact-card h3 {
+  color: black;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid black;
+}
+
+.contact-card p {
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  color: black;
+  font-size: 1rem;
+}
+
+.contact-card i {
+  color: #d32f2f;
+  margin-right: 10px;
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+}
+
+/* Map Section */
+.map-section {
+  margin-top: 50px;
+}
+
+.map-section h2{
+  text-align: left;
+  padding-left: 40px;
+}
+
+.map-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .contact-header h2 {
+    font-size: 1.5rem;
+  }
+}
+/*--------------------- humburger menu -----------------------*/
+
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: 15px;
+  z-index: 200;
+}
+
+.hamburger {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before {
+  transform: translateY(-8px);
+}
+
+.hamburger::after {
+  transform: translateY(8px);
+}
+
+/* Hamburger animation when active */
+.menu-toggle.active .hamburger {
+  background: transparent;
+}
+
+.menu-toggle.active .hamburger::before {
+  transform: rotate(45deg);
+}
+
+.menu-toggle.active .hamburger::after {
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 992px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .navbar {
+    padding: 10px 0;
+  }
+  
+  .navlist {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 270px;
+    height: 100vh;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 60px;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navlist.active {
+    right: 0;
+  }
+  
+  .navitem {
+    width: 100%;
+  }
+  
+  .dropdown-button {
+    width: 100%;
+    text-align: left;
+    padding: 15px;
+  }
+  
+  .dropdown-content {
+    position: static;
+    display: none;
+    width: 100%;
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .dropdown-content a {
+    padding-left: 30px;
+    color: var(--white);
+  }
+  
+  /* Show dropdown on click instead of hover for mobile */
+  .dropdown-container.active .dropdown-content {
+    display: block;
+  }
+  
+  /* Adjust dropdown arrow direction */
+  .dropdown-container.active .dropdown-button::after {
+    content: "▲";
+  }
+  
+  /* Adjust subdropdown for mobile */
+  .dropdown-subcontent {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    padding-left: 15px;
+  }
+}

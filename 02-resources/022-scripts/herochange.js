@@ -109,63 +109,76 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // humburger menu for mobile 
 
-document.addEventListener('DOMContentLoaded', function() {
+// main.js - Put this in your main JavaScript file
+// Put this in your main JavaScript file
+// Run the mobile menu initialization on DOMContentLoaded as well as headerLoaded
+document.addEventListener('DOMContentLoaded', initMobileMenu);
+document.addEventListener('headerLoaded', initMobileMenu);
+
+function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
-    const navList = document.querySelector('.navlist');
-    const dropdownButtons = document.querySelectorAll('.dropdown-button:not(.no-dropdown-sign)');
+    const navlist = document.querySelector('.navlist');
+    const hamburger = document.querySelector('.hamburger');
     
-    // Toggle menu on hamburger click
-    menuToggle.addEventListener('click', function() {
-      menuToggle.classList.toggle('active');
-      navList.classList.toggle('active');
-    });
-    
-    // Handle dropdown menus in mobile view
-    dropdownButtons.forEach(button => {
-      button.addEventListener('click', function(e) {
-        // Only apply click behavior in mobile view
-        if (window.innerWidth <= 992) {
-          e.preventDefault();
-          const parent = this.closest('.dropdown-container');
-          
-          // Close other open dropdowns
-          dropdownButtons.forEach(otherButton => {
-            const otherParent = otherButton.closest('.dropdown-container');
-            if (otherParent !== parent) {
-              otherParent.classList.remove('active');
-            }
-          });
-          
-          // Toggle current dropdown
-          parent.classList.toggle('active');
-        }
-      });
-    });
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-      if (window.innerWidth <= 992) {
-        const isClickInsideNav = navList.contains(event.target);
-        const isClickOnToggle = menuToggle.contains(event.target);
+    if (menuToggle && navlist && hamburger) {
+        setupMobileMenu(menuToggle, navlist, hamburger);
         
-        if (!isClickInsideNav && !isClickOnToggle && navList.classList.contains('active')) {
-          navList.classList.remove('active');
-          menuToggle.classList.remove('active');
+        // Also check responsive state immediately
+        checkResponsive(menuToggle, navlist, hamburger);
+    } else {
+        console.error('Mobile menu elements not found');
+    }
+}
+
+function setupMobileMenu(menuToggle, navlist, hamburger) {
+    // Responsive check
+    function checkResponsive() {
+        if (window.innerWidth <= 768) {
+            menuToggle.style.display = 'block';
+            navlist.classList.add('mobile-hidden');
+        } else {
+            menuToggle.style.display = 'none';
+            navlist.classList.remove('mobile-hidden');
+            navlist.classList.remove('navlist-visible');
+            hamburger.classList.remove('is-active');
         }
-      }
+    }
+    
+    // Toggle menu
+    menuToggle.addEventListener('click', function() {
+        navlist.classList.toggle('navlist-visible');
+        hamburger.classList.toggle('is-active');
     });
     
-    // Reset mobile menu state when resizing to desktop
-    window.addEventListener('resize', function() {
-      if (window.innerWidth > 992) {
-        navList.classList.remove('active');
-        menuToggle.classList.remove('active');
-        document.querySelectorAll('.dropdown-container.active').forEach(container => {
-          container.classList.remove('active');
+    // Mobile dropdowns
+    document.querySelectorAll('.dropdown-button:not(.no-dropdown-sign)').forEach(button => {
+        button.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const dropdownContainer = this.closest('.dropdown-container');
+                if (dropdownContainer) {
+                    dropdownContainer.classList.toggle('active');
+                    document.querySelectorAll('.dropdown-container').forEach(container => {
+                        if (container !== dropdownContainer) {
+                            container.classList.remove('active');
+                        }
+                    });
+                }
+            }
         });
-      }
     });
-  });
+    
+    // Initial setup
+    checkResponsive();
+    
+    // Window resize handler with debounce
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(checkResponsive, 100);
+    });
+}
+
 
 /* ieor highlight
 document.addEventListener("DOMContentLoaded", function () {

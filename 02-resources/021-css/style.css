@@ -768,11 +768,11 @@ body {
     background-color: #c8dbea;
   }
   
-  .footer {
+  /* .footer {
     background-color: #d90429;
     text-align: center;
     padding: 10px 0;
-  }
+  } */
   
   .container {
     max-width: 800px;

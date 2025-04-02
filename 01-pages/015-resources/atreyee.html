@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Research - IEOR</title>
+    <link href="../../02-resources/021-css/style1.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="images/icons/IITD_LOGO.svg" />
+    <base href="/">
+    <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
+</head>
+<body>
+    <div id="header"></div> <!-- Header will be loaded dynamically all the header code is inside of components_hed_fot, header.html-->
+    
+    <div class="content-container">
+        <div class="main-content">
+            <div class="topic_head">
+                <h1 style="color: black;">Atreyee - Computational Server Facility of the IEOR Lab</h1>
+                <p style="font-weight: bold; color: red; text-decoration: underline; text-indent: 10px;">Please read the below instaructions carefully before accessing the server for best results.</p>
+            </div>
+            <br>
+            <div class="para">
+                <h2><u>How to use and setup the environment</u></h2>
+                <p>You will need a <b>ssh client</b> to connect to the CPU. CPU login is available through <b>ssh mobius@10.150.224.121</b> on the IITD network. Windows users can use a ssh client named <a href="https://www.putty.org/">PuTTY Client</a> to login into the CPU. Once logged into the system, you will have access to your <b>home</b> (backed up) and <b>scratch</b> (not backed up) directories. Check <a href="#scp">scp</a> to learn how to copy data to-and-from from the CPU and your local machine.</p>
+            </div>
+                <br>
+            <div class="para">
+                <h3><u>For Linux/Mac users:</u></h3>
+                Step 1: Open the Linux/Mac terminal on any system on the <b>IITD network</b>.
+                <br>
+                Step 2: Type <b>ssh mobius@10.150.224.121</b> and hit enter.
+                <br>
+                Step 3: Type in the password received on your email/whatsapp group for the same and hit enter. For 1st time login it might show some warning regarding the security of the system, you can safely accept the same by hitting enter.
+                <br><b>Note: Password will not be visible when typing in!</b>
+                <br>
+                Step 4: Your terminal should now show <b>mobius@atreyee:~#</b> and you're logged into the CPU.
+                <br><b>Use responsibly!</b>
+                <br>
+            </div>
+                <br>
+            <div class="para">
+                <h3><u>For Windows users:</u></h3>
+                Step 1: Download and install <a href="https://www.putty.org/">PuTTY Client</a> by following the on-screen instructions.
+                <br>
+                Step 2: Ensure that your system is on the <b>IITD network</b>.
+                <br>
+                Step 3: Type <b>ssh mobius@10.150.224.121</b> in the space highlighted in the below image and hit enter or click open.
+                <img src="../../02-resources/023-images/other/putty.png" alt="PuTTY Client">
+                <br><b>Note: A new window with a terminal will open on your system with a prompt asking for the password.</b>
+                <br>
+                Step 4: Type in the password received on your email/whatsapp group for the same and hit enter. For 1st time login it might show some warning regarding the security of the system, you can safely accept the same by hitting enter.
+                <br><b>Note: Password will not be visible when typing in!</b>
+                <br>
+                Step 5: Your terminal should now show <b>mobius@atreyee:~#</b> and you're logged into the CPU. 
+                <br><b>Use responsibly!</b>
+            </div>
+            <br>
+            <div class="para" id="softwarelist">
+                <h2><u>Software List</u></h2>
+                <p><ul>
+                    <li>Python3</li>
+                </ul></p>
+            </div>
+            <div class="para" id="hardware">
+                <h2><u>Hardware Specifications</u></h2>
+                <p><ul>
+                    <li><b>Total number of nodes: 64</b></li>
+                    <li><b>RAM: 128GB</b></li>
+                    <li><b>/home directory space: 3TB</b></li>
+                    <li><b>/scratch directory space: 4TB</b></li>
+                </ul></p>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="box1courses">
+                <div class="box2">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#softwarelist">Software List</a></li>
+                        <li><a href="#hardware">Hardware Specifications</a></li>
+                        <li><a href="faq.html">FAQ and Help</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                    Last modified: March 27 2025.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div> <!-- Footer will be loaded dynamically all the footer code is inside of components_hed_fot, footer.html -->
+    <!-- <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Industrial Engineering & Operations Research. All rights reserved.</p>
+        </div>
+    </footer>     -->
+   
+</body>
+</html>

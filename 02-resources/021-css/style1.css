@@ -956,10 +956,10 @@ footer {
   
   .social-icon {
     display: inline-block;
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
     background-color: var(--primary-color);
-    color: white;
+    color: #2584e2;
     border-radius: 50%;
     display: flex;
     align-items: center;

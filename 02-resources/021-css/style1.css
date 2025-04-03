@@ -1200,6 +1200,17 @@ footer {
     overflow-wrap: break-word; /* Break long words */
 }
 
+.phd-info ol {
+  margin-top: 10px;
+  margin-left: 10%;
+  margin-bottom: 5px;
+  margin-right: 12%;
+  font-weight: 550;
+  word-wrap: break-word; /* Break long words */
+  word-break: break-word; /* Break long words */
+  overflow-wrap: break-word; /* Break long words */
+}
+
 .phd-info table {
     width: 90%; /* Reduce the width to make sure it fits within the margins */
     max-width: 800px; /* Optional: set a maximum width */

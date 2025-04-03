@@ -1182,6 +1182,13 @@ footer {
     font-weight: bold;
 }
 
+.phd-info h3 {
+  margin-top: 20px;
+  margin-left: 10%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
 .phd-info p, strong {
     margin-top: 10px;
     margin-left: 10%;

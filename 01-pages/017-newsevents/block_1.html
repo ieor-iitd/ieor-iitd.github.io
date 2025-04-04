@@ -6,14 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>IEOR - website</title>
+    
+    <!-- Corrected CSS Paths -->
     <link href="./02-resources/021-css/style1.css" rel="stylesheet">
     <link href="./02-resources/021-css/DiffMediaStyle.css" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
+    
     <link rel="icon" type="image/svg+xml" href="images/icons/IITD_LOGO.svg" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
     <script src="./02-resources/022-scripts/loadheaderfooter.js" defer></script>
+
+    <style>
+        /* 1. Underline the heading */
+        .welcome-section h2 {
+            text-align: center;
+            border-bottom: 3px solid #000;  /* Thick underline */
+            padding-bottom: 10px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        /* 2. Justify text */
+        .text-content p {
+            text-align: justify;
+        }
+
+        /* 3. Match container width to header */
+        .main-container {
+            max-width: 1200px; /* Adjust as per header width */
+            margin: 0 auto;   /* Centering */
+            padding: 20px;    /* Optional: Add some spacing */
+        }
+
+        /* Ensuring images also align properly */
+        .image-slider {
+            text-align: center; /* Center the images */
+        }
+    </style>
 
 </head>
 
@@ -26,15 +59,26 @@
         <!-- Welcome Section -->
         <section class="welcome-section">
             <div class="text-content">
-                <h2>Welcome to IEOR</h2>
-                <p>Industrial Engineering & Operations Research (IEOR) focuses on optimizing complex systems through mathematical modeling, data analytics, and decision sciences. It integrates engineering, management, and computational techniques to improve efficiency in manufacturing, supply chains, logistics, and service industries. The program emphasizes operations research, artificial intelligence, optimization, and statistical modeling, equipping students with analytical and problem-solving skills for real-world challenges.</p>
+                <h2> Dr. Boli Chen in IIT Delhi </h2>
+                <p>
+                    Dr. Boli Chen from UCL visited IIT Delhi on February 13,2025 for a 
+                    talk on "Intelligent Control for Smart and Sustainable Mobility".
+                    His talk on control and decision-making challenges in connected 
+                    and automated vehicles (CAVs), including, coordinated platooning and smart charging
+                     technology, was very insightful. Engaging discussions followed on the future of 
+                     intelligent control systems and their impact on mobility and sustainability. 
+
+                    <br>
+                    Dr. Chen also interacted with the students in the "Optimization" course. We thank him for his visit to IEOR, IIT Delhi.
+                </p>
             </div>
             <!-- Image slider -->
             <div class="image-slider">
                 <div class="slider">
-                    <img id="img-1" src="ieor-iitd.github.io/02-resources/023-images/news/Boli_Chen_1.JPG" alt="Image 1"/>
-                    <img id="img-2" src="ieor-iitd.github.io/02-resources/023-images/news/Boli_Chen_2.JPG" alt="Image 2"/>
-                    <img id="img-3" src="ieor-iitd.github.io/02-resources/023-images/news/Boli_Chen_3.JPG" alt="Image 3"/>
+                    <!-- Corrected Image Paths -->
+                    <img id="img-1" src="../../02-resources/023-images/news/Boli_Chen_1.JPG" alt="Image 1"/>
+                    <img id="img-2" src="../../02-resources/023-images/news/Boli_Chen_2.JPG" alt="Image 2"/>
+                    <img id="img-3" src="../../02-resources/023-images/news/Boli_Chen_3.JPG" alt="Image 3"/>
                 </div>
                 <div class="navigation-button">
                     <span class="dot active" onclick="changeSlide(0)"></span>
@@ -48,6 +92,8 @@
     </div>
 
     <div id="footer"></div> <!-- Footer will be loaded dynamically -->
+
+    <!-- Corrected JavaScript Path -->
     <script src="./02-resources/022-scripts/herochange.js"></script>
 </body>
 

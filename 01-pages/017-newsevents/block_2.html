@@ -1,65 +1,60 @@
-
 <!DOCTYPE html>
 <html>
-
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ph.D. Opportunity - IEOR</title>
-    <link href="../../02-resources/021-css/style.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="stylespages.css"> -->
+    <title>IEOR - website</title>
+    <link href="./02-resources/021-css/style1.css" rel="stylesheet">
+    <link href="./02-resources/021-css/DiffMediaStyle.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="images/icons/IITD_LOGO.svg" />
-    <base href="/">
-    <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="./02-resources/022-scripts/loadheaderfooter.js" defer></script>
 
 </head>
 
 <body>
-    <div id="header"></div> <!-- Header will be loaded dynamically all the header code is inside of components_hed_fot, header.html-->
+<!-- Header will be loaded dynamically all the header code is inside of components_hed_fot, header.html-->
+    <div id="header"></div> 
 
-    <div class="phd-info">
-        <h2>
-            <u>
-                Prof. Varun Ramamohan visits University of Exeter
-            </u>
-            
-        </h2>
-        <p>
-            Admission to the Ph.D. programmes is normally made on
-            the basis of an interview of eligible candidates conducted by the Department/Centre/School
-            concerned, through its Department Research Committee (DRC) / Centre Research Committee
-            (CRC)/ School Research Committee (SRC). DRC/CRC/SRC may decide to conduct a written test as
-            well, or multiple interviews, or other ways or testing, in order to screen the candidates.
-            Applications are invited from candidates by advertising the programmes in Employment
-            News/web portals in March for the first semester and in October for the second semester every
-            year.
-        </p>
-        
-        <h2>
-            <u>Photo Gallery</u>
+<!-- Main container -->    
+    <div class="main-container">
+<!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="text-content">
+                <h2>Welcome to IEOR</h2>
+                <p>Industrial Engineering & Operations Research (IEOR) focuses on optimizing complex systems through mathematical modeling, data analytics, and decision sciences. It integrates engineering, management, and computational techniques to improve efficiency in manufacturing, supply chains, logistics, and service industries. The program emphasizes operations research, artificial intelligence, optimization, and statistical modeling, equipping students with analytical and problem-solving skills for real-world challenges.</p>
+            </div>
+<!-- Image slider -->
+            <div class="image-slider">
+                <div class="slider">
+                    <img id="img-1" src="ieor-iitd.github.io\02-resources\023-images\news\Boli_Chen_1.JPG" alt="Image 1"/>
+                    <img id="img-2" src="ieor-iitd.github.io\02-resources\023-images\news\Boli_Chen_2.JPG" alt="Image 2"/>
+                    <img id="img-3" src="ieor-iitd.github.io\02-resources\023-images\news\Boli_Chen_3.JPG" alt="Image 3"/>
+                </div>
+                <div class="navigation-button">
+                    <span class="dot active" onclick="changeSlide(0)"></span>
+                    <span class="dot" onclick="changeSlide(1)"></span>
+                    <span class="dot" onclick="changeSlide(2)"></span>
+                </div>
+                <button class="prev" onclick="prevSlide()">❮</button>
+                <button class="next" onclick="nextSlide()">❯</button>
+            </div>
+        </section>
 
-            
-        </h2>
 
-        <p style="font-weight: bolder; margin-top: 30px;">For more information please follow the link: <a href="https://home.iitd.ac.in/pg-admissions.php" target="_blank">https://home.iitd.ac.in/pg-admissions.php</a></p>
-        
+        </section>
+
 
 
     </div>
 
     <div id="footer"></div> <!-- Footer will be loaded dynamically all the footer code is inside of components_hed_fot, footer.html -->
-
-    <!-- <footer class="footer" style="margin-top: 20px;">
-        <div class="container">
-            <p>&copy; 2024 Industrial Engineering & Operations Research. All rights reserved.</p>
-        </div>
-    </footer>    -->
-
-
+    <script src="./02-resources/022-scripts/herochange.js" ></script>
 </body>
 
 </html>

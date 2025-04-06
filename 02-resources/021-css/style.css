@@ -768,11 +768,12 @@ body {
     background-color: #c8dbea;
   }
   
-  /* .footer {
-    background-color: #d90429;
+  .footer {
+    background-color: #d6eaf8;
+    color: #000000;
     text-align: center;
     padding: 10px 0;
-  } */
+  } 
   
   .container {
     max-width: 800px;
@@ -926,8 +927,6 @@ body {
 .contact-content {
     padding: 40px 0;
 }
-
-
 
 .section h2 {
     font-size: 2rem;

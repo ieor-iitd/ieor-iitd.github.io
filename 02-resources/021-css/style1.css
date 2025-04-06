@@ -1543,6 +1543,68 @@ body::before {
   transition: opacity 0.4s ease, visibility 0s linear 0.4s;
 }
 
+/* Page title */
+.research-title {
+  text-align: center;
+  color: #c00;
+  font-weight: bold;
+  margin-top: 40px;
+  font-size: 2.5em;
+}
+
+/* Container for all scholar cards */
+.scholar-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 40px;
+}
+
+/* Each scholar card */
+.scholar-card {
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  width: 400px;
+  display: flex;
+  gap: 20px;
+}
+
+/* Scholar image */
+.scholar-card img {
+  border-radius: 10px;
+  width: 120px;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* Scholar details */
+.scholar-info h2 {
+  color: #c00;
+  margin: 0;
+}
+
+.scholar-info p {
+  margin: 5px 0;
+}
+
+/* Profile button */
+.profile-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #c00;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.profile-button:hover {
+  background: #a00;
+}
 
 
 

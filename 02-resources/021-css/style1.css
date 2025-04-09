@@ -40,6 +40,7 @@
  
 
   .text {
+    flex-grow: 1;
     color: black;
 }
 
@@ -54,12 +55,12 @@
 
 .text h2 {
     font-size: 20px;
-    font: bold;
+    font-weight: 600;
 }
 
 .text h3 {
     font-size: 18px;
-    font: bold;
+    font-weight: 600;
 }
   
   .home {

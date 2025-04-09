@@ -37,30 +37,30 @@
   .IITD_LOGO:hover {
     transform: scale(1.05);
   }
-  
+ 
+
   .text {
-    /* flex-grow: 1; */
     color: black;
-  }
-  
-  .text h1 {
+}
+
+.text h1, .text h2, .text h3 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.text h1 {
     font-size: 26px;
-    font-weight: 600;
-    margin-bottom: 5px;
-  }
-  
-  .text h2 {
+}
+
+.text h2 {
     font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 3px;
     font: bold;
-  }
-  
-  .text h3 {
+}
+
+.text h3 {
     font-size: 18px;
-    font-weight: 600;
     font: bold;
-  }
+}
   
   .home {
     text-decoration: none;

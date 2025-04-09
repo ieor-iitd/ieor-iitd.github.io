@@ -1,0 +1,47 @@
+.mtech_container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.mtech_student {
+    margin-bottom: 20px;
+}
+
+/* Use mtech_name instead of student_name */
+.mtech_name {
+    font-weight: bold;
+    font-size: 22px;   /* Bigger font */
+    margin: 0;
+}
+
+/* LinkedIn icon link style */
+.mtech_name a {
+    text-decoration: none;
+}
+
+.mtech_name a:hover {
+    text-decoration: underline;
+}
+
+.guide, .project {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 30px 0;
+}
+
+.linkedin-icon {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    margin-left: 6px;
+}

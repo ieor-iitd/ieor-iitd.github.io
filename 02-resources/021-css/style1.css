@@ -42,6 +42,9 @@
   .text {
     flex-grow: 1;
     color: black;
+    display: flex;            /* Add this */
+    flex-direction: column;   /* Add this */
+    justify-content: center;  /* Add this */
 }
 
 .text h1, .text h2, .text h3 {

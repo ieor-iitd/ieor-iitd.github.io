@@ -1,80 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ph.D. Opportunity - IEOR</title>
-    <link href="../../02-resources/021-css/style.css" rel="stylesheet">
+    <title>IEOR - website</title>
+    <link href="./02-resources/021-css/style1.css" rel="stylesheet">
+    <link href="./02-resources/021-css/DiffMediaStyle.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="images/icons/IITD_LOGO.svg" />
-    <base href="/">
-    <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="./02-resources/022-scripts/loadheaderfooter.js" defer></script>
+    
     <style>
-        /* Flexbox container for two-column layout */
+        /* Main Container Styling */
+        .main-container {
+            width: 1150px;
+            height: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Heading Styling */
+        .welcome-section h2 {
+            text-align: left;
+            border-bottom: 3px solid black; /* Underline */
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            font-size: 25px;
+        }
+
+        /* Layout for text and image slider */
         .content-container {
             display: flex;
-            gap: 20px; /* Adds space between columns */
-            margin-top: 20px;
+            align-items: flex-start; /* Align text and image at the top */
+            gap: 20px;
         }
 
-        /* Left column (main content) */
-        .main-content {
-            flex: 2; /* Takes 2/3 of the available space */
+        /* Text Styling */
+        .text-content {
+            flex: 1;
+            text-align: justify;
+            font-size: 16px;
+            line-height: 1.5;
         }
 
-        /* Right column (gallery) */
-        .gallery {
-            flex: 1; /* Takes 1/3 of the available space */
-            display: flex;
-            flex-direction: column; /* Arranges images vertically */
-            gap: 10px; /* Adds space between images */
+        /* Image Slider Container */
+        .image-slider {
+            width: 600px; 
+            position: relative;
         }
 
-        .gallery img {
-            width: 100%; /* Makes images responsive */
-            border-radius: 5px; /* Optional: Adds rounded corners */
+        /* Image Styling */
+        .slider img {
+            width: 100%;
+            height: auto;
+            display: none;
+            border-radius: 5px;
         }
+
+        .slider img.active {
+            display: block;
+        }
+
+        /* Navigation Buttons */
+        .navigation-button {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: gray;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: black;
+        }
+
+        /* Previous & Next Buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .prev { left: 0; }
+        .next { right: 0; }
+
     </style>
+
 </head>
 
 <body>
-    <div id="header"></div> <!-- Header will be loaded dynamically -->
+    <div id="header"></div> 
 
-    <!-- Two-column layout -->
-    <div class="content-container">
-        <!-- Left column (main content) -->
-        <div class="main-content">
-            <h2><u>Prof. Varun Ramamohan visits University of Exeter</u></h2>
-            <p>
-                Admission to the Ph.D. programmes is normally made on
-                the basis of an interview of eligible candidates conducted by the Department/Centre/School
-                concerned, through its Department Research Committee (DRC) / Centre Research Committee
-                (CRC)/ School Research Committee (SRC). DRC/CRC/SRC may decide to conduct a written test as
-                well, or multiple interviews, or other ways or testing, in order to screen the candidates.
-                Applications are invited from candidates by advertising the programmes in Employment
-                News/web portals in March for the first semester and in October for the second semester every
-                year.
-            </p>
+    <div class="main-container">
+        <section class="welcome-section">
+            <h2> Dr. Boli Chen in IIT Delhi </h2>
 
-            <p style="font-weight: bolder; margin-top: 30px;">
-                For more information please follow the link:
-                <a href="https://home.iitd.ac.in/pg-admissions.php" target="_blank">https://home.iitd.ac.in/pg-admissions.php</a>
-            </p>
-        </div>
+            <div class="content-container">
+                <div class="text-content">
+                    <p>
+                        Dr. Boli Chen from UCL visited IIT Delhi on February 13, 2025, for a 
+                        talk on "Intelligent Control for Smart and Sustainable Mobility". 
+                        His talk on control and decision-making challenges in connected 
+                        and automated vehicles (CAVs), including coordinated platooning and smart charging 
+                        technology, was very insightful. Engaging discussions followed on the future of 
+                        intelligent control systems and their impact on mobility and sustainability. 
 
-        <!-- Right column (gallery) -->
-        <div class="gallery">
-            <img src="images/gallery/image1.jpg" alt="Image related to news event">
-            <img src="images/gallery/image2.jpg" alt="Another image related to news event">
-        </div>
+                        <br><br>
+                        Dr. Chen also interacted with the students in the "Optimization" course. We thank him for his visit to IEOR, IIT Delhi.
+                    </p>
+                </div>
+
+                <!-- Image slider -->
+                <div class="image-slider">
+                    <div class="slider">
+                        <img class="active" id="img-1" src="../../02-resources/023-images/news/Boli_Chen_1.JPG" alt="Image 1"/>
+                        <img id="img-2" src="../../02-resources/023-images/news/Boli_Chen_2.JPG" alt="Image 2"/>
+                        <img id="img-3" src="../../02-resources/023-images/news/Boli_Chen_3.JPG" alt="Image 3"/>
+                    </div>
+                    <button class="prev" onclick="prevSlide()">❮</button>
+                    <button class="next" onclick="nextSlide()">❯</button>
+                    <div class="navigation-button">
+                        <span class="dot active" onclick="changeSlide(0)"></span>
+                        <span class="dot" onclick="changeSlide(1)"></span>
+                        <span class="dot" onclick="changeSlide(2)"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <div id="footer"></div> <!-- Footer will be loaded dynamically -->
-</body>
+    <div id="footer"></div>
 
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".slider img");
+        const dots = document.querySelectorAll(".dot");
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove("active");
+                dots[i].classList.remove("active");
+            });
+            slides[index].classList.add("active");
+            dots[index].classList.add("active");
+        }
+
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        function prevSlide() {
+            slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        function changeSlide(index) {
+            slideIndex = index;
+            showSlide(slideIndex);
+        }
+    </script>
+</body>
 </html>

@@ -13,100 +13,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="images/icons/IITD_LOGO.svg" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="./02-resources/022-scripts/loadheaderfooter.js" defer></script>
+    <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
     
     <style>
-        /* Main Container Styling */
         .main-container {
             width: 1150px;
-            height: 500px;
             margin: 0 auto;
             padding: 20px;
             border: 1px solid #ccc;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        /* Heading Styling */
         .welcome-section h2 {
             text-align: left;
-            border-bottom: 3px solid black; /* Underline */
+            border-bottom: 3px solid #c41e3a;
             padding-bottom: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             font-size: 25px;
+            color: #c41e3a;
         }
 
-        /* Layout for text and image slider */
+        .date-line {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
         .content-container {
             display: flex;
-            align-items: flex-start; /* Align text and image at the top */
+            flex-direction: column;
             gap: 20px;
         }
 
-        /* Text Styling */
+        .image-block {
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-block img {
+            width: 100%;
+            max-width: 700 px;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
         .text-content {
-            flex: 1;
             text-align: justify;
             font-size: 16px;
-            line-height: 1.5;
+            line-height: 1.6;
         }
-
-        /* Image Slider Container */
-        .image-slider {
-            width: 600px; 
-            position: relative;
-        }
-
-        /* Image Styling */
-        .slider img {
-            width: 100%;
-            height: auto;
-            display: none;
-            border-radius: 5px;
-        }
-
-        .slider img.active {
-            display: block;
-        }
-
-        /* Navigation Buttons */
-        .navigation-button {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .dot {
-            height: 10px;
-            width: 10px;
-            margin: 0 5px;
-            background-color: gray;
-            border-radius: 50%;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .dot.active {
-            background-color: black;
-        }
-
-        /* Previous & Next Buttons */
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .prev { left: 0; }
-        .next { right: 0; }
-
     </style>
 
 </head>
@@ -116,72 +72,45 @@
 
     <div class="main-container">
         <section class="welcome-section">
-            <h2> Dr. Boli Chen in IIT Delhi </h2>
+            <h2>Dr. Boli Chen visited IIT Delhi for the inaugural IEOR seminar series for his talk on "Intelligent Control 
+                for Smart and Sustainable Mobility" </h2>
+            <div class="date-line">February 13, 2025</div>
 
             <div class="content-container">
-                <div class="text-content">
-                    <p>
-                        Dr. Boli Chen from UCL visited IIT Delhi on February 13, 2025, for a 
-                        talk on "Intelligent Control for Smart and Sustainable Mobility". 
-                        His talk on control and decision-making challenges in connected 
-                        and automated vehicles (CAVs), including coordinated platooning and smart charging 
-                        technology, was very insightful. Engaging discussions followed on the future of 
-                        intelligent control systems and their impact on mobility and sustainability. 
-
-                        <br><br>
-                        Dr. Chen also interacted with the students in the "Optimization" course. We thank him for his visit to IEOR, IIT Delhi.
-                    </p>
+                <div class="image-block">
+                    <img src="../../02-resources/023-images/news/Boli_Chen_2.JPG" alt="Dr. Boli Chen at IIT Delhi">
                 </div>
 
-                <!-- Image slider -->
-                <div class="image-slider">
-                    <div class="slider">
-                        <img class="active" id="img-1" src="../../02-resources/023-images/news/Boli_Chen_1.JPG" alt="Image 1"/>
-                        <img id="img-2" src="../../02-resources/023-images/news/Boli_Chen_2.JPG" alt="Image 2"/>
-                        <img id="img-3" src="../../02-resources/023-images/news/Boli_Chen_3.JPG" alt="Image 3"/>
-                    </div>
-                    <button class="prev" onclick="prevSlide()">❮</button>
-                    <button class="next" onclick="nextSlide()">❯</button>
-                    <div class="navigation-button">
-                        <span class="dot active" onclick="changeSlide(0)"></span>
-                        <span class="dot" onclick="changeSlide(1)"></span>
-                        <span class="dot" onclick="changeSlide(2)"></span>
-                    </div>
+                <div class="text-content">
+                    <p>
+                        Recent advancements in AI, computation, and communication technologies have driven significant progress in 
+                        robotics and autonomous systems. Among these, connected and automated vehicles (CAVs) are ready to become 
+                        the first highly safety-critical autonomous systems available to the public. With broader adoption, 
+                        CAVs have the potential to make road transport greener, safer, and more efficient. However, 
+                        realizing these benefits depends on our ability to ensure system reliability, safety, and 
+                        efficiency—challenges that lie at the heart of control engineering. In particular, providing 
+                        safety guarantees remains a central concern for self-driving vehicles and other autonomous systems 
+                        increasingly integrated into society. This talk will explore some key control and decision-making challenges 
+                        in CAVs, such as real-time control and planning with enhanced situational awareness, coordinated platooning
+                         with traffic signal information, and smart charging technology that benefits both the grid and the vehicle.
+                        <br>
+                        Boli Chen (IEEE SM'24) obtained his PhD degree in Control Systems from Imperial College London, UK in 2016. 
+                        He was a Post-Doc at Imperial college London, with the Control and Power Group from 2016 to 2019. 
+                        Since September 2019, he is a Lecturer in the Department of Electronic and Electrical Engineering 
+                        at University College London, where he is associated with the Sensors Systems and Circuits research 
+                        group and the UCL Robotics Institute. His research focuses on the control, optimization, and estimation 
+                        of complex dynamical systems, with rich applications in smart cities, e.g., transportation, electric energy 
+                        systems, and sensor networks. Dr Boli Chen is a member of the IEEE Control Systems Society Technical Committee 
+                        on "Smart Cities". He serves as an Associate Editor for the IEEE Transactions on Intelligent Transportation Systems 
+                        and the European Journal of Control. Additionally, he is a member of the EUCA Conference Editorial Board and the IEEE 
+                        ITSC Editorial Board.
+                        
+                    </p>
                 </div>
             </div>
         </section>
     </div>
 
     <div id="footer"></div>
-
-    <script>
-        let slideIndex = 0;
-        const slides = document.querySelectorAll(".slider img");
-        const dots = document.querySelectorAll(".dot");
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.remove("active");
-                dots[i].classList.remove("active");
-            });
-            slides[index].classList.add("active");
-            dots[index].classList.add("active");
-        }
-
-        function nextSlide() {
-            slideIndex = (slideIndex + 1) % slides.length;
-            showSlide(slideIndex);
-        }
-
-        function prevSlide() {
-            slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-            showSlide(slideIndex);
-        }
-
-        function changeSlide(index) {
-            slideIndex = index;
-            showSlide(slideIndex);
-        }
-    </script>
 </body>
 </html>

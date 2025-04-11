@@ -4,135 +4,129 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>News and Events - IEOR</title>
+    <title> News & Events: IEOR </title>
     <link href="../../02-resources/021-css/style1.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="images/icons/IITD_LOGO.svg" />
+    <link rel="icon" type="image/svg+xml" href="ieor-iitd.github.io\02-resources\023-images\icons\IITD_LOGO.svg" />
+    <base href="/">
     <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
 
     <style>
-        /* Center the section headings */
-        .section-heading {
-            text-align: center;
-            width: 100%;
-            margin: 30px 0;
+        body {
+            background-color: #f8f8f8;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        /* Ensure the content aligns properly */
         .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin-top: 30px;
         }
 
-        .project-container {
+        .news-block {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            width: 90%;
+            margin-bottom: 30px;
+            background-color: #e3e0e0;
+            border-radius: 8px;
+            overflow: hidden;
             max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .news-block:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .news-image {
+            flex: 1 1 30%;
+            max-width: 30%;
+            overflow: hidden;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            
+        }
+
+        .news-block:hover .news-image img {
+            transform: scale(1.05);
+        }
+
+        .news-content {
+            flex: 1 1 70%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .news-content h3 {
+            margin: 0 0 10px;
+            font-weight: 600;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .news-date-text {
+            margin: 0 0 15px;
+            font-size: 14px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .news-content a {
+            background-color: #c41e3a;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            width: fit-content;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .news-content a:hover {
+            background-color: #333;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
-    
     <div id="header"></div> 
 
     <div class="content">
-        <h2 class="section-heading"><strong>News</strong></h2>
-
-        <div class="project-container">
-            <div class="project-name">
-                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSswJhleU56PXdklQOqrxFwmfv2FYOT_thgfdKNPbIGXIYu2p_y" alt="Project 1" class="project-image">
-                <div class="project-info">
-                    <a href="../../01-pages/017-newsevents/block_1.html">
-                        <h3>Prof. Varun Ramamohan visits University of Exeter</h3>
-                    </a>
-                </div>
+        <div class="news-block">
+            <div class="news-image">
+                <img src="ieor-iitd.github.io/02-resources/023-images/news/Boli_Chen_3.JPG" alt="Dr. Boli Chen">
             </div>
-
-            <div class="project-name">
-                <img src="https://publicsystemslab.in/wp-content/uploads/2024/01/Untitled-design-1-1-1024x576.png" alt="Project 2" class="project-image">
-                <div class="project-info">
-                    <a href="../../01-pages/017-newsevents/block_2.html"> 
-                        <h3>Amber Srivastava, Shaurya Shriyam and Prashant Palkar participated in the Climate Change Conclave</h3>
-                    </a>
-                </div>
-            </div>
-
-            <div class="project-name">
-                <img src="https://publicsystemslab.in/wp-content/uploads/2022/06/SDG-2-Dashboard.jpg" alt="Project 3" class="project-image">
-                <div class="project-info">
-                    <a href="../../01-pages/017-newsevents/block_3.html"> 
-                        <h3>Amber Srivastava, Shaurya Shriyam and Prashant Palkar participated in the Climate Change Conclave</h3>
-                    </a>
-                </div>
-            </div>
-
-            <div class="project-name">
-                <img src="https://publicsystemslab.in/wp-content/uploads/2022/06/SDG-2-Dashboard.jpg" alt="Project 3" class="project-image">
-                <div class="project-info">
-                    <a href="../../01-pages/017-newsevents/block_3.html"> 
-                        <h3>Amber Srivastava, Shaurya Shriyam and Prashant Palkar participated in the Climate Change Conclave</h3>
-                    </a>
-                </div>
-            </div>
-
-            <div class="project-name">
-                <img src="https://publicsystemslab.in/wp-content/uploads/2022/06/SDG-2-Dashboard.jpg" alt="Project 3" class="project-image">
-                <div class="project-info">
-                    <a href="../../01-pages/017-newsevents/block_3.html"> 
-                        <h3>Amber Srivastava, Shaurya Shriyam and Prashant Palkar participated in the Climate Change Conclave</h3>
-                    </a>
-                </div>
-            </div>
-
-            <div class="project-name">
-                <img src="https://publicsystemslab.in/wp-content/uploads/2022/06/SDG-2-Dashboard.jpg" alt="Project 3" class="project-image">
-                <div class="project-info">
-                    <a href="../../01-pages/017-newsevents/block_3.html"> 
-                        <h3>Amber Srivastava, Shaurya Shriyam and Prashant Palkar participated in the Climate Change Conclave</h3>
-                    </a>
-                </div>
+            <div class="news-content">
+                <h3>Dr. Boli Chen visited IIT Delhi for the inaugural IEOR seminar series for his talk on "Intelligent Control 
+                    for Smart and Sustainable Mobility"</h3>
+                <p class="news-date-text">13 February 2025</p>
+                <a href="ieor-iitd.github.io/01-pages/017-newsevents/block_1.html" target="_blank">Read more</a>
             </div>
         </div>
 
-        <h2 class="section-heading"><strong>Upcoming Events</strong></h2>
-
-        <div class="project-container">
-            <div class="project-name">
-                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQi5wJ9mSNlrHWCqk6yBMKiAaJtFxI227RNc0SeyVfq3iRO-KCe" alt="Project 4" class="project-image">
-                <div class="project-info">
-                    <a href="../../01-pages/017-newsevents/block_1.html"> 
-                        <h3>Dr. Boli Chen Visits IIT Delhi</h3>
-                    </a>
-                </div>
+        <div class="news-block">
+            <div class="news-image">
+                <img src="ieor-iitd.github.io/02-resources/023-images/news/Ankur_Garg_1.jpg" alt="Dr. Ankur Garg">
             </div>
-
-            <div class="project-name">
-                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTRT3wvxqRpRaAxeKjEhPqxt0-kstn2bjzLsgMb5Eg9jnX0UyNq" alt="Project 5" class="project-image">
-                <div class="project-info">
-                    <a href="../../01-pages/017-newsevents/block_5.html"> 
-                        <h3>Dr. Ankur Garg seminar on use of OR in Aviation Industries</h3>
-                    </a>
-                </div>
-            </div>
-
-            <div class="project-name">
-                <img src="https://publicsystemslab.in/wp-content/uploads/2022/06/10893-2-1024x871.jpg" alt="Project 6" class="project-image">
-                <div class="project-info">
-                    <a href="../../01-pages/017-newsevents/block_6.html"> 
-                        <h3>Sankara Prasad lecture on the use of AI and ML</h3>
-                    </a>
-                </div>
+            <div class="news-content">
+                <h3>Dr. Ankur Garg presented his lecture on "Scheduling Models and Heuristics in the Airline Industry"</h3>
+                <p class="news-date-text">6 March 2025</p>
+                <a href="ieor-iitd.github.io/01-pages/017-newsevents/block_2.html" target="_blank">Read more</a>
             </div>
         </div>
     </div>
 
     <div id="footer"></div> 
-
 </body>
 </html>

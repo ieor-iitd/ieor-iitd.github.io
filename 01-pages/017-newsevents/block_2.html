@@ -14,47 +14,174 @@
     <link rel="icon" type="image/svg+xml" href="images/icons/IITD_LOGO.svg" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="./02-resources/022-scripts/loadheaderfooter.js" defer></script>
+    
+    <style>
+        /* Main Container Styling */
+        .main-container {
+            width: 1150px;
+            height: 550px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Heading Styling */
+        .welcome-section h2 {
+            text-align: left;
+            border-bottom: 3px solid black; /* Underline */
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            font-size: 25px;
+        }
+
+        /* Layout for text and image slider */
+        .content-container {
+            display: flex;
+            align-items: flex-start; /* Align text and image at the top */
+            gap: 20px;
+        }
+
+        /* Text Styling */
+        .text-content {
+            flex: 1;
+            text-align: justify;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Image Slider Container */
+        .image-slider {
+            width: 600px; 
+            position: relative;
+        }
+
+        /* Image Styling */
+        .slider img {
+            width: 100%;
+            height: auto;
+            display: none;
+            border-radius: 5px;
+        }
+
+        .slider img.active {
+            display: block;
+        }
+
+        /* Navigation Buttons */
+        .navigation-button {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: gray;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: black;
+        }
+
+        /* Previous & Next Buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .prev { left: 0; }
+        .next { right: 0; }
+
+    </style>
 
 </head>
 
 <body>
-<!-- Header will be loaded dynamically all the header code is inside of components_hed_fot, header.html-->
     <div id="header"></div> 
 
-<!-- Main container -->    
     <div class="main-container">
-<!-- Welcome Section -->
         <section class="welcome-section">
-            <div class="text-content">
-                <h2>Welcome to IEOR</h2>
-                <p>Industrial Engineering & Operations Research (IEOR) focuses on optimizing complex systems through mathematical modeling, data analytics, and decision sciences. It integrates engineering, management, and computational techniques to improve efficiency in manufacturing, supply chains, logistics, and service industries. The program emphasizes operations research, artificial intelligence, optimization, and statistical modeling, equipping students with analytical and problem-solving skills for real-world challenges.</p>
-            </div>
-<!-- Image slider -->
-            <div class="image-slider">
-                <div class="slider">
-                    <img id="img-1" src="ieor-iitd.github.io\02-resources\023-images\news\Boli_Chen_1.JPG" alt="Image 1"/>
-                    <img id="img-2" src="ieor-iitd.github.io\02-resources\023-images\news\Boli_Chen_2.JPG" alt="Image 2"/>
-                    <img id="img-3" src="ieor-iitd.github.io\02-resources\023-images\news\Boli_Chen_3.JPG" alt="Image 3"/>
+            <h2> Dr. Ankur Garg talk on "Scheduling Models and Heuristics in the Airline Industry" </h2>
+
+            <div class="content-container">
+                <div class="text-content">
+                    <p>
+                        Dr. Boli Chen from UCL visited IIT Delhi on February 13, 2025, for a 
+                        talk on "Intelligent Control for Smart and Sustainable Mobility". 
+                        His talk on control and decision-making challenges in connected 
+                        and automated vehicles (CAVs), including coordinated platooning and smart charging 
+                        technology, was very insightful. Engaging discussions followed on the future of 
+                        intelligent control systems and their impact on mobility and sustainability. 
+
+                        <br><br>
+                        Dr. Chen also interacted with the students in the "Optimization" course. We thank him for his visit to IEOR, IIT Delhi.
+                    </p>
                 </div>
-                <div class="navigation-button">
-                    <span class="dot active" onclick="changeSlide(0)"></span>
-                    <span class="dot" onclick="changeSlide(1)"></span>
-                    <span class="dot" onclick="changeSlide(2)"></span>
+
+                <!-- Image slider -->
+                <div class="image-slider">
+                    <div class="slider">
+                        <img class="active" id="img-1" src="../../02-resources/023-images/news/Ankur_Garg_1.jpg" alt="Image 1"/>
+                        <img id="img-2" src="../../02-resources/023-images/news/Ankur_Garg_2.jpg" alt="Image 2"/>
+                        
+                    </div>
+                    <button class="prev" onclick="prevSlide()">❮</button>
+                    <button class="next" onclick="nextSlide()">❯</button>
+                    <div class="navigation-button">
+                        <span class="dot active" onclick="changeSlide(0)"></span>
+                        <span class="dot" onclick="changeSlide(1)"></span>
+                        <span class="dot" onclick="changeSlide(2)"></span>
+                    </div>
                 </div>
-                <button class="prev" onclick="prevSlide()">❮</button>
-                <button class="next" onclick="nextSlide()">❯</button>
             </div>
         </section>
-
-
-        </section>
-
-
-
     </div>
 
-    <div id="footer"></div> <!-- Footer will be loaded dynamically all the footer code is inside of components_hed_fot, footer.html -->
-    <script src="./02-resources/022-scripts/herochange.js" ></script>
-</body>
+    <div id="footer"></div>
 
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".slider img");
+        const dots = document.querySelectorAll(".dot");
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove("active");
+                dots[i].classList.remove("active");
+            });
+            slides[index].classList.add("active");
+            dots[index].classList.add("active");
+        }
+
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        function prevSlide() {
+            slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        function changeSlide(index) {
+            slideIndex = index;
+            showSlide(slideIndex);
+        }
+    </script>
+</body>
 </html>

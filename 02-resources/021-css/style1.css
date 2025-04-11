@@ -1202,6 +1202,7 @@ footer {
     word-wrap: break-word; /* Break long words */
     word-break: break-word; /* Break long words */
     overflow-wrap: break-word; /* Break long words */
+    text-align: justify; /* Justify text */
 }
 
 .phd-info ol {
@@ -1213,6 +1214,7 @@ footer {
   word-wrap: break-word; /* Break long words */
   word-break: break-word; /* Break long words */
   overflow-wrap: break-word; /* Break long words */
+  text-align: justify; /* Justify text */
 }
 
 .phd-info table {
@@ -1298,16 +1300,16 @@ h2 u {
 }
 
 .phd-info table th {
-  background-color:  #f5f5f5;
+  background-color:  #c8dbea;
   color: #000000;
 }
 
 .phd-info table tr:nth-child(even) {
-  background-color: #c8dbea;
+  background-color: white;
 }
 
 .phd-info table tr:nth-child(odd) {
-  background-color: #c8dbea;
+  background-color: white;
 }
 
 .footer {

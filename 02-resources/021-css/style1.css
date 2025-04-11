@@ -1300,16 +1300,16 @@ h2 u {
 }
 
 .phd-info table th {
-  background-color:  #f5f5f5;
+  background-color:  white;
   color: #000000;
 }
 
 .phd-info table tr:nth-child(even) {
-  background-color: #c8dbea;
+  background-color: white;
 }
 
 .phd-info table tr:nth-child(odd) {
-  background-color: #c8dbea;
+  background-color: white;
 }
 
 .footer {

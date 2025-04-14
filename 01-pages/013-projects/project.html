@@ -1,155 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Projects: IEOR</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects: IEOR</title>
 
-    <!-- CSS and Fonts -->
-    <link href="../../02-resources/021-css/style1.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="02-resources/023-images/icons/IITD_LOGO.svg" />
+  <link href="../../02-resources/021-css/style1.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="02-resources/023-images/icons/IITD_LOGO.svg" />
+  <base href="/" />
+  <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
 
-    <!-- Base path and JS -->
-    <base href="/">
-    <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
+  <style>
+    body {
+      background-color: #f8f8f8;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-    <style>
-        body {
-            background-color: #f8f8f8;
-            font-family: 'Montserrat', sans-serif;
-        }
+    .content {
+      margin: 40px auto;
+      max-width: 1350px; /* Reduced width of the container */
+      padding: 10px 20px; /* Added 10px padding to top and bottom, 20px on the sides */
+    }
 
-        .content {
-            margin-top: 30px;
-        }
+    .news-block {
+      display: flex;
+      align-items: flex-start;
+      background-color: #e3e0e0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .news-block {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-            background-color: #e3e0e0;
-            border-radius: 8px;
-            overflow: hidden;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    .news-block:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
 
-        .news-block:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-        }
+    .news-image {
+      flex: 0 0 28%;
+      margin: 0;
+      padding: 30px 10px 10px 10px;
+      background-color: #fff;
+      border-radius: 12px 0 0 12px;
+    }
 
-        .news-image {
-            flex: 1 1 30%;
-            max-width: 30%;
-            overflow: hidden;
-        }
+    .news-image img {
+      width: 100%;
+      height: auto;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      display: block;
+    }
 
-        .news-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
+    .news-block:hover .news-image img {
+      transform: scale(1.02);
+    }
 
-        .news-block:hover .news-image img {
-            transform: scale(1.05);
-        }
+    .image-source {
+      font-size: 12px;
+      font-style: italic;
+      color: #555;
+      margin-top: 8px;
+      text-align: center;
+    }
 
-        .news-content {
-            flex: 1 1 70%;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative; /* Required for positioning image source */
-        }
+    .news-content {
+      flex: 1;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background-color: #fdfdfd;
+    }
 
-        .news-content h3 {
-            margin: 0 0 10px;
-            font-weight: 600;
-            font-size: 20px;
-            color: #333;
-        }
+    .news-content h3 {
+      margin: 0 0 14px;
+      font-weight: 600;
+      font-size: 24px;
+      color: #333;
+      text-align: justify;
+    }
 
-        .project-members {
-            margin: 0 0 10px;
-            font-size: 14px;
-            color: #444;
-            font-weight: 500;
-        }
+    .project-members {
+      margin-bottom: 18px;
+      font-size: 15px;
+      color: #444;
+      font-weight: 500;
+    }
 
-        .project-members a {
-            color: #c41e3a;
-            text-decoration: underline;
-            font-weight: 500;
-        }
+    .project-members a {
+      color: #c41e3a;
+      text-decoration: underline;
+      font-weight: 500;
+    }
 
-        /* Read More button */
-        .read-more-btn {
-            display: inline-block;
-            background-color: #c41e3a;
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 14px;
-            margin-top: 10px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            width: fit-content;
-        }
+    .abstract,
+    .keywords-wrapper {
+      font-size: 15px;
+      margin-bottom: 14px;
+      color: #555;
+      line-height: 1.7;
+    }
 
-        .read-more-btn:hover {
-            background-color: #333;
-            transform: scale(1.05);
-        }
+    .abstract-title,
+    .keywords-title {
+      font-weight: 600;
+      color: #222;
+      display: inline;
+    }
 
-        /* Image Source as hyperlink in bottom right */
-        .image-source {
-            position: absolute;
-            bottom: 10px;
-            right: 15px;
-            font-size: 12px;
-            font-style: italic;
-            color: #0066cc;
-            text-decoration: underline;
-            transition: color 0.3s ease;
-        }
+    .abstract .abstract-title::after {
+      content: ": ";
+    }
 
-        .image-source:hover {
-            color: #c41e3a;
-        }
-    </style>
+    .abstract {
+      text-align: justify;
+    }
+
+    .keywords-wrapper {
+      display: flex;
+      justify-content: space-between; /* Distribute space between the keywords and the "Read More" button */
+      align-items: center; /* Align vertically to center */
+      flex-wrap: wrap;
+    }
+
+    .keywords-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .keywords {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 100%;
+    }
+
+    .keywords span {
+      background-color: #d6d6d6;
+      color: #333;
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 500;
+    }
+
+    .read-more-btn {
+      background-color: #c41e3a;
+      color: white;
+      padding: 6px 12px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 13px;
+      white-space: nowrap;
+      display: inline-block;
+      font-weight: 500;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .read-more-btn:hover {
+      background-color: #333;
+      transform: scale(1.05);
+    }
+
+    @media screen and (max-width: 768px) {
+      .news-block {
+        flex-direction: column;
+      }
+
+      .news-image,
+      .news-content {
+        max-width: 100%;
+        flex: 1 1 100%;
+      }
+
+      .news-content {
+        padding: 20px;
+      }
+
+      .keywords-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .read-more-btn {
+        align-self: flex-start;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div id="header"></div> 
+  <div id="header"></div>
 
-    <div class="content">
-        <div class="news-block">
-            <div class="news-image">
-                <img src="../../02-resources/023-images/projects/NLP_Solver.png" alt="Minotaur Solver Project Snapshot">
-            </div>
-            <div class="news-content">
-                <h3>Theoretical and computational advances in mixed-integer nonlinear optimization: Development of the open-source solver Minotaur</h3>
-                <p class="project-members">
-                    <a href="https://web.iitd.ac.in/~ppalkar/" target="_blank">Prashant Palkar</a>, Meenarli Sharma, Kishan, Nayan Kumar
-                </p>
-                <a class="image-source" href="https://medium.com/@karthikmr1991/programming-tips-for-implementation-of-a-non-linear-optimization-solver-part-i-linear-algebra-1ebb13f2a1d4" target="_blank">
-                    Click here to view the image source
-                </a>
-                <a href="../../01-pages/013-projects/PP_Timetable.html" target="_blank" class="read-more-btn">Read more</a>
-            </div>
+  <div class="content">
+    <div class="news-block">
+      <div class="news-image">
+        <img src="ieor-iitd.github.io/02-resources/023-images/projects/NLP_Solver.png" alt="Minotaur Solver Project Snapshot" />
+        <div class="image-source">Image courtesy: Medium.com</div>
+      </div>
+
+      <div class="news-content">
+        <h3>Theoretical and computational advances in mixed-integer nonlinear optimization: Development of the open-source solver Minotaur</h3>
+
+        <p class="project-members">
+          <a href="https://web.iitd.ac.in/~ppalkar/" target="_blank">Prashant Palkar</a>, Meenarli Sharma, Kishan, Nayan Kumar
+        </p>
+
+        <div class="abstract">
+          <span class="abstract-title">Abstract</span>
+          This project focuses on the development of Minotaur, an open-source solver for tackling mixed-integer nonlinear optimization (MINLP) problems. The research addresses both theoretical modeling and algorithmic advancements to efficiently solve large-scale instances arising in engineering and scientific applications.
         </div>
-    </div>
 
-    <div id="footer"></div> 
+        <div class="keywords-wrapper">
+          <div class="keywords-container">
+            <div class="keywords-title">Keywords:</div>
+            <div class="keywords">
+              <span>MINLP</span>
+              <span>Optimization</span>
+              <span>Open-source</span>
+              <span>Nonlinear</span>
+            </div>
+          </div>
+
+          <!-- "Read More" button aligned to the rightmost part of the keywords-wrapper -->
+          <a href="../../01-pages/013-projects/PP_Timetable.html" target="_blank" class="read-more-btn">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
 </body>
 </html>

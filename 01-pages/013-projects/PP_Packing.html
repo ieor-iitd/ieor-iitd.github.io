@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects: IEOR</title>
+
+  <!-- Fonts and Styles -->
+  <link href="../../02-resources/021-css/style1.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="02-resources/023-images/icons/IITD_LOGO.svg" />
+  <base href="/" />
+  <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
+
+  <style>
+    body {
+      background-color: #f8f8f8;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .content {
+      margin: 40px auto;
+      max-width: 1350px;
+      padding: 0 20px;
+    }
+
+    .news-block {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #e3e0e0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .news-block:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .news-image {
+      flex: 1 1 33%;
+      max-width: 33%;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: #fff;
+      border-radius: 12px 0 0 12px;
+    }
+
+    .news-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .news-block:hover .news-image img {
+      transform: scale(1.02);
+    }
+
+    .image-source {
+      font-size: 12px;
+      font-style: italic;
+      color: #555;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .news-content {
+      flex: 1 1 67%;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      background-color: #fdfdfd;
+    }
+
+    .news-content h3 {
+      margin: 0 0 14px;
+      font-weight: 600;
+      font-size: 24px;
+      color: #333;
+      text-align: justify;
+    }
+
+    .project-members {
+      margin-bottom: 18px;
+      font-size: 15px;
+      color: #444;
+      font-weight: 500;
+    }
+
+    .project-members a {
+      color: #c41e3a;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    .abstract,
+    .keywords {
+      font-size: 15px;
+      margin-bottom: 14px;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    .abstract-title,
+    .keywords-title {
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 4px;
+    }
+
+    .abstract {
+      text-align: justify;
+    }
+
+    .keywords span {
+      display: inline-block;
+      background-color: #d6d6d6;
+      color: #333;
+      font-size: 13px;
+      padding: 5px 10px;
+      border-radius: 4px;
+      margin: 3px 8px 3px 0;
+    }
+
+    .read-more-link {
+      margin-top: 14px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #c41e3a;
+      text-decoration: none;
+      width: fit-content;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+
+    .read-more-link:hover {
+      color: #333;
+    }
+
+    @media screen and (max-width: 768px) {
+      .news-block {
+        flex-direction: column;
+      }
+
+      .news-image,
+      .news-content {
+        max-width: 100%;
+        flex: 1 1 100%;
+      }
+
+      .news-content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header"></div>
+
+  <div class="content">
+    <div class="news-block">
+      <div class="news-image">
+        <img src="ieor-iitd.github.io\02-resources\023-images\projects\NLP_Solver.png" alt="Minotaur Solver Project Snapshot" />
+        <div class="image-source">Image courtesy: Medium.com</div>
+      </div>
+
+      <div class="news-content">
+        <h3>Theoretical and computational advances in mixed-integer nonlinear optimization: Development of the open-source solver Minotaur</h3>
+
+        <p class="project-members">
+          <a href="https://web.iitd.ac.in/~ppalkar/" target="_blank">Prashant Palkar</a>, Meenarli Sharma, Kishan, Nayan Kumar
+        </p>
+
+        <div class="abstract">
+          <div class="abstract-title">Abstract:</div>
+          This project focuses on the development of Minotaur, an open-source solver for tackling mixed-integer nonlinear optimization (MINLP) problems. The research addresses both theoretical modeling and algorithmic advancements to efficiently solve large-scale instances arising in engineering and scientific applications.
+        </div>
+
+        <div class="keywords">
+          <div class="keywords-title">Keywords:</div>
+          <span>MINLP</span>
+          <span>Optimization</span>
+          <span>Open-source Solver</span>
+          <span>Nonlinear Programming</span>
+          <span>Minotaur</span>
+        </div>
+
+        <a href="../../01-pages/013-projects/PP_Timetable.html" target="_blank" class="read-more-link">Read More →</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+</body>
+</html>

@@ -37,34 +37,30 @@
   .IITD_LOGO:hover {
     transform: scale(1.05);
   }
- 
-
+  
   .text {
     flex-grow: 1;
     color: black;
-    display: flex;            /* Add this */
-    flex-direction: column;   /* Add this */
-    justify-content: center;  /* Add this */
-}
-
-.text h1, .text h2, .text h3 {
-    margin: 0;
-    font-weight: 600;
-}
-
-.text h1 {
+  }
+  
+  .text h1 {
     font-size: 26px;
-}
-
-.text h2 {
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  .text h2 {
     font-size: 20px;
     font-weight: 600;
-}
-
-.text h3 {
+    margin-bottom: 3px;
+    font: bold;
+  }
+  
+  .text h3 {
     font-size: 18px;
     font-weight: 600;
-}
+    font: bold;
+  }
   
   .home {
     text-decoration: none;
@@ -332,7 +328,6 @@ margin: 0 auto;
   color: black;
   font-size: 35px;
   margin-bottom: 160px;
-  margin-left: 0px ;
   border-bottom: 2px solid black; /* Adjust thickness and color */
   padding-bottom: 8px; /* Adds space between text and line */
 }
@@ -358,7 +353,6 @@ margin: 0 auto;
   .section-header h2 {
     color: black;
     font-size: 24px;
-    margin-left: 20px ;
   }
   
   .view-all {
@@ -514,17 +508,6 @@ margin: 0 auto;
   .event-row:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  }
-
-  .no-event-name {
-    font-size: 20px ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    font-weight: bolder;
   }
 
   .date-box {
@@ -973,10 +956,10 @@ footer {
   
   .social-icon {
     display: inline-block;
-    width: 40px;
-    height: 40px ;
+    width: 80px;
+    height: 80px;
     background-color: var(--primary-color);
-    color: white;
+    color: #2584e2;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1215,7 +1198,6 @@ footer {
     word-wrap: break-word; /* Break long words */
     word-break: break-word; /* Break long words */
     overflow-wrap: break-word; /* Break long words */
-    text-align: justify; /* Justify text */
 }
 
 .phd-info ol {
@@ -1227,7 +1209,6 @@ footer {
   word-wrap: break-word; /* Break long words */
   word-break: break-word; /* Break long words */
   overflow-wrap: break-word; /* Break long words */
-  text-align: justify; /* Justify text */
 }
 
 .phd-info table {
@@ -1248,26 +1229,122 @@ footer {
 }
 
 .phd-info .topmost-heading th {
-    background-color: #C40C0C;
-    color: white;
+    background-color: #87CEEB;
+    color: #000000;
 }
 
 
-/* CODE FOR PHD SECTION */
+/*CODE FOR FACULTY SECTION*/
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+  margin: 0;
+  padding: 20px;
+}
 
 h2 {
   font-size: 1.6em;
-  margin-left: 10%;
   margin-top: 30px;
   margin-bottom: 10px;
-  position: relative;
+  text-decoration: underline;
+  text-align: left; /* Align heading to the left */
 }
 
 h2 u {
   text-decoration: none;
   display: inline-block;
   padding-bottom: 5px;
-  border-bottom: 3px solid #ffffff; /* Bold white underline */
+  border-bottom: 3px solid #000000; /* Bold white underline */
+}
+
+.faculty-info p, strong {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 550;
+  font-size: 1.1em;
+  max-width: 80%;         /* Controls total text width */
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-align: left; /* Align text to the left */
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.faculty-info a {
+  color: blue;
+  text-decoration: none;
+}
+
+.faculty-info a:hover {
+  text-decoration: underline;
+}
+
+.faculty-info table {
+  width: 80%;
+  margin-left: auto; /* Center table horizontally */
+  margin-right: auto; /* Center table horizontally */
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: #000000; /* Keeps text black */
+}
+
+.faculty-info table th,
+.faculty-info table td {
+  border: 1px solid #000000;
+  padding: 12px;
+  text-align: center;
+}
+
+.faculty-info table thead th {
+  background-color: #2584e2; /* Blue */
+}
+
+.faculty-info table tbody tr {
+  background-color: #ffffff; /* White */
+}
+
+.footer {
+  background-color: #c8dbea;
+  color: #000000;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.container {
+  max-width: 800px;
+  margin-left: auto; /* Center container horizontally */
+  margin-right: auto; /* Center container horizontally */
+}
+
+p[style="font-weight: bolder"] {
+  font-size: 1.2em;
+}
+
+/* CODE FOR PHD SECTION */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color:white;
+  margin: 0;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 1.6em;
+  margin-left: 10%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+h2 u {
+  text-decoration: none;
+  display: inline-block;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #000000; /* Bold white underline */
 }
 
 .phd-info p, strong {
@@ -1280,6 +1357,9 @@ h2 u {
   word-wrap: break-word;
   word-break: break-word;
   overflow-wrap: break-word;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .phd-info a {
@@ -1293,38 +1373,42 @@ h2 u {
 
 .phd-info table {
   width: 80%;
-  margin-left: 20%;
+  margin-left: 25%;
   border-collapse: collapse;
   margin-top: 20px;
-  color: #000000;
+  color: #000000; /* Keeps text black */
 }
 
-.phd-info table th, 
+.phd-info table th,
 .phd-info table td {
   border: 1px solid #000000;
   padding: 12px;
   text-align: center;
+  color: #000000; /* Ensures black text */
 }
 
-.phd-info table th {
-  background-color:  #c8dbea;
-  color: #000000;
+/* Top header row in blue */
+.phd-info table thead th {
+  background-color: #87CEEB;; /* Sky Blue */
 }
 
-.phd-info table tr:nth-child(even) {
-  background-color: white;
+/* All table rows (body) in white */
+.phd-info table tbody tr {
+  background-color: #ffffff; /* White */
 }
 
+/* Remove previous row coloring */
+.phd-info table tr:nth-child(even),
 .phd-info table tr:nth-child(odd) {
-  background-color: white;
+  background-color: unset;
 }
 
 .footer {
-  background-color: #d6eaf8;
+  background-color: #c8dbea;
   color: #000000;
   text-align: center;
   padding: 10px 0;
-} 
+}
 
 .container {
   max-width: 800px;
@@ -1340,25 +1424,28 @@ a[target="_blank"] {
   font-weight: bold;
 }
 
-.phd-info .topmost-heading th {
-  background-color: #f1948a;
-}
 
 /*CODE FOR M.Tech/MSR SECTION*/
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color:white;
+  margin: 0;
+  padding: 20px;
+}
 
 h2 {
   font-size: 1.6em;
   margin-left: 10%;
   margin-top: 30px;
   margin-bottom: 10px;
-  position: relative;
+  text-decoration: underline;
 }
 
 h2 u {
   text-decoration: none;
   display: inline-block;
   padding-bottom: 5px;
-  border-bottom: 3px solid #ffffff; /* Bold white underline */
+  border-bottom: 3px solid #000000; /* Bold white underline */
 }
 
 .M\.Tech_MSR-info p, strong {
@@ -1371,6 +1458,9 @@ h2 u {
   word-wrap: break-word;
   word-break: break-word;
   overflow-wrap: break-word;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .M\.Tech_MSR-info a {
@@ -1402,11 +1492,11 @@ h2 u {
 }
 
 .M\.Tech_MSR-info table tr:nth-child(even) {
-  background-color: #c8dbea;
+  background-color: #ffffff;
 }
 
 .M\.Tech_MSR-info table tr:nth-child(odd) {
-  background-color: #c8dbea;
+  background-color: #ffffff;
 }
 
 .footer {
@@ -1431,8 +1521,104 @@ a[target="_blank"] {
 }
 
 .M\.Tech_MSR-info .topmost-heading th {
-  background-color: #f1948a;
+  background-color: #87CEEB;
 } 
+
+
+/*CODE FOR POST-DOCS SECTION*/
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color:white;
+  margin: 0;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 1.6em;
+  margin-left: 10%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+h2 u {
+  text-decoration: none;
+  display: inline-block;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #000000; /* Bold white underline */
+}
+
+.postdoc-info p, strong {
+  margin-top: 10px;
+  margin-left: 10%;
+  margin-bottom: 5px;
+  margin-right: 12%;
+  font-weight: 550;
+  font-size: 1.1em;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.postdoc-info a {
+  color: blue;
+  text-decoration: none;
+}
+
+.postdoc-info a:hover {
+  text-decoration: underline;
+}
+
+
+/*CODE FOR Academic & Non - Academic Staffs SECTION*/
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color:white;
+  margin: 0;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 1.6em;
+  margin-left: 10%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+h2 u {
+  text-decoration: none;
+  display: inline-block;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #000000; /* Bold white underline */
+}
+
+.Staff-info p, strong {
+  margin-top: 10px;
+  margin-left: 10%;
+  margin-bottom: 5px;
+  margin-right: 12%;
+  font-weight: 550;
+  font-size: 1.1em;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.Staff-info a {
+  color: blue;
+  text-decoration: none;
+}
+
+.Staff-info a:hover {
+  text-decoration: underline;
+}
 
 
 /*------------------- Responsive Styles --------------------*/
@@ -1562,7 +1748,7 @@ a[target="_blank"] {
   padding: 30px 20px;
 }
 
-/* Header Section        our location is commented out from html
+/* Header Section */
 .contact-header {
   text-align: left;
   margin-bottom: 40px;
@@ -1586,7 +1772,7 @@ a[target="_blank"] {
   margin: 8px 0;
   font-size: 1.1rem;
   color: black;
-}*/
+}
 
 /* Main Contact Section */
 .contact-main {
@@ -1595,8 +1781,7 @@ a[target="_blank"] {
 
 .contact-main h2{
   text-align: left;
-  margin-left: 0px ;
-  margin-bottom: 10px ;
+  padding-left: 40px;
 }
 
 .section-title {
@@ -1658,14 +1843,13 @@ a[target="_blank"] {
 
 .map-section h2{
   text-align: left;
-  margin-left: 0px ;
+  padding-left: 40px;
 }
 
 .map-wrapper {
-  display: flex;
   border-radius: 8px;
   overflow: hidden;
-  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 /*--------------------- humburger menu -----------------------*/
@@ -1757,68 +1941,6 @@ body::before {
   transition: opacity 0.4s ease, visibility 0s linear 0.4s;
 }
 
-/* Page title */
-.research-title {
-  text-align: center;
-  color: #c00;
-  font-weight: bold;
-  margin-top: 40px;
-  font-size: 2.5em;
-}
-
-/* Container for all scholar cards */
-.scholar-container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin: 40px;
-}
-
-/* Each scholar card */
-.scholar-card {
-  background: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
-  padding: 20px;
-  width: 400px;
-  display: flex;
-  gap: 20px;
-}
-
-/* Scholar image */
-.scholar-card img {
-  border-radius: 10px;
-  width: 120px;
-  height: 150px;
-  object-fit: cover;
-}
-
-/* Scholar details */
-.scholar-info h2 {
-  color: #c00;
-  margin: 0;
-}
-
-.scholar-info p {
-  margin: 5px 0;
-}
-
-/* Profile button */
-.profile-button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background: #c00;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background 0.3s ease;
-}
-
-.profile-button:hover {
-  background: #a00;
-}
 
 
 

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects: IEOR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .filters {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        select {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .news-block {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            background-color: #e3e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .news-block:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+        .news-image {
+            flex: 1 1 30%;
+            max-width: 30%;
+            overflow: hidden;
+        }
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .news-content {
+            flex: 1 1 70%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .news-content h3 {
+            margin: 0 0 10px;
+            font-weight: 600;
+        }
+        .project-members {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .news-content button {
+            padding: 10px;
+            border: none;
+            background-color: #c41e3a;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            width: fit-content;
+        }
+        .image-source {
+            font-size: 13px;
+            margin-top: auto;
+            text-align: right;
+        }
+        .image-source a {
+            color: #333;
+            text-decoration: underline;
+        }
+        .image-source a:hover {
+            color: #c41e3a;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="filters">
+            <select id="teamFilter">
+                <option value="all">All Teams</option>
+                <option value="Prashant">Prashant</option>
+                <option value="Thermofisher">Thermofisher</option>
+            </select>
+            <select id="domainFilter">
+                <option value="all">All Domains</option>
+                <option value="Railways">Railways</option>
+                <option value="Packing">Packing</option>
+                <option value="Optimization">Optimization</option>
+            </select>
+        </div>
+
+        <div class="news-block" data-team="Prashant" data-domain="Railways">
+            <div class="news-image">
+                <img src="../../02-resources/023-images/projects/Timetable_Prashant Sir.png" alt="Time Table">
+            </div>
+            <div class="news-content">
+                <div>
+                    <h3>Precision Timetabling for Indian Railways</h3>
+                    <p class="project-members">Team: Prashant Palkar, Varun Ramamohan, Apurv Negi, CRIS</p>
+                    <button onclick="openModal('Timetable project details...')">Preview</button>
+                </div>
+                <div class="image-source">
+                    <a href="https://okcredit.in/blog/how-does-indian-railway-work/" target="_blank">Click here to view image source</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-block" data-team="Thermofisher" data-domain="Packing">
+            <div class="news-image">
+                <img src="../../02-resources/023-images/projects/packing optimization.png" alt="Packing Optimization">
+            </div>
+            <div class="news-content">
+                <div>
+                    <h3>Three Dimensional Packing Optimization</h3>
+                    <p class="project-members">Team: Prashant Palkar, Thermofisher team</p>
+                    <button onclick="openModal('Packing optimization details...')">Preview</button>
+                </div>
+                <div class="image-source">
+                    <a href="https://www.globaltrademag.com/the-importance-of-packaging-optimization-in-supply-chain/" target="_blank">Click here to view image source</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-block" data-team="Prashant" data-domain="Optimization">
+            <div class="news-image">
+                <img src="../../02-resources/023-images/projects/NLP_Solver.png" alt="Solver NLP">
+            </div>
+            <div class="news-content">
+                <div>
+                    <h3>Minotaur Solver Development</h3>
+                    <p class="project-members">Team: Prashant Palkar, Meenarli Sharma, Kishan, Nayan Kumar</p>
+                    <button onclick="openModal('Minotaur solver details...')">Preview</button>
+                </div>
+                <div class="image-source">
+                    <a href="https://medium.com/@karthikmr1991/programming-tips-for-implementation-of-a-non-linear-optimization-solver-part-i-linear-algebra-1ebb13f2a1d4" target="_blank">Click here to view image source</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="projectModal">
+            <div class="modal-content">
+                <span onclick="closeModal()" style="float:right;cursor:pointer;font-weight:bold;">&times;</span>
+                <div id="modalText"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const teamFilter = document.getElementById('teamFilter');
+        const domainFilter = document.getElementById('domainFilter');
+        const blocks = document.querySelectorAll('.news-block');
+
+        function filterProjects() {
+            const selectedTeam = teamFilter.value;
+            const selectedDomain = domainFilter.value;
+            blocks.forEach(block => {
+                const matchesTeam = selectedTeam === 'all' || block.dataset.team === selectedTeam;
+                const matchesDomain = selectedDomain === 'all' || block.dataset.domain === selectedDomain;
+                block.style.display = (matchesTeam && matchesDomain) ? 'flex' : 'none';
+            });
+        }
+
+        teamFilter.addEventListener('change', filterProjects);
+        domainFilter.addEventListener('change', filterProjects);
+
+        function openModal(content) {
+            document.getElementById('modalText').innerText = content;
+            document.getElementById('projectModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -24,8 +24,8 @@
 
     .content {
       margin: 40px auto;
-      max-width: 1350px; /* Reduced width of the container */
-      padding: 10px 20px; /* Added 10px padding to top and bottom, 20px on the sides */
+      max-width: 1350px;
+      padding: 10px 20px;
     }
 
     .news-block {
@@ -36,6 +36,7 @@
       overflow: hidden;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 40px; /* Added spacing between blocks */
     }
 
     .news-block:hover {
@@ -129,9 +130,10 @@
 
     .keywords-wrapper {
       display: flex;
-      justify-content: space-between; /* Distribute space between the keywords and the "Read More" button */
-      align-items: center; /* Align vertically to center */
+      align-items: flex-end;
+      justify-content: space-between;
       flex-wrap: wrap;
+      gap: 10px;
     }
 
     .keywords-container {
@@ -169,6 +171,8 @@
       display: inline-block;
       font-weight: 500;
       transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-left: auto;
+      align-self: flex-end;
     }
 
     .read-more-btn:hover {
@@ -199,6 +203,7 @@
 
       .read-more-btn {
         align-self: flex-start;
+        margin-left: 0;
       }
     }
   </style>
@@ -210,7 +215,7 @@
   <div class="content">
     <div class="news-block">
       <div class="news-image">
-        <img src="ieor-iitd.github.io/02-resources/023-images/projects/NLP_Solver.png" alt="Minotaur Solver Project Snapshot" />
+        <img src="../../02-resources/023-images/projects/NLP_Solver.png" alt="Minotaur Solver Project Snapshot" />
         <div class="image-source">Image courtesy: Medium.com</div>
       </div>
 
@@ -237,8 +242,78 @@
             </div>
           </div>
 
-          <!-- "Read More" button aligned to the rightmost part of the keywords-wrapper -->
           <a href="../../01-pages/013-projects/PP_Timetable.html" target="_blank" class="read-more-btn">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-block">
+      <div class="news-image">
+        <img src="../../02-resources/023-images/projects/Timetable_Prashant Sir.png" alt="Railway Timetabling" />
+        <div class="image-source">Image courtesy: https://okcredit.in/ </div>
+      </div>
+
+      <div class="news-content">
+        <h3>Precision Timetabling for Indian Railways</h3>
+
+        <p class="project-members">
+          <a href="https://web.iitd.ac.in/~ppalkar/" target="_blank">Prashant Palkar</a>, <a href="varunr@mech.iitd.ac.in" target="_blank">Varun Ramamohan</a>, Apurv Negi and officers from <a href="https://cris.org.in/" target="_blank"> CRIS</a>
+        </p>
+
+        <div class="abstract">
+          <span class="abstract-title">Abstract</span>
+          This project develops an AI-driven railway timetabling tool in collaboration with CRIS, combining optimization and ML 
+          to model scheduling constraints, accommodate new requirements, and enhance punctuality while minimizing disruptions. 
+          It optimizes key metrics like service consolidation and freight capacity using advanced algorithms and parallel computing.
+        </div>
+
+        <div class="keywords-wrapper">
+          <div class="keywords-container">
+            <div class="keywords-title">Keywords:</div>
+            <div class="keywords">
+              <span>Scheduling</span>
+              <span>Optimization</span>
+              <span>AI/ML</span>
+              <span>Constraint Programming</span>
+            </div>
+          </div>
+
+          <a href="../../01-pages/013-projects/PP_Timetable.html" target="_blank" class="read-more-btn">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-block">
+      <div class="news-image">
+        <img src="../../02-resources/023-images/projects/packing_opt.png" alt="Packing Optimization" />
+        <div class="image-source">Image courtesy: Canva.com</div>
+      </div>
+
+      <div class="news-content">
+        <h3> Three-Dimensional Packing Optimization</h3>
+
+        <p class="project-members">
+          <a href="https://web.iitd.ac.in/~ppalkar/" target="_blank">Prashant Palkar</a>, <a href="asrvstv@mech.iitd.ac.in"> Amber Srivastava </a>
+          Aniket Mandavkar, Harshit Lohar and <a href="https://jobs.thermofisher.com/global/en/india-about-us" target="_blank"> Thermo Fisher team </a> 
+        </p>
+
+        <div class="abstract">
+          <span class="abstract-title">Abstract</span>
+          This project addresses Thermofisher Scientific's 3D packaging optimization challenge by developing a clustering-then-packing 
+          approach for SKU consolidation.We formulate the problem as a MILP and propose scalable super-SKU solutions that outperform 
+          manual methods and existing benchmarks. 
+        </div>
+
+        <div class="keywords-wrapper">
+          <div class="keywords-container">
+            <div class="keywords-title">Keywords:</div>
+            <div class="keywords">
+              <span>MILP</span>
+              <span>Bin-Packing</span>
+            </div>
+          </div>
+
+          <a href="../../01-pages/013-projects/PP_Packing.html" target="_blank" class="read-more-btn">Read More</a>
         </div>
       </div>
     </div>

@@ -1086,18 +1086,25 @@ footer {
 
 .faculty-info p {
     margin: 5px 0;
-    word-wrap: break-word; /* Ensures long URLs break within the container */
-    word-break: break-all;
+    /* word-wrap: break-word; */
+    /* word-break: break-all; */
+    text-align: center;
 }
 
 .faculty-info a {
-    color: #007bff;
-    text-decoration: none;
+    color: #3b91ec;
+    text-decoration: underline;
+    text-align: center;
+    white-space:nowrap;
+    text-under
 }
 
 .faculty-info a:hover {
     text-decoration: underline;
+    text-align: center;
 }
+
+
 
 /*---------------------- Student Section ----------------------*/
 .student-container {

@@ -1,0 +1,79 @@
+.research-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #b20000; /* IITD deep red */
+    text-align: center;
+    text-transform: uppercase;
+    margin: 40px 0 30px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+.scholar-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.scholar-card {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.scholar-card img {
+    width: 120px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.scholar-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 100%;
+}
+
+.scholar-info h2 {
+    font-size: 18px;
+    margin: 0;
+    color: #b20000;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.scholar-info p {
+    font-size: 14px;
+    margin: 0;
+    color: #333;
+}
+
+.profile-button {
+    align-self: flex-start;
+    margin-top: auto;
+    background-color: #b20000;
+    color: white;
+    padding: 6px 14px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.profile-button:hover {
+    background-color: #900000;
+}

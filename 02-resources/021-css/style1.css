@@ -39,8 +39,12 @@
   }
   
   .text {
-    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* flex-grow: 1; */
     color: black;
+    text-decoration: none;
   }
   
   .text h1 {
@@ -1094,9 +1098,9 @@ footer {
 .faculty-info a {
     color: #3b91ec;
     text-decoration: underline;
-    text-align: center;
     white-space:nowrap;
-    text-under
+    display: inline-block;
+
 }
 
 .faculty-info a:hover {

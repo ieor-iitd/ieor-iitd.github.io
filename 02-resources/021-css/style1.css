@@ -25,14 +25,17 @@
     padding-left: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
-    
+    height: 120px;
   }
   
   .IITD_LOGO {
-    width: 100px;
-    height: 100%;
+    width: auto;
+    height: 100px;
+    margin-right: 20px;
     transition: var(--transition);
   }
+
+
   
   .IITD_LOGO:hover {
     transform: scale(1.05);
@@ -57,13 +60,11 @@
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 3px;
-    font: bold;
   }
   
   .text h3 {
     font-size: 18px;
     font-weight: 600;
-    font: bold;
   }
   
   .home {
@@ -106,7 +107,8 @@
 
   .dropdown-button::after {
     content: "▼";
-    font-size: 0.6em;
+    margin-left: 3px;
+    font-size: 0.8em;
   }
 
   .no-dropdown-sign::after {

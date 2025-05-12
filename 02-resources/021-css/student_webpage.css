@@ -69,20 +69,20 @@
     margin-top: 50px;
   }
 
-  .social-icons {
+  .social-icons-main {
     display: inline-flex;
     align-items: center;
     gap: 10px;
     margin-top: 5px;
 }
 
-.social-icons .icon {
+.social-icons-main .icon {
     width: 24px;
     height: 24px;
     transition: transform 0.3s ease; /* Optional: smooth hover effect */
 }
 
-.social-icons .icon:hover {
+.social-icons-main .icon:hover {
     transform: scale(1.2); /* Optional: zoom on hover */
 }
 

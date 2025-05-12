@@ -15,9 +15,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    /* font-family: sans-serif; */
 }
 
 /*--------------- Header & Logo Area --------------------*/
+
 .topmost {
     background-color: var(--white);
     display: flex;
@@ -59,7 +61,7 @@
   .text h2 {
     font-size: 20px;
     font-weight: 600;
-    margin-bottom: 3px;
+    margin: 0px 0px 5px;
   }
   
   .text h3 {
@@ -67,11 +69,37 @@
     font-weight: 600;
   }
   
-  .home {
+.text h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  line-height: 1.2;
+}
+
+.text h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.text h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+}
+.text a {
+  text-decoration: none;
+  color: inherit; /* Optional: ensures it matches surrounding text color */
+}
+
+  /* .home {
     text-decoration: none;
     color: var(--white);
     padding-left: 30px;
-  }
+  } */
 
 /* ----------------------Navigation Bar---------------------*/
 /*dropdown content*/

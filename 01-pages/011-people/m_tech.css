@@ -1,11 +1,12 @@
 .mtech_container {
     max-width: 1000px;
-    margin: 40px auto;
+    margin: 20px auto;
     padding: 20px;
     background: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
+
 
 .mtech_student {
     margin-bottom: 20px;
@@ -44,4 +45,8 @@ hr {
     height: 25px;
     vertical-align: middle;
     margin-left: 6px;
+}
+
+.batch {
+    display: none;
 }

@@ -22,6 +22,39 @@
 <body>
     <div id="header"></div>
 
+<!-- Filter Section Above Container -->
+<div style="
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    display: flex;  
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    font-size: 18px;  /* Increased font size */
+">
+
+  <!-- Batch Dropdown -->
+  <div>
+    <label style="font-weight: bold; margin-right: 8px;">Batch</label>
+    <select id="batchSelect" onchange="filterStudents()" style="padding: 10px 14px; font-size: 16px; border-radius: 6px; border: 1px solid #ccc;">
+      <option value="all">All</option>
+      <option value="2023-2025">2023–2025</option>
+      <option value="2024-2026">2024–2026</option>
+    </select>
+  </div>
+
+  <!-- Student Name Input -->
+  <div>
+    <label style="font-weight: bold; margin-right: 8px;">Student Name</label>
+    <input type="text" id="studentSearch" placeholder="Enter name" onkeyup="filterStudents()" 
+      style="padding: 10px 14px; font-size: 16px; border-radius: 6px; border: 1px solid #ccc;" />
+  </div>
+
+</div>
+
 
  <div class="mtech_container">
 
@@ -30,7 +63,8 @@
       Aditya Marathe
       <a href="https://www.linkedin.com/in/aditya-marathe-7941a22ab/" target="_blank" style="font-size: 0.8em; color: blue;">Homepage</a>
     </p>
-    <p class="guide"><b>Supervisor:</b> Prof Varun Ramamoahan</p>
+    <p class="batch">2024-2026</p>
+    <p class="guide"><b>Supervisor:</b> Prof Varun Ramamohan</p>
     <p class="project"><b>Project:</b> Personalised recommendation system development for Indigo airlines</p>
     <!-- <p class="btech">B.Tech Branch: Fibres and Textile processing technology</p> -->
     <hr>
@@ -41,6 +75,7 @@
       Nilotpol Patra
       <a href="../../01-pages/011-people/Nilotpol.html" target="_blank" style="font-size: 0.8em; color: blue;">Homepage</a>
     </p>
+    <p class="batch">2023-2025</p>
     <p class="guide"><b>Supervisor:</b> <a href="https://web.iitd.ac.in/~varunr/" target="_blank">Dr. Varun Ramamohan</a></p>
     <p class="project"><b>Project:</b> Pharmacy Store Transaction Data Analytics for Inventory Management and Disease Profiling.</p>
     <!-- <p class="btech">B.Tech Branch: Fibres and Textile processing technology</p> -->
@@ -52,6 +87,7 @@
       Aman Verma
       <a href="../../01-pages/011-people/Aman_Verma.html" target="_blank" style="font-size: 0.8em; color: blue;">Homepage</a>
     </p>
+    <p class="batch">2023-2025</p>
     <p class="guide"><b>Supervisor:</b> <a href="https://web.iitd.ac.in/~nomesh/" target="_blank">Dr. Nomesh Bolia</a></p>
     <p class="project"><b>Project:</b> Optimization of Movements in Public Distribution System for the State of Bihar</p>
     <!-- <p class="btech">B.Tech Branch: Fibres and Textile processing technology</p> -->
@@ -64,6 +100,7 @@
       Aish Singh
       <a href="https://www.linkedin.com/in/aish-singh-b09834343" target="_blank" style="font-size: 0.8em; color: blue;">Homepage</a>
     </p>
+    <p class="batch">2024-2026</p>
     <p class="guide"><b>Supervisor:</b> Prof Prashant Palkar</p>
     <p class="project"><b>Project:</b> Precision Timetabling For Indian Railways</p>
     <!-- <p class="btech">B.Tech Branch: Mechanical Engineering</p> -->
@@ -75,6 +112,7 @@
       Ankush Upadhyay
       <a href="https://www.linkedin.com/in/ankush-upadhyay-a714a6321" target="_blank" style="font-size: 0.8em; color: blue;">Homepage</a>
     </p>
+    <p class="batch">2024-2026</p>
     <p class="guide"><b>Supervisor:</b> Prof Nomesh B. Bolia</p>
     <p class="project"><b>Project:</b> Route optimization for Public Distribution System</p>
     <!-- <p class="btech">B.Tech Branch: Agricultural Engineering</p> -->
@@ -86,7 +124,8 @@
       G Mahesh Kumar
       <a href="https://www.linkedin.com/in/g-mahesh-kumar-54bb7130a/" target="_blank" style="font-size: 0.8em; color: blue;">Homepage</a>
     </p>
-    <p class="guide"><b>Supervisor:</b> Prof Varun Ramamoahan</p>
+    <p class="batch">2024-2026</p>
+    <p class="guide"><b>Supervisor:</b> Prof Varun Ramamohan</p>
     <p class="project"><b>Project:</b> Medical Data Analysis</p>
     <!-- <p class="btech">B.Tech Branch: Agricultural Engineering</p> -->
     <hr>
@@ -97,6 +136,7 @@
       Mohd Naveed
       <a href="https://www.linkedin.com/in/mohd-naveed-b48394135/" target="_blank" style="font-size: 0.8em; color: blue;">Homepage</a>
     </p>
+    <p class="batch">2024-2026</p>
     <p class="guide"><b>Supervisor:</b> Prof Amber Shrivastava</p>
     <p class="project"><b>Project:</b> Dynamic pricing for Indian Railways</p>
     <!-- <p class="btech">B.Tech Branch: Production and Industrial Engineering</p> -->
@@ -108,6 +148,7 @@
       Mukesh Kumar
       <a href="https://www.linkedin.com/in/mukesh-kumar-a82907266/" target="_blank" style="font-size: 0.8em; color: blue;">Homepage</a>
     </p>
+    <p class="batch">2024-2026</p>
     <p class="guide"><b>Supervisor:</b> Prof Amber Shrivastava</p>
     <p class="project"><b>Project:</b> Intermodal Hub Location and Transportation System for Indian Railways</p>
     <!-- <p class="btech">B.Tech Branch: Carpet and Textile Technology</p> -->
@@ -119,6 +160,7 @@
       Phaningmi Kasar
       <a href="https://www.linkedin.com/in/phaningmi-kasar-484674362/" target="_blank" style="font-size: 0.8em; color: blue;">Homepage</a>
     </p>
+    <p class="batch">2024-2026</p>
     <p class="guide"><b>Supervisor:</b> Prof Minakshi Kumari</p>
     <p class="project"><b>Project:</b> Digital Twin</p>
     <!-- <p class="btech">B.Tech Branch: Mechanical Engineering</p> -->
@@ -130,6 +172,7 @@
       Pratiksha Prabhakar
       <a href="https://www.linkedin.com/in/pratiksha-prabhakar-689256229" target="_blank" style="font-size: 0.8em; color: blue;">Homepage</a>
     </p>
+    <p class="batch">2024-2026</p>
     <p class="guide"><b>Supervisor:</b> Prof Prashant Palkar</p>
     <p class="project"><b>Project:</b> Precision Timetabling for Indian Railways</p>
     <!-- <p class="btech">B.Tech Branch: Agricultural Engineering</p> -->
@@ -141,6 +184,7 @@
       Raj Yadav
       <a href="https://www.linkedin.com/in/raj-yadav-5998aa195/" target="_blank" style="font-size: 0.8em; color: blue;">Homepage</a>
     </p>
+    <p class="batch">2024-2026</p>
     <p class="guide"><b>Supervisor:</b> Prof Shaurya Shrivam</p>
     <p class="project"><b>Project:</b> Task Planning for Robotics</p>
     <!-- <p class="btech">B.Tech Branch: Production Engineering</p> -->
@@ -152,6 +196,7 @@
       Sailander Tak
       <a href="https://www.linkedin.com/in/sailander-tak-477811274" target="_blank" style="font-size: 0.8em; color: blue;">Homepage</a>
     </p>
+    <p class="batch">2024-2026</p>
     <p class="guide"><b>Supervisor:</b> Prof Amber Shrivastava</p>
     <p class="project"><b>Project:</b> Dynamic pricing for Indian Railways</p>
     <!-- <p class="btech">B.Tech Branch: Agricultural Engineering</p> -->
@@ -163,6 +208,7 @@
       Sudhir Singh
       <a href="https://www.linkedin.com/in/sudhir-singh-588472246" target="_blank" style="font-size: 0.8em; color: blue;">Homepage</a>
     </p>
+    <p class="batch">2024-2026</p>
     <p class="guide"><b>Supervisor:</b> Prof Amber Shrivastava</p>
     <p class="project"><b>Project:</b> Intermodal Hub Location and Transportation System for Indian Railways</p>
     <!-- <p class="btech">B.Tech Branch: Agricultural Engineering</p> -->
@@ -174,7 +220,8 @@
       Upasana
       <a href="#" target="_blank" style="font-size: 0.8em; color: blue;">Homepage</a>
     </p>
-    <p class="guide"><b>Supervisor:</b> Prof Varun Ramamoahan</p>
+    <p class="batch">2024-2026</p>
+    <p class="guide"><b>Supervisor:</b> Prof Varun Ramamohan</p>
     <p class="project"><b>Project:</b> Simulation metamodel development</p>
     <!-- <p class="btech">B.Tech Branch: Mechanical Engineering</p> -->
     <hr>
@@ -185,6 +232,7 @@
       Vipin Kumar
       <a href="https://www.linkedin.com/in/vipin-kumar-720a15243/" target="_blank" style="font-size: 0.8em; color: blue;">Homepage</a>
     </p>
+    <p class="batch">2024-2026</p>
     <p class="guide"><b>Supervisor:</b> Prof Amber Shrivastava</p>
     <p class="project"><b>Project:</b> </p>
     <!-- <p class="btech">B.Tech Branch: Mechanical Engineering</p> -->
@@ -196,14 +244,34 @@
       Vishak Jayakumar
       <a href="https://www.linkedin.com/in/vishakjayakumar" target="_blank" style="font-size: 0.8em; color: blue;">Homepage</a>
     </p>
+    <p class="batch">2024-2026</p>
     <p class="guide"><b>Supervisor:</b> Prof Minakshi Kumari</p>
     <p class="project"><b>Project:</b> Incident Prediction Model for Indian Railways</p>
     <!-- <p class="btech">B.Tech Branch: Mechatronics Engineering</p> -->
     <hr>
   </div>
-
 </div>
  
+<script>
+function filterStudents() {
+  const selectedBatch = document.getElementById('batchSelect').value.toLowerCase();
+  const searchTerm = document.getElementById('studentSearch').value.toLowerCase();
+  const students = document.querySelectorAll('.mtech_student');
+
+  students.forEach(student => {
+    const batch = student.querySelector('.batch')?.innerText.toLowerCase() || '';
+    const name = student.querySelector('.mtech_name')?.innerText.toLowerCase() || '';
+
+    const batchMatch = selectedBatch === 'all' || batch.includes(selectedBatch);
+    const nameMatch = name.includes(searchTerm);
+
+    student.style.display = batchMatch && nameMatch ? 'block' : 'none';
+  });
+}
+</script>
+
+
+
 
 
 

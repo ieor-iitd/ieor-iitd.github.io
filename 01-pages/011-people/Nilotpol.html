@@ -4,170 +4,25 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nilotpol Patra</title>
-
+  <title>Nilotpol Patra_IEOR</title>
+  
   <link rel="icon" type="image/svg+xml" href="../images/icon/IITD_LOGO.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;700&display=swap" rel="stylesheet" />
 
-  <style>
-    :root {
-      /* Adjust this value (in px) to align profile photo top with name heading */
-      --profile-photo-vertical-offset: 0px;
-    }
+  <!-- External CSS -->
+  <link rel="stylesheet" href="../../02-resources/021-css/M.Tech_Style_doc.css" />
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 3em 1.5em;
-      background-color: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
-
-    h1 {
-      font-size: 2.4em;
-      font-weight: 300;
-      color: #cf0808;
-      margin-bottom: 0.05em;
-    }
-
-    .sub-heading {
-      font-size: 1.4em;
-      font-weight: 300;
-      margin-top: 0.1em;
-      margin-bottom: 0.6em;
-      color: #555;
-    }
-
-    p {
-      text-align: justify;
-      margin-bottom: 1em;
-    }
-
-    h2 {
-      font-size: 1.1em;
-      font-weight: 500;
-      color: #cf0808;
-      margin-top: 2em;
-      margin-bottom: 0.6em;
-    }
-
-    section {
-      margin-bottom: 2em;
-    }
-
-    .top-section {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 2em;
-      flex-wrap: nowrap;
-    }
-
-    .profile-photo {
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      /* This is where vertical offset is applied */
-      margin-top: 75px;
-    }
-
-    .profile-photo-inner {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .profile-photo img {
-      height: auto;
-      max-height: 100%;
-      max-width: 150px;
-      border-radius: 10px;
-      display: block;
-    }
-
-    .icon-links {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 0.5em;
-    }
-
-    .icon-links a img {
-      width: 28px;
-      height: 28px;
-      transition: transform 0.2s ease;
-    }
-
-    .icon-links a img:hover {
-      transform: scale(1.2);
-    }
-
-    
-    .personal-info {
-      flex-grow: 1;
-    }
-
-    ul {
-      padding-left: 20px;
-      list-style: disc;
-    }
-
-    li {
-      margin-bottom: 0.5em;
-    }
-
-    a {
-      color: #0444bb;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      .top-section {
-        flex-direction: column-reverse;
-        align-items: center;
-        text-align: center;
-      }
-
-      .profile-photo {
-        margin-top: 0; /* override on mobile for better stacking */
-      }
-
-      .profile-photo img {
-        max-width: 120px;
-      }
-
-      .icon-links {
-        justify-content: center;
-      }
-
-      .profile-photo-inner {
-        height: auto;
-      }
-    }
-  </style>
+  <!-- Header/Footer Loader -->
+  <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
 </head>
+
+
 <body>
   <div class="container">
-    <!-- Top Section: Info Left + Image and Icons Right -->
-    <section class="top-section">
+    <!-- Top Section -->
+    <div class="top-section">
       <div class="personal-info">
         <h1>Nilotpol Patra</h1>
         <p class="sub-heading">M.Tech in IEOR</p>
@@ -175,7 +30,8 @@
           data-driven approaches. My work focuses on analytics, machine learning, 
           and optimization, and I enjoy working on applications related to healthcare, 
           logistics, and systems design.</p>
-        <p> Areas of Interest: Operations Research, Supply Chain Analytics, Data Science, 
+        
+        <p> <span class="label-red">Areas of Interest:</span> Operations Research, Supply Chain Analytics, Data Science, 
           Machine Learning</p>
       </div>
 
@@ -195,62 +51,66 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    
     <!-- Thesis and Supervisor -->
-    <section>
+    <div class="my-section">
       <h2>IIT Delhi Thesis and Supervisor</h2>
-      <p>Thesis Title: Transaction Data Analytics for Disease Profiling and Inventory Management</p>
-      <p>Supervisor: <a href="https://web.iitd.ac.in/~varunr/" target="_blank">Dr. Varun Ramamohan</a></p>
-      <p>Description: In this paper, we have tried to provide an efficient and cost-effective methodology as an alternative way of profiling chronic disease patterns at the zip code level, in contrast to existing methods like NFHS and IDSP. Here we have taken the data of a popular e-pharmacy chain in India, and based on this, we have established a methodology for doing this profiling. As the final output of this analysis, we have shown the top three chronic diseases prevalent at any pin code and how the pattern changes with time.</p>
-    </section>
+      <p><span class="label-red">Thesis Title:</span> Transactional Data Analytics and Disease Profiling</p>
+      <p><span class="label-red">Supervisor:</span> <a href="https://web.iitd.ac.in/~varunr/" target="_blank">Dr. Varun Ramamohan</a></p>
+      <p><span class="label-red">Description:</span> In this paper, we have tried to provide an efficient and cost-effective methodology
+         as an alternative way of profiling chronic disease patterns at the zip code level, in contrast to existing methods like NFHS 
+         and IDSP. Here we have taken the data of a popular e-pharmacy chain in India, and based on this, we have established a 
+         methodology for doing this profiling. As the final output of this analysis, we have shown the top three chronic diseases 
+         prevalent at any pin code and how the pattern changes with time.</p>
+    </div>
 
     <!-- Academic Background -->
-    <section>
+    <div class="my-section">
       <h2>Academic Background</h2>
       <ul>
-        <li>B.Tech in Mechanical Engineering, <a href="https://www.kgec.edu.in/" target="_blank">Kalyani Government Engineering College</a> – CGPA: 8.67/10</li>
-        <li>Higher Secondary, Bidhan Chandra Institution – Percentage: 82%</li>
-        <li>Secondary, Khandra High School – Percentage: 88.6%</li>
+        <li>B.Tech, Mechanical Engineering, <a href="https://www.kgec.edu.in/" target="_blank">Kalyani Government Engineering College</a>, CGPA: 8.67/10</li>
+        <li>Higher Secondary, <a href="https://www.bcidgp.org.in/Default/Pages/Default.aspx" target="_blank">Bidhan Chandra Institution 
+
+        </a>, Percentage: 82%</li>
+        <li>Secondary(class 10), Khandra High School, Percentage: 88.6 %</li>
       </ul>
-    </section>
+    </div>
 
     <!-- Work Experience -->
-    <section>
+    <div class="my-section">
       <h2>Work Experience</h2>
-      <p>Assistant Manager-Design, <a href="https://tilindia.in/" target="_blank">Tractors India Limited</a> (Jul 17 – Jun 20)</p>
-      <ul>
-        <li>Nomad</li>
-        <li>Design</li>
-        <li>Cost Optimization</li>
-      </ul>
-    </section>
+      <p> I worked as an Assistant Manager-Design in <a href="https://tilindia.in/" target="_blank">Tractors India Limited</a> 
+        from July 2017 to June 2020. During my tenure, I was mainly involved in its various projects. I was also fortunate enough to
+        be in team of developing a protype version of Hot-mix Asphalt plant named <b>NOMAD</b>. I also involved in cost-minimization and 
+        and some standardization projects.
 
+      </p>
+  
     <!-- Miscellaneous -->
     <section>
       <h2>Miscellaneous</h2>
       <ol type="I">
-        <li>Achievements:
+        <li><b>Achievements:</b>
           <ul>
             <li>Awards:</li>
             <li>Honors:</li>
             <li>Scholarships:</li>
           </ul>
         </li>
-        <li>Conferences Attended:
+        <li><b>Conferences Attended:</b>
           <ul>
             <li>Conference name, year, location</li>
             <li>Conference name, year, location</li>
           </ul>
         </li>
-        <li>Extracurricular Activities:
+        <li><b>Extracurricular Activities:</b>
           <ul>
-            <li>Club participation:</li>
+            <li>Club participation</li>
             <li>Hobbies:</li>
           </ul>
         </li>
-        <li>Papers Published:
+        <li><b>Papers Published:</b>
           <ul>
             <li><a href="paper-link" target="_blank">Title of Paper</a>, Journal/Conference</li>
             <li><a href="paper-link" target="_blank">Title of Paper</a>, Journal/Conference</li>

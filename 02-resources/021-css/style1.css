@@ -362,7 +362,7 @@ margin: 0 auto;
   color: black;
   font-size: 35px;
   margin-bottom: 160px;
-  border-bottom: 2px solid black; /* Adjust thickness and color */
+  /* border-bottom: 2px solid black; Adjust thickness and color */
   padding-bottom: 8px; /* Adds space between text and line */
 }
 
@@ -1255,6 +1255,7 @@ h2 u {
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
+  text-align: center;
 }
 
 .faculty-info a {

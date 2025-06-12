@@ -1230,7 +1230,7 @@ h2 {
   margin-top: 30px;
   margin-bottom: 10px;
   text-decoration: underline;
-  text-align: left; /* Align heading to the left */
+  text-align: left;
 }
 
 h2 u {
@@ -1251,11 +1251,11 @@ h2 u {
   word-wrap: break-word;
   word-break: break-word;
   overflow-wrap: break-word;
-  text-align: left; /* Align text to the left */
+  text-align: left;
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .faculty-info a {
@@ -1280,7 +1280,7 @@ h2 u {
 .faculty-info table td {
   border: 1px solid #000000;
   padding: 12px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .faculty-info table thead th {

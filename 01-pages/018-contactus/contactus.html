@@ -32,26 +32,77 @@
             <div class="contact-grid">
                 <div class="contact-card">
                     <h3>Website Administration</h3>
-                    <p><i class="fas fa-phone"></i> +91-9422663512</p>
-                <!--    <p><i class="fas fa-phone"></i> +91-11-2659-5678</p>  -->
-                    <p><i class="fas fa-envelope"></i>  mey247551@iitd.ac.in </p>
+                    <div class="contact-item">
+                        <div class="contact-info">
+                            <i class="fas fa-phone"></i>
+                            <span>+91-9422663512</span>
+                        </div>
+                        <button class="copy-btn" onclick="copyToClipboard('+919422663512', this)">
+                            📋 Copy
+                        </button>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-info">
+                            <i class="fas fa-envelope"></i>
+                            <a href="https://mail.google.com/mail/?view=cm&to=mey247551@iitd.ac.in&su=Website Inquiry" 
+                               target="_blank" class="email-link">
+                                mey247551@iitd.ac.in
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="contact-card">
                     <h3>Faculty Representative</h3>
-                    <p><i class="fas fa-phone"></i> 01126510088</p>
-                    <p><i class="fas fa-phone"></i> 1127 </p> 
-                  <!--  <p><i class="fas fa-envelope"></i> faculty.ieor@iitd.ac.in</p>  -->
+                    <div class="contact-item">
+                        <div class="contact-info">
+                            <i class="fas fa-phone"></i>
+                            <span>01126510088</span>
+                        </div>
+                        <button class="copy-btn" onclick="copyToClipboard('01126510088', this)">
+                            📋 Copy
+                        </button>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-info">
+                            <i class="fas fa-phone"></i>
+                            <span>1127</span>
+                        </div>
+                        <button class="copy-btn" onclick="copyToClipboard('1127', this)">
+                            📋 Copy
+                        </button>
+                    </div>
                 </div>
             
                 <div class="contact-card">
                     <h3>IEOR Representative</h3>
-                    <p><i class="fas fa-phone"></i> +91-11-2659-2468</p>
-                <!--    <p><i class="fas fa-phone"></i> +91-11-2659-1357</p>   -->
-                    <p><i class="fas fa-envelope"></i> mey247593@iitd.ac.in</p>
+                    <div class="contact-item">
+                        <div class="contact-info">
+                            <i class="fas fa-phone"></i>
+                            <span>+91-11-2659-2468</span>
+                        </div>
+                        <button class="copy-btn" onclick="copyToClipboard('+911126592468', this)">
+                            📋 Copy
+                        </button>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-info">
+                            <i class="fas fa-envelope"></i>
+                            <a href="https://mail.google.com/mail/?view=cm&to=mey247593@iitd.ac.in&su=IEOR Inquiry" 
+                               target="_blank" class="email-link">
+                                mey247593@iitd.ac.in
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+    <!-- Success message -->
+    <div id="copySuccess" class="copy-success">
+        ✅ Number copied to clipboard!
+    </div>
+
         
         <div class="map-section">
             <h2 class="section-title">Find Us on Google Maps</h2>
@@ -81,6 +132,69 @@
             </div>
         </div>
     </div>
+
+    <script>
+        async function copyToClipboard(text, element) {
+            try {
+                await navigator.clipboard.writeText(text);
+                showCopySuccess();
+                
+                // Visual feedback for the clicked button
+                const originalText = element.textContent;
+                element.textContent = '✅ Copied!';
+                element.classList.add('copied');
+                
+                setTimeout(() => {
+                    element.textContent = originalText;
+                    element.classList.remove('copied');
+                }, 2000);
+                
+            } catch (err) {
+                // Fallback for older browsers
+                fallbackCopyTextToClipboard(text);
+                showCopySuccess();
+                
+                // Visual feedback for fallback
+                const originalText = element.textContent;
+                element.textContent = '✅ Copied!';
+                element.classList.add('copied');
+                
+                setTimeout(() => {
+                    element.textContent = originalText;
+                    element.classList.remove('copied');
+                }, 2000);
+            }
+        }
+
+        function fallbackCopyTextToClipboard(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                document.execCommand('copy');
+            } catch (err) {
+                console.error('Fallback: Unable to copy', err);
+            }
+
+            document.body.removeChild(textArea);
+        }
+
+        function showCopySuccess() {
+            const successMsg = document.getElementById('copySuccess');
+            successMsg.style.display = 'block';
+            
+            setTimeout(() => {
+                successMsg.style.display = 'none';
+            }, 2000);
+        }
+    </script>
 
     <div id="footer"></div> <!-- Footer will be loaded dynamically all the footer code is inside of components_hed_fot, footer.html -->
     <script src="./02-resources/022-scripts/herochange.js" ></script>

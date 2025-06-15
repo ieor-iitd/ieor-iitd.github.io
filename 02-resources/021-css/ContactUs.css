@@ -162,20 +162,6 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .contact-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-
-    .copy-btn {
-        align-self: flex-end;
-        margin-left: 0;
-    }
-}
-
 /* Map Section */
 .map-section {
     margin-top: 50px;
@@ -199,11 +185,19 @@
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-
-
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
     .maps-container {
         flex-direction: column;
+    }
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .copy-btn {
+        align-self: flex-end;
+        margin-left: 0;
     }
 }

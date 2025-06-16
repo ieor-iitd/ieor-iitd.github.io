@@ -543,6 +543,7 @@ body {
     word-wrap: break-word; /* Break long words */
     word-break: break-word; /* Break long words */
     overflow-wrap: break-word; /* Break long words */
+    text-align: justify;
 }
 
 .phd-info ol {

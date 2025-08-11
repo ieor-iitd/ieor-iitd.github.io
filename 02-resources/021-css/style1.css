@@ -329,6 +329,7 @@
     /* word-wrap: break-word; */
     /* word-break: break-all; */
     text-align: center;
+    font-size: 10px;
 }
 
 .faculty-info a {

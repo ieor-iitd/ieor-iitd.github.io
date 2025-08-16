@@ -1,131 +1,260 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> News & Events: IEOR </title>
+    <title>News &amp; Events: IEOR</title>
+    <link href="../../02-resources/021-css/style1.css" rel="stylesheet">
     <link href="../../02-resources/021-css/home.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="02-resources\023-images\icons\IITD_LOGO.svg" />
+    <link rel="icon" type="image/svg+xml" href="images/icons/IITD_LOGO.svg" />
     <base href="/">
     <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             background-color: #f8f8f8;
             font-family: 'Montserrat', sans-serif;
         }
 
         .content {
-            margin-top: 30px;
+            margin: 30px auto;
+            padding: 0 20px;
+            max-width: 1200px;
+        }
+
+        .news-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
 
         .news-block {
             display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
             background-color: #e3e0e0;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            min-height: 200px;
         }
 
         .news-block:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
         }
 
         .news-image {
-            flex: 1 1 30%;
-            max-width: 30%;
+            flex: 0 0 300px;
             overflow: hidden;
+            position: relative;
+        }
+
+        .news-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(196, 30, 58, 0.1), transparent);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .news-block:hover .news-image::before {
+            opacity: 1;
         }
 
         .news-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
-            
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .news-block:hover .news-image img {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
         .news-content {
-            flex: 1 1 70%;
-            padding: 20px;
+            flex: 1;
+            padding: 25px 30px;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            gap: 15px;
         }
 
         .news-content h3 {
-            margin: 0 0 10px;
+            margin: 0;
             font-weight: 600;
-            font-size: 20px;
+            font-size: clamp(18px, 2.5vw, 22px);
             color: #333;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+
+        .news-block:hover .news-content h3 {
+            color: #c41e3a;
         }
 
         .news-date-text {
-            margin: 0 0 15px;
+            margin: 0;
             font-size: 14px;
-            color: #555;
+            color: #666;
             font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .news-content a {
-            background-color: #c41e3a;
+        .news-date-text::before {
+            content: '📅';
+            font-size: 16px;
+        }
+
+        .news-content .read-more-btn {
+            background: linear-gradient(135deg, #c41e3a, #a01729);
             color: white;
-            padding: 10px 15px;
+            padding: 12px 24px;
             text-decoration: none;
             width: fit-content;
-            border-radius: 4px;
+            border-radius: 8px;
             font-size: 14px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
 
-        .news-content a:hover {
-            background-color: #333;
-            transform: scale(1.05);
+        .news-content .read-more-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
         }
+
+        .news-content .read-more-btn:hover::before {
+            left: 100%;
+        }
+
+        .news-content .read-more-btn:hover {
+            background: linear-gradient(135deg, #333, #222);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .news-content .read-more-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content {
+                padding: 0 15px;
+                margin: 20px auto;
+            }
+
+            .news-block {
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .news-image {
+                flex: 0 0 200px;
+                order: -1;
+            }
+
+            .news-content {
+                padding: 20px;
+                gap: 12px;
+            }
+
+            .news-content h3 {
+                font-size: 18px;
+            }
+
+            .news-container {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content {
+                padding: 0 10px;
+            }
+
+            .news-image {
+                flex: 0 0 160px;
+            }
+
+            .news-content {
+                padding: 15px;
+            }
+
+            .news-content .read-more-btn {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+        }
+
     </style>
 </head>
 <body>
     <div id="header"></div> 
 
-    <div class="content">
-        <div class="news-block">
-            <div class="news-image">
-                <img src="../../02-resources/023-images/news/Boli_Chen_3.JPG" alt="Dr. Boli Chen">
-            </div>
-            <div class="news-content">
-                <h3>Dr. Boli Chen visited IIT Delhi for the inaugural IEOR seminar series for his talk on "Intelligent Control 
-                    for Smart and Sustainable Mobility" </h3>
-                <p class="news-date-text">13 February 2025</p>
-                <a href="../../01-pages/017-newsevents/block_1.html" target="_blank">Read more</a>
-            </div>
-        </div>
+    <main class="content">
+        <div class="news-container">
+            <article class="news-block">
+                <div class="news-image">
+                    <img src="../../02-resources/023-images/news/Boli_Chen_3.JPG" 
+                         alt="Dr. Boli Chen presenting at IIT Delhi"
+                         loading="eager">
+                </div>
+                <div class="news-content">
+                    <h3>Dr. Boli Chen visited IIT Delhi for the inaugural IEOR seminar series for his talk on "Intelligent Control for Smart and Sustainable Mobility"</h3>
+                    <time class="news-date-text" datetime="2025-02-13">13 February 2025</time>
+                    <a href="../../01-pages/017-newsevents/block_1.html" 
+                       class="read-more-btn" 
+                       rel="noopener noreferrer"
+                       aria-label="Read more about Dr. Boli Chen's seminar">
+                        Read more
+                    </a>
+                </div>
+            </article>
 
-        <div class="news-block">
-            <div class="news-image">
-                <img src="../../02-resources/023-images/news/Ankur_Garg_1.jpg" alt="Dr. Ankur Garg">
-            </div>
-            <div class="news-content">
-                <h3>Dr. Ankur Garg presented his lecture on "Scheduling Models and Heuristics in the Airline Industry"</h3>
-                <p class="news-date-text">6 March 2025</p>
-                <a href="../../01-pages/017-newsevents/block_2.html" target="_blank">Read more</a>
-            </div>
+            <article class="news-block">
+                <div class="news-image">
+                    <img src="../../02-resources/023-images/news/Ankur_Garg_1.jpg" 
+                         alt="Dr. Ankur Garg during his lecture"
+                         loading="eager">
+                </div>
+                <div class="news-content">
+                    <h3>Dr. Ankur Garg presented his lecture on "Scheduling Models and Heuristics in the Airline Industry"</h3>
+                    <time class="news-date-text" datetime="2025-03-06">6 March 2025</time>
+                    <a href="../../01-pages/017-newsevents/block_2.html" 
+                       class="read-more-btn" 
+                       rel="noopener noreferrer"
+                       aria-label="Read more about Dr. Ankur Garg's lecture">
+                        Read more
+                    </a>
+                </div>
+            </article>
         </div>
-    </div>
+    </main>
 
     <div id="footer"></div> 
 </body>

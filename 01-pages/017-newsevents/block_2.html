@@ -1,126 +1,390 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IEOR - website</title>
-    <link href="./02-resources/021-css/style1.css" rel="stylesheet">
+    <title>Dr. Boli Chen Seminar - IEOR</title>
+    <meta name="description" content="Dr. Boli Chen's inaugural IEOR seminar on Intelligent Control for Smart and Sustainable Mobility at IIT Delhi">
+    <link href="../../02-resources/021-css/style1.css" rel="stylesheet">
     <link href="../../02-resources/021-css/home.css" rel="stylesheet">
-    <link href="./02-resources/021-css/DiffMediaStyle.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="images/icons/IITD_LOGO.svg" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <base href="/">
     <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
     
     <style>
-        /* Main Container Styling */
+        body {
+            background-color: #f8f8f8;
+        }
+
         .main-container {
-            width: 1150px;
-            height: 550px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            max-width: 1200px;
+            width: 100%;
+            margin: 30px auto;
+            padding: 0 20px;
         }
 
-        /* Heading Styling */
-        .welcome-section h2 {
-            text-align: left;
-            border-bottom: 3px solid black; /* Underline */
-            padding-bottom: 10px;
-            margin-bottom: 10px;
-            font-size: 25px;
+        .article-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
         }
 
-        /* Layout for text and image slider */
-        .content-container {
-            display: flex;
-            align-items: flex-start; /* Align text and image at the top */
-            gap: 20px;
-        }
-
-        /* Text Styling */
-        .text-content {
-            flex: 1;
-            text-align: justify;
-            font-size: 16px;
-            line-height: 1.5;
-        }
-
-        /* Image Slider Container */
-        .image-slider {
-            width: 600px; 
+        .article-header {
+            padding: 40px;
             position: relative;
+            overflow: hidden;
         }
 
-        /* Image Styling */
+        .article-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0, transparent 70%);
+            animation: shimmer 6s ease-in-out infinite;
+        }
+
+        .article-header h1 {
+            font-size: clamp(24px, 3vw, 32px);
+            font-weight: 600;
+            line-height: 1.3;
+            margin: 0 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .date-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        .date-container i {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .article-content {
+            padding: 0 40px 40px;
+        }
+
+        /* Slider Styles */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 400px;
+        }
+
         .slider img {
             width: 100%;
-            height: auto;
-            display: none;
-            border-radius: 5px;
+            height: 100%;
+            object-fit: cover;
+            flex-shrink: 0;
         }
 
-        .slider img.active {
-            display: block;
+        .slider-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
         }
 
-        /* Navigation Buttons */
-        .navigation-button {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .dot {
-            height: 10px;
-            width: 10px;
-            margin: 0 5px;
-            background-color: gray;
+        .slider-dot {
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-            display: inline-block;
+            background: rgba(255, 255, 255, 0.5);
             cursor: pointer;
+            transition: background 0.3s ease;
         }
 
-        .dot.active {
-            background-color: black;
+        .slider-dot.active {
+            background: #c41e3a;
         }
 
-        /* Previous & Next Buttons */
-        .prev, .next {
+        .slider-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
-            padding: 10px;
+            padding: 15px;
             cursor: pointer;
-            font-size: 16px;
+            z-index: 10;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            transition: background 0.3s ease;
         }
 
-        .prev { left: 0; }
-        .next { right: 0; }
+        .slider-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
 
+        .slider-btn.prev {
+            left: 20px;
+        }
+
+        .slider-btn.next {
+            right: 20px;
+        }
+
+        .slider-btn i {
+            font-size: 18px;
+        }
+
+        .text-content1 {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+            text-align: center;
+        }
+
+        .text-content p {
+            margin-bottom: 24px;
+        }
+
+        .text-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .bio-paragraph {
+            background: linear-gradient(135deg, #fff8f5 0, #fff0e6 100%);
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid rgba(196, 30, 58, 0.1);
+            position: relative;
+            text-align: left;
+        }
+
+        .bio-paragraph::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #c41e3a, #a01729);
+            border-radius: 12px 12px 0 0;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #c41e3a, #a01729);
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(196, 30, 58, 0.3);
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(196, 30, 58, 0.4);
+            background: linear-gradient(135deg, #333, #222);
+        }
+
+        .back-button i {
+            transition: transform 0.3s ease;
+        }
+
+        .back-button:hover i {
+            transform: translateX(-4px);
+        }
+
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                margin: 20px auto;
+                padding: 0 15px;
+            }
+            
+            .article-header {
+                padding: 30px 25px;
+            }
+            
+            .article-content {
+                padding: 30px 25px;
+            }
+            
+            .slider {
+                height: 300px;
+            }
+            
+            .bio-paragraph {
+                padding: 20px;
+            }
+            
+            .text-content {
+                font-size: 15px;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-container {
+                padding: 0 10px;
+            }
+            
+            .article-header {
+                padding: 25px 20px;
+            }
+            
+            .article-content {
+                padding: 25px 20px;
+            }
+            
+            .slider {
+                height: 250px;
+            }
+            
+            .bio-paragraph {
+                padding: 16px;
+            }
+            
+            .back-button {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+
+            .slider-btn {
+                width: 30px;
+                height: 30px;
+                padding: 10px;
+            }
+
+            .slider-btn i {
+                font-size: 14px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .article-card,
+            .slider,
+            .back-button,
+            .article-header::before {
+                transition: none;
+                animation: none;
+            }
+        }
+
+        .back-button:focus {
+            outline: 3px solid #c41e3a;
+            outline-offset: 2px;
+        }
+
+        @media print {
+            .back-button {
+                display: none;
+            }
+            
+            .article-card {
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+
+            .slider-btn, .slider-dot {
+                display: none;
+            }
+
+            .slider {
+                display: block;
+                height: auto;
+            }
+
+            .slider img {
+                display: block;
+                margin-bottom: 20px;
+                page-break-inside: avoid;
+            }
+        }
     </style>
-
 </head>
 
 <body>
     <div id="header"></div> 
 
-    <div class="main-container">
-        <section class="welcome-section">
-            <h2> Dr. Ankur Garg talk on "Scheduling Models and Heuristics in the Airline Industry" </h2>
+    <main class="main-container">
+        <article class="article-card">
+            <header class="article-header">
+                <h1>Dr. Boli Chen visited IIT Delhi for the inaugural IEOR seminar series for his talk on "Intelligent Control for Smart and Sustainable Mobility"</h1>
+                <div class="date-container">
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                    <time datetime="2025-02-13">February 13, 2025</time>
+                </div>
+            </header>
 
-            <div class="content-container">
-                <div class="text-content">
+            <div class="article-content">
+                <section class="slider-section">
+                    <div class="slider-container">
+                        <div class="slider">
+                            <img src="../../02-resources/023-images/news/Ankur_Garg_1.jpg" 
+                                 alt="Dr. Boli Chen presenting his seminar on Intelligent Control for Smart and Sustainable Mobility at IIT Delhi"
+                                 loading="eager">
+                            <img src="../../02-resources/023-images/news/Ankur_Garg_2.jpg" 
+                                 alt="Dr. Boli Chen discussing his research with attendees"
+                                 loading="lazy">
+
+                            <!-- Add more images as needed -->
+                        </div>
+                        <button class="slider-btn prev" aria-label="Previous image">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="slider-btn next" aria-label="Next image">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="slider-nav">
+                            <div class="slider-dot active" data-index="0"></div>
+                            <div class="slider-dot" data-index="1"></div>
+                            <!-- Add more dots as needed -->
+                        </div>
+                    </div>
+                </section>
+
+                <div class="bio-paragraph">
                     <p>
                         Dr. Boli Chen from UCL visited IIT Delhi on February 13, 2025, for a 
                         talk on "Intelligent Control for Smart and Sustainable Mobility". 
@@ -128,61 +392,106 @@
                         and automated vehicles (CAVs), including coordinated platooning and smart charging 
                         technology, was very insightful. Engaging discussions followed on the future of 
                         intelligent control systems and their impact on mobility and sustainability. 
+                    </p>
 
-                        <br><br>
+                    <p>
                         Dr. Chen also interacted with the students in the "Optimization" course. We thank him for his visit to IEOR, IIT Delhi.
                     </p>
                 </div>
-
-                <!-- Image slider -->
-                <div class="image-slider">
-                    <div class="slider">
-                        <img class="active" id="img-1" src="../../02-resources/023-images/news/Ankur_Garg_1.jpg" alt="Image 1"/>
-                        <img id="img-2" src="../../02-resources/023-images/news/Ankur_Garg_2.jpg" alt="Image 2"/>
-                        
-                    </div>
-                    <button class="prev" onclick="prevSlide()">❮</button>
-                    <button class="next" onclick="nextSlide()">❯</button>
-                    <div class="navigation-button">
-                        <span class="dot active" onclick="changeSlide(0)"></span>
-                        <span class="dot" onclick="changeSlide(1)"></span>
-                        <span class="dot" onclick="changeSlide(2)"></span>
-                    </div>
-                </div>
             </div>
-        </section>
-    </div>
+        </article>
+    </main>
 
     <div id="footer"></div>
 
     <script>
-        let slideIndex = 0;
-        const slides = document.querySelectorAll(".slider img");
-        const dots = document.querySelectorAll(".dot");
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.slider');
+            const slides = document.querySelectorAll('.slider img');
+            const dots = document.querySelectorAll('.slider-dot');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            let currentIndex = 0;
+            const slideCount = slides.length;
 
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.remove("active");
-                dots[i].classList.remove("active");
+            // Initialize slider
+            function updateSlider() {
+                slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            // Next slide
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slideCount;
+                updateSlider();
+            }
+
+            // Previous slide
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                updateSlider();
+            }
+
+            // Dot navigation
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    currentIndex = parseInt(this.getAttribute('data-index'));
+                    updateSlider();
+                });
             });
-            slides[index].classList.add("active");
-            dots[index].classList.add("active");
-        }
 
-        function nextSlide() {
-            slideIndex = (slideIndex + 1) % slides.length;
-            showSlide(slideIndex);
-        }
+            // Button events
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
 
-        function prevSlide() {
-            slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-            showSlide(slideIndex);
-        }
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                }
+            });
 
-        function changeSlide(index) {
-            slideIndex = index;
-            showSlide(slideIndex);
-        }
+            // Auto-advance (optional)
+            let slideInterval = setInterval(nextSlide, 5000);
+
+            // Pause on hover
+            const sliderContainer = document.querySelector('.slider-container');
+            sliderContainer.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+
+            sliderContainer.addEventListener('mouseleave', () => {
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+
+            // Touch support for mobile devices
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            sliderContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, {passive: true});
+
+            sliderContainer.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, {passive: true});
+
+            function handleSwipe() {
+                if (touchEndX < touchStartX - 50) {
+                    nextSlide();
+                }
+                if (touchEndX > touchStartX + 50) {
+                    prevSlide();
+                }
+            }
+        });
     </script>
 </body>
 </html>

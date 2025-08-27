@@ -22,16 +22,17 @@
         .student_content {
             display: flex;
             gap: 15px;
-            align-items: flex-start;
+            align-items: center;
         }
 
         .student_photo {
-            width: 100px;        /* Increased width for rectangular shape */
-            height: 110px;        /* Slightly less height than width */
+            width: 105px;        /* Increased width for rectangular shape */
+            height: 125px;        /* Slightly less height than width */
             border-radius: 8px;  /* Slight rounding instead of 50% */
             object-fit: cover;
             border: 2px solid #ddd;
             flex-shrink: 0;
+            align-self: center;
         }
 
         .student_info {

@@ -518,11 +518,11 @@ body {
   background-color:white;
   margin: 0;
 }
-
 /* --- Updated .phd-info table CSS for perfect column alignment --- */
 .phd-info {
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 40px auto;
+    padding-left: 50px;
 }
 
 .phd-info table {
@@ -575,6 +575,14 @@ body {
     text-underline-offset: 4px;
 }
 
+.phd-info h2,
+.phd-info h3,
+.phd-info p,
+.phd-info ol {
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
+} 
 
 
 /*.............................CODE FOR M.Tech/MSR SECTION...............................*/

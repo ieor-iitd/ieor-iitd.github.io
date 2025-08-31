@@ -327,8 +327,8 @@
 .faculty-info p {
     margin: 5px 0;
     /* word-wrap: break-word; */
-    /* word-break: break-all; */
-    text-align: center;
+    /* word-break: break-all; */ 
+    text-align: justify;
     font-size: 10px;
 }
 
@@ -460,6 +460,10 @@ h2 u {
   text-align: center;
   hyphens: auto;
   /* text-align: center; */
+}
+.faculty-info p {
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .faculty-info a {

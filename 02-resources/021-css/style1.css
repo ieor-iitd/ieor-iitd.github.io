@@ -519,54 +519,27 @@ body {
   margin: 0;
 }
 
-.phd-info h2 {
-    margin-top: 20px;
-    margin-left: 10%;
-    margin-bottom: 5px;
-    font-weight: bold;
+/* --- Updated .phd-info table CSS for perfect column alignment --- */
+.phd-info {
+    width: 100%;
+    margin: 0 auto;
 }
 
-.phd-info h3 {
-  margin-top: 20px;
-  margin-left: 10%;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.phd-info p, strong {
-    margin-top: 10px;
-    margin-left: 10%;
-    margin-bottom: 5px;
-    margin-right: 12%;
-    font-weight: 550;
-    word-wrap: break-word; /* Break long words */
-    word-break: break-word; /* Break long words */
-    overflow-wrap: break-word; /* Break long words */
-    text-align: justify;
-}
-
-.phd-info ol {
-  margin-top: 10px;
-  margin-left: 10%;
-  margin-bottom: 5px;
-  margin-right: 12%;
-  font-weight: 550;
-  word-wrap: break-word; /* Break long words */
-  word-break: break-word; /* Break long words */
-  overflow-wrap: break-word; /* Break long words */
-}
-
- .phd-info table {
+.phd-info table {
     width: 600px;
     margin: 0 auto 24px auto;
     border-collapse: collapse;
-    table-layout: fixed; 
+    table-layout: fixed;
 }
+
 .phd-info th, .phd-info td {
     text-align: left;
     padding: 8px 16px;
-    border: 1px solid #bbb; /* neutral grey border */
+    border: 1px solid #bbb;
+    vertical-align: middle;
+    font-size: 1em;
 }
+
 .phd-info th[colspan="2"] {
     text-align: center;
     font-weight: bold;
@@ -574,17 +547,30 @@ body {
     border-bottom: 2px solid #bbb;
     background: #eee;
 }
+
+.phd-info th {
+    background: #f5f5f5;
+    font-weight: 600;
+}
+
 .phd-info th:first-child, .phd-info td:first-child {
     width: 200px;
+    min-width: 200px;
+    max-width: 200px;
 }
+
 .phd-info th:last-child, .phd-info td:last-child {
     width: 400px;
+    min-width: 400px;
+    max-width: 400px;
 }
+
 .phd-info h2, .phd-info h3 {
     text-align: left;
     margin-left: 0;
     padding-left: 0;
 }
+
 .phd-info u {
     text-underline-offset: 4px;
 }

@@ -86,3 +86,9 @@
     transform: scale(1.2); /* Optional: zoom on hover */
 }
 
+.students_info h3 {
+    margin-top: 3em;  /* Adds space above each h3 */
+    margin-bottom: 1em; /* Adds space below each h3 */
+} 
+
+

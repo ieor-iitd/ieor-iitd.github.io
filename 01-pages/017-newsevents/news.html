@@ -161,6 +161,83 @@
             transform: translateY(0);
         }
 
+        /* Past News Dropdown Styles */
+        .past-news-section {
+            margin-top: 40px;
+            padding-top: 30px;
+        }
+
+        .past-news-toggle {
+            background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .past-news-toggle:hover {
+            background: linear-gradient(135deg, #e8e8e8, #ddd);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .past-news-toggle h2 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .past-news-toggle h2::before {
+            content: '🗃️';
+            font-size: 32px;
+        }
+
+        .toggle-icon {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #c41e3a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #c41e3a;
+            font-size: 18px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .toggle-icon.active {
+            transform: rotate(90deg);
+            background-color: #c41e3a;
+            color: white;
+        }
+
+        .past-news-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .past-news-content.active {
+            max-height: 2000px;
+        }
+
+        .past-news-container {
+            padding-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .content {
@@ -190,6 +267,19 @@
             .news-container {
                 gap: 20px;
             }
+
+            .past-news-toggle {
+                padding: 15px 20px;
+            }
+
+            .past-news-toggle h2 {
+                font-size: 18px;
+            }
+
+            .past-news-section {
+                margin-top: 30px;
+                padding-top: 20px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -209,6 +299,14 @@
                 padding: 10px 20px;
                 font-size: 13px;
             }
+
+            .past-news-toggle {
+                padding: 12px 15px;
+            }
+
+            .past-news-toggle h2 {
+                font-size: 16px;
+            }
         }
 
     </style>
@@ -226,8 +324,8 @@
                          loading="eager">
                 </div>
                 <div class="news-content">
-                    <h3>Dr. Ankur Garg to Join IEOR Department as Adjunct Professor Soon</h3>
-                    <time class="news-date-text" datetime="2025-03-06">4 September 2025</time>
+                    <h3>Dr. Ankur Garg joins IIT Delhi as Adjunct Professor</h3>
+                    <time class="news-date-text" datetime="2025-03-06">1 September 2025</time>
                     <a href="../../01-pages/017-newsevents/block_5.html" 
                        class="read-more-btn" 
                        rel="noopener noreferrer"
@@ -256,10 +354,8 @@
             </article>
 
             <article class="news-block">
-
-
                 <div class="news-content">
-                    <h3>IEOR Department Welcomes New Batch of M.Tech and PhD Students</h3>
+                    <h3>IEOR Group welcomes new batch of M.Tech and Ph.D students</h3>
                     <time class="news-date-text" datetime="2025-03-06">1 August 2025</time>
                     <a href="../../01-pages/017-newsevents/block_6.html" 
                        class="read-more-btn" 
@@ -269,63 +365,91 @@
                     </a>
                 </div>
             </article>           
+        </div>
+
+        <!-- Past News Section -->
+        <div class="past-news-section">
+            <div class="past-news-toggle" onclick="togglePastNews()">
+                <h2>Past News</h2>
+                <div class="toggle-icon" id="toggle-icon">+</div>
+            </div>
             
-            <article class="news-block">
-                <div class="news-image">
-                    <img src="../../02-resources/023-images/news/amber_presentation.jpeg" 
-                         alt="prof. Amber during his lecture"
-                         loading="eager">
-                </div>
-                <div class="news-content">
-                    <h3>Prof. Amber Srivastava Delivers Seminar on Artificial Intelligence in Engineering Systems at TITS, Bhiwani</h3>
-                    <time class="news-date-text" datetime="2025-03-06">12 April 2025</time>
-                    <a href="../../01-pages/017-newsevents/block_4.html" 
-                       class="read-more-btn" 
-                       rel="noopener noreferrer"
-                       aria-label="Read more about prof. Amber lecture">
-                        Read more
-                    </a>
-                </div>
-            </article>
+            <div class="past-news-content" id="past-news-content">
+                <div class="past-news-container">
+                    <article class="news-block">
+                        <div class="news-image">
+                            <img src="../../02-resources/023-images/news/amber_presentation.jpeg" 
+                                 alt="prof. Amber during his lecture"
+                                 loading="lazy">
+                        </div>
+                        <div class="news-content">
+                            <h3>Prof. Amber Srivastava delivers seminar on Artificial Intelligence in Engineering systems at TITS, Bhiwani</h3>
+                            <time class="news-date-text" datetime="2025-04-12">12 April 2025</time>
+                            <a href="../../01-pages/017-newsevents/block_4.html" 
+                               class="read-more-btn" 
+                               rel="noopener noreferrer"
+                               aria-label="Read more about prof. Amber lecture">
+                                Read more
+                            </a>
+                        </div>
+                    </article>
 
-            <article class="news-block">
-                <div class="news-image">
-                    <img src="../../02-resources/023-images/news/Ankur_Garg_3.jpeg" 
-                         alt="Dr. Ankur Garg during his lecture"
-                         loading="eager">
-                </div>
-                <div class="news-content">
-                    <h3>Dr. Ankur Garg presented his lecture on "Scheduling Models and Heuristics in the Airline Industry"</h3>
-                    <time class="news-date-text" datetime="2025-03-06">6 March 2025</time>
-                    <a href="../../01-pages/017-newsevents/block_2.html" 
-                       class="read-more-btn" 
-                       rel="noopener noreferrer"
-                       aria-label="Read more about Dr. Ankur Garg's lecture">
-                        Read more
-                    </a>
-                </div>
-            </article>
+                    <article class="news-block">
+                        <div class="news-image">
+                            <img src="../../02-resources/023-images/news/Ankur_Garg_3.jpeg" 
+                                 alt="Dr. Ankur Garg during his lecture"
+                                 loading="lazy">
+                        </div>
+                        <div class="news-content">
+                            <h3>Dr. Ankur Garg presented his lecture on "Scheduling Models and Heuristics in the Airline Industry"</h3>
+                            <time class="news-date-text" datetime="2025-03-06">6 March 2025</time>
+                            <a href="../../01-pages/017-newsevents/block_2.html" 
+                               class="read-more-btn" 
+                               rel="noopener noreferrer"
+                               aria-label="Read more about Dr. Ankur Garg's lecture">
+                                Read more
+                            </a>
+                        </div>
+                    </article>
 
-            <article class="news-block">
-                <div class="news-image">
-                    <img src="../../02-resources/023-images/news/Boli_Chen_3.JPG" 
-                         alt="Dr. Boli Chen presenting at IIT Delhi"
-                         loading="eager">
+                    <article class="news-block">
+                        <div class="news-image">
+                            <img src="../../02-resources/023-images/news/Boli_Chen_3.JPG" 
+                                 alt="Dr. Boli Chen presenting at IIT Delhi"
+                                 loading="lazy">
+                        </div>
+                        <div class="news-content">
+                            <h3>Dr. Boli Chen visited IIT Delhi for the inaugural IEOR seminar series for his talk on "Intelligent Control for Smart and Sustainable Mobility"</h3>
+                            <time class="news-date-text" datetime="2025-02-13">13 February 2025</time>
+                            <a href="../../01-pages/017-newsevents/block_1.html"
+                               class="read-more-btn" 
+                               rel="noopener noreferrer"
+                               aria-label="Read more about Dr. Boli Chen's seminar">
+                                Read more
+                            </a>
+                        </div>
+                    </article>
                 </div>
-                <div class="news-content">
-                    <h3>Dr. Boli Chen visited IIT Delhi for the inaugural IEOR seminar series for his talk on "Intelligent Control for Smart and Sustainable Mobility"</h3>
-                    <time class="news-date-text" datetime="2025-02-13">13 February 2025</time>
-                    <a href="../../01-pages/017-newsevents/block_1.html"
-                       class="read-more-btn" 
-                       rel="noopener noreferrer"
-                       aria-label="Read more about Dr. Boli Chen's seminar">
-                        Read more
-                    </a>
-                </div>
-            </article>
+            </div>
         </div>
     </main>
 
-    <div id="footer"></div> 
+    <div id="footer"></div>
+
+    <script>
+        function togglePastNews() {
+            const content = document.getElementById('past-news-content');
+            const icon = document.getElementById('toggle-icon');
+            
+            content.classList.toggle('active');
+            icon.classList.toggle('active');
+            
+            if (content.classList.contains('active')) {
+                icon.textContent = '×';
+            } else {
+                icon.textContent = '+';
+            }
+        }
+    </script>
 </body>
 </html>

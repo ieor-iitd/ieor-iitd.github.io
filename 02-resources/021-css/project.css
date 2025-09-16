@@ -28,10 +28,11 @@ body {
     }
 
     .news-image {
+      justify-content: center; 
+      align-items: center;   
       flex: 0 0 28%;
       margin: 0;
       padding: 30px 10px 10px 10px;
-      background-color: #fff;
       border-radius: 12px 0 0 12px;
     }
 

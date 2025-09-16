@@ -34,18 +34,18 @@
       border: none;
       color: var(--white);
       font-size: 24px;
-      padding: 10px 15px;
+      padding: 15px 15px;
       cursor: pointer;
       visibility: visible;
     }
     
     .hamburger {
       display: block;
-      width: 25px;
-      height: 3px;
+      width: 24px;
+      height: 2px;
       background-color: var(--white);
       position: relative;
-      transition: var(--transition);
+      transition: transform 0.3s ease-in-out;
     }
     
     .hamburger::before,
@@ -60,11 +60,11 @@
     }
     
     .hamburger::before {
-      transform: translateY(-4px);
+      transform: translateY(-7px);
     }
     
     .hamburger::after {
-      transform: translateY(4px);
+      transform: translateY(7px);
     }
     
     /* When menu is open */
@@ -136,7 +136,113 @@
         to { opacity: 1; max-height: 500px }
       }
     
+    /* Sub-dropdown specific styles */
+    .dropdown-subcontainer {
+        position: relative;
+        width: 100%;
+    }
     
+    .dropdown-subbutton {
+        display: block;
+        width: 100%;
+        padding: 12px 30px;
+        color: var(--white);
+        text-decoration: none;
+        background: none;
+        border: none;
+        text-align: left;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        position: relative;
+    }
+    
+    .dropdown-subbutton:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Add arrow indicator for sub-dropdowns */
+    .dropdown-subbutton::after {
+        content: '▶';
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease;
+        font-size: 10px;
+    }
+    
+    .dropdown-subcontainer.active .dropdown-subbutton::after {
+        transform: translateY(-50%) rotate(90deg);
+    }
+    
+    .dropdown-subcontent {
+        display: none;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        animation: none;
+    }
+    
+    .dropdown-subcontainer.active .dropdown-subcontent {
+        display: block;
+        animation: slideDown 0.3s ease;
+    }
+    
+    .dropdown-subcontent a {
+        display: block;
+        padding: 10px 50px;
+        color: var(--white);
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        border-left: 2px solid transparent;
+    }
+    
+    .dropdown-subcontent a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-left-color: var(--white);
+    }
+    
+    /* Animation for sub-dropdown */
+    @keyframes slideDown {
+        from { 
+            opacity: 0; 
+            max-height: 0;
+            transform: translateY(-10px);
+        }
+        to { 
+            opacity: 1; 
+            max-height: 300px;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Ensure main dropdown content has proper styling */
+    .dropdown-content {
+        position: static;
+        display: none;
+        width: 100%;
+        box-shadow: none;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    .dropdown-content a:not(.dropdown-subbutton) {
+        padding: 12px 30px;
+        color: var(--white);
+    }
+    
+    /* Override hover behavior for mobile */
+    .dropdown-container:hover .dropdown-content {
+        display: none;
+    }
+    
+    .dropdown-container.active .dropdown-content {
+        display: block;
+        animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; max-height: 0 }
+        to { opacity: 1; max-height: 500px }
+    }
 
     /* Welcome section adjustments */
     .welcome-section {

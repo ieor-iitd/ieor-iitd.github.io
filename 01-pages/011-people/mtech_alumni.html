@@ -15,6 +15,7 @@
     <link rel="icon" type="image/svg+xml" href="../images/icon/IITD_LOGO.svg" />
     <base href="/">
     <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
+    <script src="./02-resources/022-scripts/herochange.js" ></script>
     
 </head>
 
@@ -74,6 +75,44 @@
         padding: 20px;
     }
 
+    .shiny-heading {
+        text-align: left;
+        color: rgb(246, 5, 5);
+        font-size: 36px;
+        font-weight: 600;
+        margin-bottom: 30px;
+        font-family: 'Montserrat', sans-serif;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+    }
+
+    .shiny-heading::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.6),
+            transparent
+        );
+        animation: shine 2.5s infinite;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    @keyframes shine {
+        0% {
+            left: -100%;
+        }
+        100% {
+            left: 100%;
+        }
+    }
 
 </style>
 
@@ -84,7 +123,7 @@
 
 
 <div class="container-wrapper">
-    <h1 style="text-align: left; color: #dc3545; font-size: 36px; font-weight: 600; margin-bottom: 30px; font-family: 'Montserrat', sans-serif;">M.Tech Alumni</h1>
+    <h1 class="shiny-heading">M.Tech Alumni</h1>
     <button class="accordion">Batch 2023-2025</button>
     <div class="panel">
         <div class="mtech_container">

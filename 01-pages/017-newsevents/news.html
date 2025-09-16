@@ -13,6 +13,8 @@
     <link rel="icon" type="image/svg+xml" href="images/icons/IITD_LOGO.svg" />
     <base href="/">
     <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
+    <script src="./02-resources/022-scripts/herochange.js" ></script>
+    <link href="../../02-resources/021-css/DiffMediaStyle.css" rel="stylesheet">
 
     <style>
         * {
@@ -186,19 +188,25 @@
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
         }
 
-        .past-news-toggle h2 {
+        .news-heading {
             margin: 0;
-            font-size: 20px;
-            font-weight: 600;
+            font-size: 25px;
+            font-weight: 800;
             color: #333;
             display: flex;
             align-items: center;
             gap: 12px;
+            text-decoration: none;
+        }
+        
+        .past-news-toggle:hover .news-heading {
+            color: #dc3545;
+            font-weight: bolder;
         }
 
         .past-news-toggle h2::before {
             content: '🗃️';
-            font-size: 32px;
+            font-size: 35px;
         }
 
         .toggle-icon {
@@ -370,7 +378,7 @@
         <!-- Past News Section -->
         <div class="past-news-section">
             <div class="past-news-toggle" onclick="togglePastNews()">
-                <h2>Past News</h2>
+                <h2 class ='news-heading'>Past News</h2>
                 <div class="toggle-icon" id="toggle-icon">+</div>
             </div>
             

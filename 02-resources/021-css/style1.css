@@ -362,17 +362,7 @@
 
 /*---------------------- courses table Section ----------------------*/
 
-.courses-table-flex table th:first-child,
-.courses-table-flex table td:first-child {
-    width: 80px;   /* or even 100px if you want it closer */
-    min-width: 100px;
-    max-width: 140px; 
-}
 
-.courses-table-flex table th:last-child,
-.courses-table-flex table td:last-child {
-    width: 220px;
-}
 
 /*---------------------- Student Section ----------------------*/
 .student-container {
@@ -489,7 +479,7 @@ h2 u {
   /* text-align: center; */
 }
 .faculty-info p {
-    text-align: justify;
+    text-align: center;
     text-justify: inter-word;
 }
 
@@ -614,6 +604,33 @@ body {
     margin-left: 0;
     padding-left: 0;
 } 
+.phd-info table {
+    border-collapse: collapse;
+    width: 40%;
+    table-layout: fixed;   /* makes percentage widths work properly */
+}
+
+.phd-info th, 
+.phd-info td {
+    border: 1px solid #bbb;
+    padding: 8px 16px;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 1em;
+}
+
+/* Course Code column (narrow) */
+.phd-info th:first-child, 
+.phd-info td:first-child {
+    width: 15%;   /* adjust to 10% / 20% as you prefer */
+    text-align: center;
+}
+
+/* Course Name column (wide) */
+.phd-info th:last-child, 
+.phd-info td:last-child {
+    width: 85%;   /* takes remaining space */
+}
 
 
 /*.............................CODE FOR M.Tech/MSR SECTION...............................*/

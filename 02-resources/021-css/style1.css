@@ -360,7 +360,19 @@
   line-height: 1.2; /* tighter lines */
 }
 
+/*---------------------- courses table Section ----------------------*/
 
+.courses-table-flex table th:first-child,
+.courses-table-flex table td:first-child {
+    width: 80px;   /* or even 100px if you want it closer */
+    min-width: 100px;
+    max-width: 140px; 
+}
+
+.courses-table-flex table th:last-child,
+.courses-table-flex table td:last-child {
+    width: 220px;
+}
 
 /*---------------------- Student Section ----------------------*/
 .student-container {

@@ -1,166 +1,196 @@
 /* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
-    /* Header adjustments */
-*{
-    font-size: 14px;
-}    
-    
-    .IITD_LOGO {
-      width: 80px;
-      margin-bottom: 10px;
-    }
-    
-    .text h1 {
-      font-size: 18px;
-    }
-    
-    .text h2 {
-      font-size: 16px;
-    }
-    
-    .text h3 {
-      font-size: 14px;
+    * {
+        font-size: 14px;
+        box-sizing: border-box;
     }
 
-    /* Navigation modifications */
+    /* Logo & Text */
+    .IITD_LOGO {
+        width: 80px;
+        margin-bottom: 10px;
+    }
+
+    .text h1 {
+        font-size: 18px;
+    }
+
+    .text h2 {
+        font-size: 16px;
+    }
+
+    .text h3 {
+        font-size: 14px;
+    }
+
+    /* Navbar container */
     .navbar {
-      position: relative;
-      padding: 5px;
+        position: relative;
+        padding: 5px;
     }
-    
+
+    /* Hamburger toggle button */
     .menu-toggle {
-      display: block;
-      background: none;
-      border: none;
-      color: var(--white);
-      font-size: 24px;
-      padding: 15px 15px;
-      cursor: pointer;
-      visibility: visible;
+        display: block;
+        background: none;
+        border: none;
+        color: var(--white);
+        font-size: 24px;
+        padding: 15px;
+        cursor: pointer;
+        z-index: 110;
+        transition: transform 0.3s ease-in-out;
     }
-    
+
+    /* Hamburger icon styling */
     .hamburger {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background-color: var(--white);
-      position: relative;
-      transition: transform 0.3s ease-in-out;
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: var(--white);
+        position: relative;
+        transition: all 0.4s ease;
     }
-    
+
     .hamburger::before,
     .hamburger::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: var(--white);
-      transition: var(--transition);
-      left: 0;
-    }
-    
-    .hamburger::before {
-      transform: translateY(-7px);
-    }
-    
-    .hamburger::after {
-      transform: translateY(7px);
-    }
-    
-    /* When menu is open */
-    .menu-toggle.active .hamburger {
-      background-color: transparent;
-    }
-    
-    .menu-toggle.active .hamburger::before {
-      transform: rotate(45deg);
-    }
-    
-    .menu-toggle.active .hamburger::after {
-      transform: rotate(-45deg);
-    }
-    
-    /* Navigation list */
-    .navlist {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: var(--primary-color);
-      z-index: 100;
-    }
-    
-    .navlist.active {
-      display: flex;
-    }
-    
-    .navitem {
-      width: 100%;
-    }
-    
-    .dropdown-button {
-      width: 100%;
-      text-align: left;
-      padding: 15px;
-    }
-    
-    .dropdown-content {
-      position: static;
-      display: none;
-      width: 100%;
-      box-shadow: none;
-      background-color: rgba(0, 0, 0, 0.1);
-    }
-    
-    .dropdown-content a {
-      padding-left: 30px;
-    }
-    
-    .dropdown-container:hover .dropdown-content {
-      display: none;
-    }
-    
-    .dropdown-container.active .dropdown-content {
-      display: block;
-      animation: fadeIn 0.3s ease;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: var(--white);
+        transition: all 0.4s ease;
+        left: 0;
     }
 
-    .dropdown-content a {
-        color: var(--white);
-      }
+    .hamburger::before {
+        transform: translateY(-7px);
+    }
+
+    .hamburger::after {
+        transform: translateY(7px);
+    }
+
+    /* Active hamburger animation */
+    .menu-toggle.active .hamburger {
+        background-color: transparent;
+    }
+
+    .menu-toggle.active .hamburger::before {
+        transform: rotate(45deg);
+    }
+
+    .menu-toggle.active .hamburger::after {
+        transform: rotate(-45deg);
+    }
+
+    /* Main nav list */
+    .navlist {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: rgb(220, 238, 240);
+        z-index: 100;
+        overflow: hidden;
+        max-height: 0;
+        transform: translateY(-10px);
+        transition: 
+        max-height 0.4s ease-in-out,
+        opacity 0.4s ease-in-out,
+        transform 0.4s ease-in-out;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .navlist.active {
+        max-height: 800px; /* Smooth slide down */
+    }
+
+    /* Nav item styling */
+    .navitem {
+        width: 100%;
+        animation: fadeIn 0.4s ease forwards;
+    }
 
     @keyframes fadeIn {
-        from { opacity: 0; max-height: 0 }
-        to { opacity: 1; max-height: 500px }
-      }
-    
-    /* Sub-dropdown specific styles */
-    .dropdown-subcontainer {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+    /* Dropdown button */
+    .dropdown-button {
+        width: 100%;
+        text-align: left;
+        padding: 15px;
+        color: black;
+        font-weight: bolder;
+        background: rgb(220, 238, 240);
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease, padding-left 0.3s ease;
+    }
+
+    /* Main dropdown content */
+    .dropdown-content {
+        display: block;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.4s ease, opacity 0.4s ease;
         position: relative;
+        z-index: 99;
+    }
+
+    /* Show dropdown when active */
+    .dropdown-container.active .dropdown-content {
+        max-height: 600px;
+        opacity: 1;
+        background: rgb(220, 238, 240);
+    }
+
+    /* Dropdown links */
+    .dropdown-content a {
+        padding: 12px 30px;
+        color: black;
+        font-weight: bolder;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Sub-dropdown container */
+    .dropdown-subcontainer {
         width: 100%;
     }
-    
+
+    /* Sub-dropdown button */
     .dropdown-subbutton {
         display: block;
         width: 100%;
         padding: 12px 30px;
-        color: var(--white);
-        text-decoration: none;
+        color: black;
         background: none;
         border: none;
         text-align: left;
         cursor: pointer;
-        transition: background-color 0.3s ease;
         position: relative;
+        transition: background-color 0.3s ease;
     }
-    
+
     .dropdown-subbutton:hover {
         background-color: rgba(255, 255, 255, 0.1);
     }
-    
-    /* Add arrow indicator for sub-dropdowns */
+
+    /* Arrow indicator for sub-dropdowns */
     .dropdown-subbutton::after {
         content: '▶';
         position: absolute;
@@ -170,79 +200,49 @@
         transition: transform 0.3s ease;
         font-size: 10px;
     }
-    
+
+    /* Rotate arrow when active */
     .dropdown-subcontainer.active .dropdown-subbutton::after {
         transform: translateY(-50%) rotate(90deg);
     }
-    
+
     .dropdown-subcontent {
-        display: none;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.2);
-        animation: none;
+      display: block !important;      /* override desktop display:none */
+      position: relative !important;  /* not absolute on mobile */
+      left: 0 !important;
+      top: auto !important;
+      max-height: 0;                  /* collapsed by default */
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, opacity 0.35s ease;
+      z-index: 999;                   /* make sure it sits above sibling content */
     }
-    
+
+    /* Show sub-dropdown when active */
     .dropdown-subcontainer.active .dropdown-subcontent {
-        display: block;
-        animation: slideDown 0.3s ease;
+        max-height: 300px;
+        opacity: 1;
     }
-    
+
+    /* Sub-dropdown links */
     .dropdown-subcontent a {
         display: block;
         padding: 10px 50px;
-        color: var(--white);
+        color: black;
+        font-weight: bolder;
+        background: rgb(220, 238, 240);
         text-decoration: none;
-        transition: background-color 0.3s ease;
         border-left: 2px solid transparent;
+        transition: background-color 0.3s ease, padding-left 0.3s ease;
     }
-    
+
     .dropdown-subcontent a:hover {
         background-color: rgba(255, 255, 255, 0.1);
         border-left-color: var(--white);
-    }
-    
-    /* Animation for sub-dropdown */
-    @keyframes slideDown {
-        from { 
-            opacity: 0; 
-            max-height: 0;
-            transform: translateY(-10px);
-        }
-        to { 
-            opacity: 1; 
-            max-height: 300px;
-            transform: translateY(0);
-        }
-    }
-    
-    /* Ensure main dropdown content has proper styling */
-    .dropdown-content {
-        position: static;
-        display: none;
-        width: 100%;
-        box-shadow: none;
-        background-color: rgba(0, 0, 0, 0.1);
-    }
-    
-    .dropdown-content a:not(.dropdown-subbutton) {
-        padding: 12px 30px;
-        color: var(--white);
-    }
-    
-    /* Override hover behavior for mobile */
-    .dropdown-container:hover .dropdown-content {
-        display: none;
-    }
-    
-    .dropdown-container.active .dropdown-content {
-        display: block;
-        animation: fadeIn 0.3s ease;
+        padding-left: 55px;
     }
 
-    @keyframes fadeIn {
-        from { opacity: 0; max-height: 0 }
-        to { opacity: 1; max-height: 500px }
-    }
+
 
     /* Welcome section adjustments */
     .welcome-section {

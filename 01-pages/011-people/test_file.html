@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ph.D - IEOR</title>
+    <link href="../../02-resources/021-css/style1.css" rel="stylesheet">
+    <link href="../../02-resources/021-css/home.css" rel="stylesheet">
+    <link href="../../02-resources/021-css/DiffMediaStyle.css" rel="stylesheet">
+    <link href="../../02-resources/021-css/phd.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../images/icon/IITD_LOGO.svg" />
+    <base href="/">
+    <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
+    <script src="./02-resources/022-scripts/herochange.js" ></script>
+    <style>
+      .profile-flex { display: flex; align-items: flex-start; gap: 40px; margin-top: 2em; justify-content: center; max-width: 900px; margin-left: auto; margin-right: auto; padding-left: 40px; }
+      .profile-info { flex: 2; }
+      .profile-photo { flex: 1; text-align: right; }
+      .profile-photo img { border-radius: 10px; width: 180px; height: 220px; object-fit: cover; }
+      .profile-name { color: #d11a2a; font-size: 2em; font-weight: bold; margin-bottom: 0.2em; }
+      .profile-degree { color: #2196f3; font-size: 1.2em; font-weight: bold; margin-bottom: 0.5em; }
+      .profile-section { margin-top: 1.5em; }
+      .profile-section h3 { margin-bottom: 0.3em; font-size: 1.1em; color: #222; }
+      .profile-section ul { margin-top: 0.2em; margin-bottom: 0.2em; }
+      .profile-label { font-weight: bold; color: #222; }
+      .profile-link { color: #2196f3; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="profile"><span id="loading">Loading...</span></div>
+    <script>
+    async function loadStudent() {
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+        const profileDiv = document.getElementById('profile');
+        document.getElementById('loading').style.display = 'block';
+        try {
+            const res = await fetch('../../01-pages/011-people/phd_students.json');
+            if (!res.ok) throw new Error('Could not load student data');
+            const students = await res.json();
+            const student = students.find(s => String(s["sr. no"]) === String(id));
+            document.getElementById('loading').style.display = 'none';
+            if (!student) {
+                profileDiv.innerHTML = '<h2>Student not found</h2>';
+                return;
+            }
+            // Try to guess image file name from name (you can adjust this logic)
+            let imgName = student.Name.replace(/\s+/g, '').toLowerCase();
+            let imgSrc = `../../02-resources/023-images/students/${imgName}.jpg`;
+            // fallback if image not found
+            let photoHtml = `<img src="${imgSrc}" alt="${student.Name}" onerror="this.style.display='none'">`;
+            let html = `<div class='profile-flex'>`;
+            html += `<div class='profile-info'>`;
+            html += `<div class='profile-name'>${student.Name}</div>`;
+            if (student['PhD thesis name'] || student['Research interests']) {
+                html += `<div class='profile-degree'>Ph.D, 2025-present</div>`;
+            }
+            if (student['project guide name']) {
+                html += `<div class='profile-label'>Advisor:</div> <a href="#" class='profile-link'>${student['project guide name']}</a><br>`;
+            }
+            if (student['email iitd and personal']) {
+                html += `<div class='profile-label'>reach at:</div> ${student['email iitd and personal']}<br>`;
+            }
+            if (student['LinkedIn id link']) {
+                html += `<a href='${student['LinkedIn id link']}' class='profile-link' target='_blank'>Linkedin</a> `;
+            }
+            html += `IEOR Lab, Vishwakarma Bhawan, IIT Delhi`;
+            if (student['PhD thesis name']) {
+                html += `<div class='profile-section'><h3>Ph.D Thesis :</h3> <span>${student['PhD thesis name']}</span></div>`;
+            }
+            if (student['Research interests']) {
+                html += `<div class='profile-section'><h3>Interests</h3><span>${student['Research interests']}</span></div>`;
+            }
+            if (student['Academic background with institute name']) {
+                html += `<div class='profile-section'><h3>Academic Background:</h3><ul>`;
+                let lines = student['Academic background with institute name'].split(/\n|\r|\r\n/).filter(l => l.trim());
+                lines.forEach(l => html += `<li>${l.trim()}</li>`);
+                html += `</ul></div>`;
+            }
+            if (student['work experience if any']) {
+                html += `<div class='profile-section'><h3>Work Experience:</h3><span>${student['work experience if any']}</span></div>`;
+            }
+            if (student['papers published']) {
+                html += `<div class='profile-section'><h3>Papers Published:</h3><ul>`;
+                let papers = student['papers published'].split(/\n|\r|\r\n/).filter(l => l.trim());
+                papers.forEach(p => html += `<li>${p.trim()}</li>`);
+                html += `</ul></div>`;
+            }
+            html += `</div>`; // profile-info
+            html += `<div class='profile-photo'>${photoHtml}</div>`;
+            html += `</div>`; // profile-flex
+            profileDiv.innerHTML = html;
+        } catch (error) {
+            document.getElementById('loading').style.display = 'none';
+            profileDiv.innerHTML = `<h2>Error loading student data</h2><p>${error.message}</p>`;
+        }
+    }
+    window.onload = loadStudent;
+    </script>
+</body>
+</html>

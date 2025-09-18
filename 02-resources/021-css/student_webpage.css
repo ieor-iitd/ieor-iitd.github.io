@@ -3,6 +3,7 @@
   font-family: inherit;
   
   margin: 30px 0 0 200px; /* Top, Right, Bottom, Left */
+  padding-right: 200px; /* or any value you prefer */
   }
   
   /* this margin top is for keeping proper separation bet */

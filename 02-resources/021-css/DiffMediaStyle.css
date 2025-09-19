@@ -29,27 +29,60 @@
         padding: 5px;
     }
 
-    /* Hamburger toggle button */
+    /* Enhanced Hamburger toggle button */
     .menu-toggle {
         display: block;
-        background: none;
-        border: none;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
         color: var(--white);
         font-size: 24px;
-        padding: 15px;
+        padding: 12px;
         cursor: pointer;
         z-index: 110;
-        transition: transform 0.3s ease-in-out;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
     }
 
-    /* Hamburger icon styling */
+    /* Trendy hover effect for menu toggle */
+    .menu-toggle::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.6s ease;
+    }
+
+    .menu-toggle:hover {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.4);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu-toggle:hover::before {
+        left: 100%;
+    }
+
+    .menu-toggle:active {
+        transform: translateY(0);
+        transition: transform 0.1s ease;
+    }
+
+    /* Enhanced hamburger icon styling with smooth morphing */
     .hamburger {
         display: block;
         width: 24px;
-        height: 2px;
+        height: 3px;
         background-color: var(--white);
         position: relative;
-        transition: all 0.4s ease;
+        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        border-radius: 2px;
     }
 
     .hamburger::before,
@@ -59,32 +92,34 @@
         width: 100%;
         height: 100%;
         background-color: var(--white);
-        transition: all 0.4s ease;
+        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         left: 0;
+        border-radius: 2px;
     }
 
     .hamburger::before {
-        transform: translateY(-7px);
+        transform: translateY(-8px);
     }
 
     .hamburger::after {
-        transform: translateY(7px);
+        transform: translateY(8px);
     }
 
-    /* Active hamburger animation */
+    /* Smooth X animation for active state */
     .menu-toggle.active .hamburger {
         background-color: transparent;
+        transform: rotate(180deg);
     }
 
     .menu-toggle.active .hamburger::before {
-        transform: rotate(45deg);
+        transform: rotate(45deg) translateY(0);
     }
 
     .menu-toggle.active .hamburger::after {
-        transform: rotate(-45deg);
+        transform: rotate(-45deg) translateY(0);
     }
 
-    /* Main nav list */
+    /* Enhanced main nav list with smooth slide animation */
     .navlist {
         display: flex;
         flex-direction: column;
@@ -92,157 +127,301 @@
         position: absolute;
         top: 100%;
         left: 0;
-        background-color: rgb(220, 238, 240);
+        background: linear-gradient(135deg, rgba(220, 238, 240, 0.95), rgba(200, 220, 235, 0.95));
+        backdrop-filter: blur(10px);
         z-index: 100;
         overflow: hidden;
         max-height: 0;
-        transform: translateY(-10px);
+        opacity: 0;
+        transform: translateY(-20px);
         transition: 
-        max-height 0.4s ease-in-out,
-        opacity 0.4s ease-in-out,
-        transform 0.4s ease-in-out;
-        border-radius: 0 0 12px 12px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.4s ease-in-out,
+            transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-top: none;
     }
 
     .navlist.active {
-        max-height: 800px; /* Smooth slide down */
-    }
-
-    /* Nav item styling */
-    .navitem {
-        width: 100%;
-        animation: fadeIn 0.4s ease forwards;
-    }
-
-    @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-5px);
-    }
-    to {
+        max-height: 800px;
         opacity: 1;
         transform: translateY(0);
     }
+
+    /* Enhanced nav item styling with staggered animation */
+    .navitem {
+        width: 100%;
+        opacity: 0;
+        transform: translateX(-30px);
+        animation: none;
     }
 
-    /* Dropdown button */
+    .navlist.active .navitem {
+        animation: slideInStagger 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .navlist.active .navitem:nth-child(1) { animation-delay: 0.1s; }
+    .navlist.active .navitem:nth-child(2) { animation-delay: 0.2s; }
+    .navlist.active .navitem:nth-child(3) { animation-delay: 0.3s; }
+    .navlist.active .navitem:nth-child(4) { animation-delay: 0.4s; }
+    .navlist.active .navitem:nth-child(5) { animation-delay: 0.5s; }
+    .navlist.active .navitem:nth-child(6) { animation-delay: 0.6s; }
+    .navlist.active .navitem:nth-child(7) { animation-delay: 0.7s; }
+
+    @keyframes slideInStagger {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Enhanced dropdown button with modern hover effects */
     .dropdown-button {
         width: 100%;
         text-align: left;
-        padding: 15px;
-        color: black;
-        font-weight: bolder;
-        background: rgb(220, 238, 240);
+        padding: 18px 20px;
+        color: #2c3e50;
+        font-weight: 600;
+        background: transparent;
         border: none;
         cursor: pointer;
-        transition: background-color 0.3s ease, padding-left 0.3s ease;
+        position: relative;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 8px;
+        margin: 2px 8px;
+        overflow: hidden;
     }
 
-    /* Main dropdown content */
+    /* Trendy hover gradient effect */
+    .dropdown-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.6s ease;
+        z-index: -1;
+    }
+
+    .dropdown-button:hover {
+        background: linear-gradient(45deg, rgba(74, 144, 226, 0.1), rgba(80, 200, 120, 0.1));
+        color: #1a252f;
+        transform: translateX(8px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown-button:hover::before {
+        left: 100%;
+    }
+
+    .dropdown-button:active {
+        transform: translateX(4px) scale(0.98);
+        transition: transform 0.1s ease;
+    }
+
+    /* Enhanced main dropdown content */
     .dropdown-content {
         display: block;
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.15);
+        background: linear-gradient(135deg, rgba(240, 248, 255, 0.9), rgba(230, 240, 250, 0.9));
         overflow: hidden;
         max-height: 0;
-        transition: max-height 0.4s ease, opacity 0.4s ease;
+        opacity: 0;
+        transition: 
+            max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.4s ease,
+            transform 0.4s ease;
         position: relative;
         z-index: 99;
+        transform: translateY(-10px);
+        border-radius: 12px;
+        margin: 0 8px 8px 8px;
+        backdrop-filter: blur(5px);
     }
 
-    /* Show dropdown when active */
+    /* Show dropdown when active with smooth animation */
     .dropdown-container.active .dropdown-content {
         max-height: 600px;
         opacity: 1;
-        background: rgb(220, 238, 240);
+        transform: translateY(0);
     }
 
-    /* Dropdown links */
+    /* Enhanced dropdown links with modern hover */
     .dropdown-content a {
-        padding: 12px 30px;
-        color: black;
+        padding: 15px 25px;
+        color: #34495e;
         font-weight: bolder;
         text-decoration: none;
         display: block;
+        position: relative;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 8px;
+        margin: 2px 8px;
+        overflow: hidden;
     }
 
-    /* Sub-dropdown container */
-    .dropdown-subcontainer {
+    .dropdown-content a::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(52, 152, 219, 0.2), rgba(46, 204, 113, 0.2));
+        transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: -1;
+    }
+
+    .dropdown-content a:hover {
+        color: #2c3e50;
+        transform: translateX(10px);
+        font-weight: 600;
+    }
+
+    .dropdown-content a:hover::before {
         width: 100%;
     }
 
-    /* Sub-dropdown button */
+    /* Enhanced sub-dropdown container */
+    .dropdown-subcontainer {
+        width: 100%;
+        border-radius: 8px;
+        margin: 2px 0;
+        overflow: hidden;
+    }
+
+    /* Enhanced sub-dropdown button */
     .dropdown-subbutton {
         display: block;
         width: 100%;
-        padding: 12px 30px;
-        color: black;
+        padding: 15px 25px;
+        color: #34495e;
         background: none;
         border: none;
         text-align: left;
         cursor: pointer;
         position: relative;
-        transition: background-color 0.3s ease;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        font-weight: 500;
+        border-radius: 8px;
+        margin: 2px 8px;
+        overflow: hidden;
+    }
+
+    .dropdown-subbutton::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(155, 89, 182, 0.2), rgba(231, 76, 60, 0.2));
+        transition: width 0.4s ease;
+        z-index: -1;
     }
 
     .dropdown-subbutton:hover {
-        background-color: rgba(255, 255, 255, 0.1);
+        color: #2c3e50;
+        transform: translateX(8px);
+        font-weight: 600;
     }
 
-    /* Arrow indicator for sub-dropdowns */
+    .dropdown-subbutton:hover::before {
+        width: 100%;
+    }
+
+    /* Enhanced arrow indicator with smooth rotation */
     .dropdown-subbutton::after {
         content: '▶';
         position: absolute;
-        right: 15px;
+        right: 30px;
         top: 50%;
         transform: translateY(-50%);
-        transition: transform 0.3s ease;
-        font-size: 10px;
+        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        font-size: 12px;
+        color: #7f8c8d;
     }
 
-    /* Rotate arrow when active */
     .dropdown-subcontainer.active .dropdown-subbutton::after {
         transform: translateY(-50%) rotate(90deg);
+        color: #3498db;
     }
 
+    /* Enhanced sub-dropdown content */
     .dropdown-subcontent {
-      display: block !important;      /* override desktop display:none */
-      position: relative !important;  /* not absolute on mobile */
-      left: 0 !important;
-      top: auto !important;
-      max-height: 0;                  /* collapsed by default */
-      opacity: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease, opacity 0.35s ease;
-      z-index: 999;                   /* make sure it sits above sibling content */
+        display: block !important;
+        position: relative !important;
+        left: 0 !important;
+        top: auto !important;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: 
+            max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.4s ease,
+            transform 0.3s ease;
+        z-index: 999;
+        transform: translateX(-15px);
+        background: linear-gradient(135deg, rgba(236, 240, 241, 0.9), rgba(250, 250, 250, 0.9));
+        border-radius: 8px;
+        margin: 5px 15px;
+        backdrop-filter: blur(3px);
     }
 
     /* Show sub-dropdown when active */
     .dropdown-subcontainer.active .dropdown-subcontent {
         max-height: 300px;
         opacity: 1;
+        transform: translateX(0);
     }
 
-    /* Sub-dropdown links */
+    /* Enhanced sub-dropdown links */
     .dropdown-subcontent a {
         display: block;
-        padding: 10px 50px;
-        color: black;
-        font-weight: bolder;
-        background: rgb(220, 238, 240);
+        padding: 12px 30px;
+        color: #2c3e50;
+        font-weight: 500;
+        background: transparent;
         text-decoration: none;
-        border-left: 2px solid transparent;
-        transition: background-color 0.3s ease, padding-left 0.3s ease;
+        border-left: 3px solid transparent;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        border-radius: 6px;
+        margin: 2px 5px;
+    }
+
+    .dropdown-subcontent a::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(52, 152, 219, 0.15), rgba(46, 204, 113, 0.15));
+        transition: width 0.3s ease;
+        z-index: -1;
     }
 
     .dropdown-subcontent a:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-        border-left-color: var(--white);
-        padding-left: 55px;
+        border-left-color: #3498db;
+        color: #2c3e50;
+        transform: translateX(8px);
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
     }
 
-
+    .dropdown-subcontent a:hover::before {
+        width: 100%;
+    }
 
     /* Welcome section adjustments */
     .welcome-section {
@@ -364,4 +543,22 @@
         font-size: 1.5rem;
       }
 
+
+    /* Accessibility improvements */
+    @media (prefers-reduced-motion: reduce) {
+        .menu-toggle,
+        .hamburger,
+        .hamburger::before,
+        .hamburger::after,
+        .navlist,
+        .dropdown-button,
+        .dropdown-content,
+        .dropdown-subcontent {
+            transition: none;
+        }
+        
+        .navitem {
+            animation: none;
+        }
+    }
 }

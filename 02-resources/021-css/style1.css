@@ -237,128 +237,6 @@
     font-weight: 1000;
 }
 
-/* ----------------------------News Section--------------------------- */
-.news-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
-
-.news-topic {
-    display: flex; /* Use flexbox for horizontal layout */
-    flex-direction: column; /* Stack items vertically within each member */
-    align-items: center;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.news-image {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    /* width: 100%;
-    height: auto; */
-    /* border-radius: 50%; */
-}
-
-.news-info {
-    margin-top: 15px;
-    text-align: center;
-}
-
-.news-info p {
-    margin: 10px 0 5px;
-}
-
-.news-info a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.news-info a:hover {
-    text-decoration: underline;
-}
-
-/*------------------------- Faculty Section------------------------- */
-.faculty-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
-
-.faculty-member {
-    display: flex; /* Use flexbox for horizontal layout */
-    flex-direction: column; /* Stack items vertically within each member */
-    align-items: center;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.faculty-image {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    /* width: 100%;
-    height: auto; */
-    /* border-radius: 50%; */
-}
-
-.faculty-info {
-    margin-top: 15px;
-    text-align: center;
-}
-
-.faculty-info h3 {
-    margin: 10px 0 5px;
-}
-
-.faculty-info p {
-    margin: 5px 0;
-    /* word-wrap: break-word; */
-    /* word-break: break-all; */ 
-    /* text-align: justify; */
-    text-align:center;
-    font-size: 10px;
-}
-
-.faculty-info a {
-    color: #3b91ec;
-    text-decoration: underline;
-    white-space:nowrap;
-    display: inline-block;
-}
-
-.faculty-info a:hover {
-    text-decoration: underline;
-    text-align: center;
-}
-.faculty-list-inline {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3px 20px; /* less vertical and horizontal gap */
-  list-style: none;
-  padding: 0;
-  margin: 0 0 16px 0;
-}
-.faculty-list-inline li {
-  flex: 1 1 30%;
-  min-width: 220px;
-  max-width: 33%;
-  margin-bottom: 0; /* remove extra bottom margin */
-  line-height: 1.2; /* tighter lines */
-}
 
 /*---------------------- courses table Section ----------------------*/
 
@@ -441,99 +319,9 @@
 }
 
 
-/*..........................................CODE FOR FACULTY SECTION..........................................*/
-body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: white;
-  margin: 0;
-}
 
-h2 {
-  font-size: 1.6em;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  text-decoration: underline;
-  text-align: left;
-}
 
-h2 u {
-  text-decoration: none;
-  display: inline-block;
-  padding-bottom: 5px;
-  border-bottom: 3px solid #000000; /* Bold white underline */
-}
-
-.faculty-info p, strong {
-  margin-top: 10px;
-  margin-bottom: 5px;
-  margin-left: auto;
-  margin-right: auto;
-  font-weight: 550;
-  font-size: 14px;
-  max-width: 80%;         /* Controls total text width */
-  word-wrap: break-word;
-  word-break: break-word;
-  overflow-wrap: break-word;
-  text-align: center;
-  hyphens: auto;
-  /* text-align: center; */
-}
-.faculty-info p {
-    text-align: center;
-    text-justify: inter-word;
-}
-
-.faculty-info a {
-  color: blue;
-  text-decoration: none;
-}
-
-.faculty-info a:hover {
-  text-decoration: underline;
-}
-
-.faculty-info table {
-  width: 80%;
-  margin-left: auto; /* Center table horizontally */
-  margin-right: auto; /* Center table horizontally */
-  border-collapse: collapse;
-  margin-top: 20px;
-  color: #000000; /* Keeps text black */
-}
-
-.faculty-info table th,
-.faculty-info table td {
-  border: 1px solid #000000;
-  padding: 12px;
-  /* text-align: center; */
-}
-
-.faculty-info table thead th {
-  background-color: #2584e2; /* Blue */
-}
-
-.faculty-info table tbody tr {
-  background-color: #ffffff; /* White */
-}
-
-.footer {
-  background-color: #c8dbea;
-  color: #000000;
-  text-align: center;
-  padding: 10px 0;
-}
-
-.container {
-  max-width: 800px;
-  margin-left: auto; /* Center container horizontally */
-  margin-right: auto; /* Center container horizontally */
-}
-
-p[style="font-weight: bolder"] {
-  font-size: 1.2em;
-}
-
-/*.........................................CODE FOR PHD SECTION.........................................*/
+/*.........................................CODE FOR PHD SECTION(of academics page).........................................*/
 body {
   font-family: 'Montserrat', sans-serif;
   background-color:white;
@@ -633,7 +421,7 @@ body {
 }
 
 
-/*.............................CODE FOR M.Tech/MSR SECTION...............................*/
+/*.............................CODE FOR M.Tech/MSR SECTION (of join us page)...............................*/
 body {
   font-family: 'Montserrat', sans-serif;
   background-color:white;
@@ -732,7 +520,7 @@ a[target="_blank"] {
 } 
 
 
-/*....................................CODE FOR POST-DOCS SECTION....................................*/
+/*....................................CODE FOR POST-DOCS SECTION(of join us page)....................................*/
 body {
   font-family: 'Montserrat', sans-serif;
   background-color:white;
@@ -779,7 +567,7 @@ h2 u {
 }
 
 
-/*..........................CODE FOR Academic & Non - Academic Staffs SECTION..........................*/
+/*..........................CODE FOR Academic & Non - Academic Staffs SECTION (join us page)..........................*/
 body {
   font-family: 'Montserrat', sans-serif;
   background-color:white;

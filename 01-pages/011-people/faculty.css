@@ -1,17 +1,247 @@
-.section-divider {
-    text-align: center;
-    margin: 40px 0 20px;
-    border-top: 1px solid #ccc;
-    line-height: 0.1em;
+/*..........................................CODE FOR FACULTY SECTION..........................................*/
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+  margin: 0;
+}
 
+.faculty-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+.faculty-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.faculty-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.faculty-info {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.faculty-info h3 {
+  margin: 10px 0 5px;
+}
+
+.faculty-info p {
+  margin: 5px 0;
+  text-align: center;
+  font-size: 10px;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.faculty-info a {
+  color: #3b91ec;
+  text-decoration: underline;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.faculty-info a:hover {
+  text-decoration: underline;
+}
+
+.faculty-list-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+.faculty-list-inline li {
+  flex: 1 1 30%;
+  min-width: 220px;
+  max-width: 33%;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.6em;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+  text-align: left;
+}
+
+h2 u {
+  text-decoration: none;
+  display: inline-block;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #000000;
+}
+
+.faculty-info p,
+strong {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 550;
+  font-size: 14px;
+  max-width: 80%;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  hyphens: auto;
+}
+
+.faculty-info table {
+  width: 80%;
+  margin: 20px auto 0 auto;
+  border-collapse: collapse;
+  color: #000000;
+}
+
+.faculty-info table th,
+.faculty-info table td {
+  border: 1px solid #000000;
+  padding: 12px;
+}
+
+.faculty-info table thead th {
+  background-color: #2584e2;
+  color: #fff;
+}
+
+.faculty-info table tbody tr {
+  background-color: #ffffff;
+}
+
+.footer {
+  background-color: #c8dbea;
+  color: #000000;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+p[style="font-weight: bolder"] {
+  font-size: 1.2em;
+}
+
+.section-divider {
+  text-align: center;
+  margin: 40px 0 20px;
+  border-top: 1px solid #ccc;
+  line-height: 0.1em;
+}
+
+.section-divider span {
+  background: #fff;
+  padding: 0 20px;
+  font-size: 35px;
+  font-weight: bold;
+  color: #ff0000;
+}
+
+/* ---------------- MOBILE RESPONSIVENESS ---------------- */
+
+/* Tablet View */
+@media screen and (max-width: 768px) {
+  .faculty-container {
+    gap: 20px;
+    padding: 0 15px;
   }
-  
+
+  .faculty-member {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px;
+  }
+
+  .faculty-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .faculty-info p,
+  .faculty-info strong {
+    font-size: 12px;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 1.4em;
+  }
+
+  .faculty-info table {
+    width: 100%;
+    font-size: 12px;
+  }
+}
+
+/* Mobile View */
+@media screen and (max-width: 480px) {
+  .faculty-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .faculty-member {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .faculty-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .faculty-info p,
+  .faculty-info strong {
+    font-size: 11px;
+    max-width: 95%;
+  }
+
+  /* Make table scrollable */
+  .faculty-info table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  .faculty-info table th,
+  .faculty-info table td {
+    padding: 8px;
+    font-size: 11px;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
   .section-divider span {
-    background: #fff;
-    padding: 0 20px;
-    font-size: 35px;
-    font-weight: bold;
-    color:#ff0000;
-    
+    font-size: 24px;
   }
-  
+}

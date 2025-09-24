@@ -4,8 +4,13 @@
         font-size: 14px;
         box-sizing: border-box;
     }
-
+/*---------------- Header & Logo Area --------------------*/
     /* Logo & Text */
+
+    .topmost {
+        padding-left: 10px;
+}
+
     .IITD_LOGO {
         width: 80px;
         margin-bottom: 10px;
@@ -423,6 +428,8 @@
         width: 100%;
     }
 
+/*-------------------------------------------- home page ----------------------------------------------*/
+
     /* Welcome section adjustments */
     .welcome-section {
       flex-direction: column;
@@ -482,6 +489,7 @@
     .news-grid {
       grid-template-columns: 1fr;
       gap: 10px;
+      margin: 5px;
     }
 
     .news-section {
@@ -500,6 +508,7 @@
     .academics-grid {
       grid-template-columns: 1fr;
       gap: 10px;
+      margin: 5px;
     }
     
     .academics-section {
@@ -530,20 +539,65 @@
       font-size: 1em;  
     }
 
-/*---------------------contact us section----------------------- */ 
+/* -----------------------------------------------footer---------------------------------------------- */
+
+    footer {
+    padding: 10px 0 0;
+    margin-top: 20px;
+    }
+
+    .footer-container {
+        gap: 15px;
+    }
+
+    .social-icons {
+        margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+    margin-top: 10px;
+}
+/*-----------------------------------------------contact us section---------------------------------------------- */ 
+
+    .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    }
+
+    .contact-main {
+    margin-bottom: 30px;
+        }
+
+    .contact-main h2 {
+    text-align: left;
+    padding-left: 10px;
+    }
+
+    .map-section {
+    margin-top: 20px;
+    }
+
+    .map-section h2 {
+    text-align: left;
+    padding-left: 10px;
+}
+
     .contact-grid {
         grid-template-columns: 1fr;
+        gap: 10px;
       }
       
       .section-title {
         font-size: 1.5rem;
+        margin-bottom: 15px;
       }
       
       .contact-header h2 {
         font-size: 1.5rem;
       }
 
-
+/* ----------------------------------------------- Accessibility Improvements ---------------------------------------------- */
     /* Accessibility improvements */
     @media (prefers-reduced-motion: reduce) {
         .menu-toggle,

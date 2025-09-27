@@ -329,7 +329,7 @@ body {
 }
 /* --- Updated .phd-info table CSS for perfect column alignment --- */
 .phd-info {
-    width: 100%;
+    max-width: 1100px;
     margin: 0 auto 40px auto;
     padding-left: 50px;
 }

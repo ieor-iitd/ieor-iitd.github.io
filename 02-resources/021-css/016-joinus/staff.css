@@ -1,0 +1,45 @@
+/*..........................CODE FOR Academic & Non - Academic Staffs SECTION (join us page)..........................*/
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color:white;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.6em;
+  margin-left: 10%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+h2 u {
+  text-decoration: none;
+  display: inline-block;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #000000; /* Bold white underline */
+}
+
+.Staff-info p, strong {
+  margin-top: 10px;
+  margin-left: 10%;
+  margin-bottom: 5px;
+  margin-right: 12%;
+  font-weight: 550;
+  font-size: 1.1em;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.Staff-info a {
+  color: blue;
+  text-decoration: none;
+}
+
+.Staff-info a:hover {
+  text-decoration: underline;
+}

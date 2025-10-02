@@ -23,10 +23,10 @@
 <div id="header"></div>
 
 <!-- Filter Section -->
-<div style="max-width: 1000px; margin: 0 auto; padding: 20px; background: #f9f9f9; border-radius: 8px; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; font-size: 18px;">
+<div class="batch-filter-container">
   <div>
-    <label style="font-weight: bold; margin-right: 8px;">Batch</label>
-    <select id="batchSelect" onchange="filterStudents()" style="padding: 10px 14px; font-size: 16px; border-radius: 6px; border: 1px solid #ccc;">
+    <label class="batch-label">Batch</label>
+    <select id="batchSelect" class="batch-select" onchange="filterStudents()">
      <option value="2024-2026" selected>2024–2026</option>
      <option value="2025-2027">2025–2027</option>
     </select>

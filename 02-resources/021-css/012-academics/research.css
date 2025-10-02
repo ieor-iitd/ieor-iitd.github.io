@@ -1,0 +1,82 @@
+/* ------------------Research Section ----------------*/
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+}
+
+.main-content {
+    width: 70%;
+}
+
+.sidebar {
+    width: 28%;
+}
+
+.topic_head h1 {
+    font-size: 2em;
+    color: #C40C0C;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.para {
+    margin: 10px 10px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+}
+
+.research_topic_list {
+    margin: 20px 0;
+}
+
+.research_topic_list ul {
+    list-style-type: disc; 
+    margin-left: 20px;
+    padding-left: 20px; 
+}
+
+.research_topic_list li {
+    margin: 10px 0; 
+}
+
+.research_topic_list a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.research_topic_list a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.box1 {
+    border: 2px;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    min-height: 200px;
+    margin-top: 30px; 
+}
+
+.box2 {
+    border: 2px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.box2 ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.box2 li {
+    margin: 10px 0;
+}

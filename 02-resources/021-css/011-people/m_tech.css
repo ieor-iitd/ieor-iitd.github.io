@@ -1,74 +1,126 @@
-        .mtech_container {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
+.mtech_container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
 
-        .mtech_student {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #ccc;
-        }
+.mtech_student {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
 
-        .mtech_student:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
+.mtech_student:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
 
-        .student_content {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
+.student_content {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
 
-        .student_photo {
-            width: 105px;        /* Increased width for rectangular shape */
-            height: 125px;        /* Slightly less height than width */
-            border-radius: 8px;  /* Slight rounding instead of 50% */
-            object-fit: cover;
-            border: 2px solid #ddd;
-            flex-shrink: 0;
-            align-self: center;
-        }
+.student_photo {
+    width: 105px;        /* Increased width for rectangular shape */
+    height: 125px;        /* Slightly less height than width */
+    border-radius: 8px;  /* Slight rounding instead of 50% */
+    object-fit: cover;
+    border: 2px solid #ddd;
+    flex-shrink: 0;
+    align-self: center;
+}
 
-        .student_info {
-            flex: 1;
-        }
+.student_info {
+    flex: 1;
+}
 
-        /* Use mtech_name instead of student_name */
-        .mtech_name {
-            font-weight: bold;
-            font-size: 22px;   /* Bigger font */
-            margin: 0 0 8px 0;
-        }
+/* Use mtech_name instead of student_name */
+.mtech_name {
+    font-weight: bold;
+    font-size: 22px;   /* Bigger font */
+    margin: 0 0 8px 0;
+}
 
-        /* LinkedIn icon link style */
-        .mtech_name a {
-            text-decoration: none;
-        }
+/* LinkedIn icon link style */
+.mtech_name a {
+    text-decoration: none;
+}
 
-        .mtech_name a:hover {
-            text-decoration: underline;
-        }
+.mtech_name a:hover {
+    text-decoration: underline;
+}
 
-        .guide, .project {
-            margin: 5px 0;
-            font-size: 16px;
-            line-height: 1.4;
-            font-weight: bolder;
-        }
+.guide, .project {
+    margin: 5px 0;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: bolder;
+}
 
-        .linkedin-icon {
-            width: 25px;
-            height: 25px;
-            vertical-align: middle;
-            margin-left: 6px;
-        }
+.linkedin-icon {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    margin-left: 6px;
+}
 
-        .batch {
-            display: none;
-        }
+.batch {
+    display: none;
+}
+
+.batch-filter-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  font-size: 18px;
+}
+
+.batch-label {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.batch-select {
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .batch-filter-container {
+    padding: 15px;
+    gap: 20px;
+    font-size: 16px;
+  }
+  
+  .batch-select {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .batch-filter-container {
+    padding: 12px;
+    gap: 15px;
+    font-size: 14px;
+  }
+  
+  .batch-select {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}

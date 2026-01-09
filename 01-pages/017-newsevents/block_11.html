@@ -34,24 +34,21 @@
 
             <div class="article-content">
                 <section class="slider-section">
-                    <div class="slider-container">
+                    <div class="image-slider">
                         <div class="slider">
-                            <img src="../../02-resources/023-images/news/IMG_1798.jpeg" 
+                            <img id="img-1" src="../../02-resources/023-images/news/IMG_1798.jpeg"
                                 alt="Dr. Boli Chen presenting" loading="eager">
-                            <img src="../../02-resources/023-images/news/IMG_1797.jpeg" 
+                            <img id="img-2" src="../../02-resources/023-images/news/IMG_1797.jpeg"
                                 alt="Dr. Boli Chen discussing" loading="eager">
+                        </div>
 
+                        <div class="navigation-button">
+                            <span class="dot active" onclick="changeSlide(0)"></span>
+                            <span class="dot" onclick="changeSlide(1)"></span>
                         </div>
-                        <button class="slider-btn prev" aria-label="Previous image">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button class="slider-btn next" aria-label="Next image">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                        <div class="slider-nav">
-                            <div class="slider-dot active" data-index="0"></div>
-                            <div class="slider-dot" data-index="1"></div>
-                        </div>
+
+                        <button class="prev" onclick="prevSlide()">❮</button>
+                        <button class="next" onclick="nextSlide()">❯</button>
                     </div>
                 </section>
 
@@ -74,94 +71,172 @@
     <div id="footer"></div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const slider = document.querySelector('.slider');
-            const slides = document.querySelectorAll('.slider img');
-            const dots = document.querySelectorAll('.slider-dot');
-            const prevBtn = document.querySelector('.prev');
-            const nextBtn = document.querySelector('.next');
-            let currentIndex = 0;
-            const slideCount = slides.length;
+        // Image Slider Module
+        (function() {
+            'use strict';
 
-            // Initialize slider
-            function updateSlider() {
-                const containerWidth = slider.parentElement.offsetWidth;
-                slider.style.transform = `translateX(-${currentIndex * containerWidth}px)`;
+            // Configuration
+            const CONFIG = {
+                slideInterval: 5000, // 5 seconds
+                transitionDuration: 800 // Should match CSS transition
+            };
+
+            // State
+            let state = {
+                currentSlide: 0,
+                slides: [],
+                dots: [],
+                totalSlides: 0,
+                intervalId: null,
+                isTransitioning: false
+            };
+
+            // Initialize slider when DOM is ready
+            function init() {
+                // Get all slider elements
+                state.slides = document.querySelectorAll('.slider img');
+                state.dots = document.querySelectorAll('.dot');
+                state.totalSlides = state.slides.length;
+
+                // Exit if no slides found
+                if (state.totalSlides === 0) {
+                    console.warn('No slides found for slider');
+                    return;
+                }
+
+                // Set up initial state
+                setupInitialSlide();
+                
+                // Start automatic slideshow
+                startAutoSlide();
+
+                // Pause slideshow on hover
+                const slider = document.querySelector('.image-slider');
+                if (slider) {
+                    slider.addEventListener('mouseenter', stopAutoSlide);
+                    slider.addEventListener('mouseleave', startAutoSlide);
+                }
+            }
+
+            // Setup initial slide
+            function setupInitialSlide() {
+                // Hide all slides
+                state.slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+
+                // Show first slide
+                state.currentSlide = 0;
+                state.slides[0].classList.add('active');
                 
                 // Update dots
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentIndex);
+                updateDots();
+            }
+
+            // Start automatic slideshow
+            function startAutoSlide() {
+                // Clear any existing interval
+                if (state.intervalId) {
+                    clearInterval(state.intervalId);
+                }
+
+                // Set new interval
+                state.intervalId = setInterval(() => {
+                    nextSlide();
+                }, CONFIG.slideInterval);
+            }
+
+            // Stop automatic slideshow
+            function stopAutoSlide() {
+                if (state.intervalId) {
+                    clearInterval(state.intervalId);
+                    state.intervalId = null;
+                }
+            }
+
+            // Show specific slide
+            function showSlide(index) {
+                // Prevent rapid clicking
+                if (state.isTransitioning) return;
+                
+                state.isTransitioning = true;
+
+                // Normalize index
+                if (index >= state.totalSlides) {
+                    index = 0;
+                } else if (index < 0) {
+                    index = state.totalSlides - 1;
+                }
+
+                // Update current slide
+                state.currentSlide = index;
+
+                // Update slides
+                state.slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+
+                // Update dots
+                updateDots();
+
+                // Reset transition lock
+                setTimeout(() => {
+                    state.isTransitioning = false;
+                }, CONFIG.transitionDuration);
+
+                // Restart auto-slide timer
+                startAutoSlide();
+            }
+
+            // Update dot indicators
+            function updateDots() {
+                state.dots.forEach((dot, index) => {
+                    if (index === state.currentSlide) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
                 });
             }
 
-            // Next slide
+            // Navigate to next slide
             function nextSlide() {
-                currentIndex = (currentIndex + 1) % slideCount;
-                updateSlider();
+                showSlide(state.currentSlide + 1);
             }
 
-            // Previous slide
+            // Navigate to previous slide
             function prevSlide() {
-                currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-                updateSlider();
+                showSlide(state.currentSlide - 1);
             }
 
-            // Dot navigation
-            dots.forEach(dot => {
-                dot.addEventListener('click', function() {
-                    currentIndex = parseInt(this.getAttribute('data-index'));
-                    updateSlider();
-                });
-            });
-
-            // Button events
-            nextBtn.addEventListener('click', nextSlide);
-            prevBtn.addEventListener('click', prevSlide);
-
-            // Keyboard navigation
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'ArrowRight') {
-                    nextSlide();
-                } else if (e.key === 'ArrowLeft') {
-                    prevSlide();
-                }
-            });
-
-            // Auto-advance (optional)
-            let slideInterval = setInterval(nextSlide, 5000);
-
-            // Pause on hover
-            const sliderContainer = document.querySelector('.slider-container');
-            sliderContainer.addEventListener('mouseenter', () => {
-                clearInterval(slideInterval);
-            });
-
-            sliderContainer.addEventListener('mouseleave', () => {
-                slideInterval = setInterval(nextSlide, 5000);
-            });
-
-            // Touch support for mobile devices
-            let touchStartX = 0;
-            let touchEndX = 0;
-
-            sliderContainer.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-            }, {passive: true});
-
-            sliderContainer.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            }, {passive: true});
-
-            function handleSwipe() {
-                if (touchEndX < touchStartX - 50) {
-                    nextSlide();
-                }
-                if (touchEndX > touchStartX + 50) {
-                    prevSlide();
-                }
+            // Navigate to specific slide (for dot navigation)
+            function changeSlide(index) {
+                showSlide(index);
             }
-        });
+
+            // Expose functions globally for inline onclick handlers
+            window.nextSlide = nextSlide;
+            window.prevSlide = prevSlide;
+            window.changeSlide = changeSlide;
+
+            // Initialize on DOM ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                // DOM already loaded
+                init();
+            }
+
+            // Cleanup on page unload
+            window.addEventListener('beforeunload', () => {
+                stopAutoSlide();
+            });
+
+        })();
     </script>
 </body>
 </html>

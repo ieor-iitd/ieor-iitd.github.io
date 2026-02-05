@@ -6,47 +6,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Courses in IEOR</title>
+
     <link href="../../02-resources/021-css/012-academics/mtech.css" rel="stylesheet">
     <link href="../../02-resources/021-css/header_footer.css" rel="stylesheet">
     <link href="../../02-resources/021-css/DiffMediaStyle.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="stylespages.css"> -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/svg+xml" href="images/icons/IITD_LOGO.svg" />
     <base href="/">
     <script src="../../02-resources/022-scripts/loadheaderfooter.js" defer></script>
-    <script src="./02-resources/022-scripts/herochange.js" ></script>
-
+    <script src="./02-resources/022-scripts/herochange.js"></script> 
 </head>
 
 <body>
-    <div id="header"></div> <!-- Header will be loaded dynamically all the header code is inside of components_hed_fot, header.html-->
+
+<div id="header"></div>
 
 <div class="phd-info">
-    <h2>
-        <u>Courses in IEOR</u>
-    </h2>
+
+    <h2><u>Courses in IEOR</u></h2>
+
     <p>
-        The Industrial Engineering & Operations Research group offers a diverse range of courses spanning foundational theory, computational methods, and practical applications. This comprehensive course catalog includes undergraduate and graduate offerings in areas such as optimization, statistics, manufacturing systems, operations management, and analytics. Students can explore these courses as part of degree programs or as electives to develop expertise in specialized IEOR domains. 
+        The Industrial Engineering & Operations Research group offers a diverse range of courses spanning foundational theory, computational methods, and practical applications.
     </p>
-    <h3>
-        <u>List of all IEOR Courses</u>
-    </h3>
+
+    <h3><u>List of all IEOR Courses</u></h3>
     <br>
 
-    
+    <!-- <div class="courses-table-flex" style="width:100%; display:flex; gap:30px; justify-content:center;"> -->
+    <div class="courses-table-flex" 
+     style="width:100%; display:flex; gap:50px; justify-content:center; align-items:flex-start;">
 
-    <div class="courses-table-flex">
-        <table>
+
+
+        <!-- PG TABLE -->
+        <table style="width:45%; border-collapse:collapse;">
+
+            <colgroup>
+                <col style="width:25%;">
+                <col style="width:75%;">
+            </colgroup>
+
             <tr>
                 <th colspan="2" style="text-align:center;">PG level courses</th>
-               
-            <tr>
+            </tr>
             <tr>
                 <th>Course Code</th>
                 <th>Course Name</th>
             </tr>
+
             <tr><td>MEL7101</td><td>Mathematical Programming</td></tr>
             <tr><td>MEL7102</td><td>Probability and Statistics</td></tr>
             <tr><td>MEL7103</td><td>Operations Planning and Control</td></tr>
@@ -58,45 +69,45 @@
             <tr><td>MEL7117</td><td>Quality Systems</td></tr>
             <tr><td>MEL7118</td><td>Reinforcement Learning</td></tr>
             <tr><td>MEL7119</td><td>Reliability Engineering</td></tr>
-            <tr><td>MEL7120</td><td> Introduction to Stochastic Modeling</td></tr>
-            <tr><td>MEL7121</td><td> Pricing and Revenue Management</td></tr>
+            <tr><td>MEL7120</td><td>Introduction to Stochastic Modeling</td></tr>
+            <tr><td>MEL7121</td><td>Pricing and Revenue Management</td></tr>
             <tr><td>MEL7122</td><td>Supply Chain Management</td></tr>
             <tr><td>MEL7124</td><td>Industrial Asset Management</td></tr>
             <tr><td>MEL7125</td><td>Stochastic Simulation Development and Analysis</td></tr>
             <tr><td>MEL7126</td><td>Special Topics in IEOR</td></tr>
             <tr><td>MEL8111</td><td>Advanced Topics in IEOR</td></tr>
         </table>
-        <table>
+
+        <!-- UG TABLE -->
+        <table style="width:45%; border-collapse:collapse;">
+
+            <colgroup>
+                <col style="width:30%;">
+                <col style="width:70%;">
+            </colgroup>
+
             <tr>
                 <th colspan="2" style="text-align:center;">UG level courses</th>
-               
+            </tr>
             <tr>
                 <th>Course Code</th>
                 <th>Course Name</th>
             </tr>
-            
+
             <tr><td>MEL2004</td><td>Operations Research</td></tr>
             <tr><td>MEL3002</td><td>Machine Learning</td></tr>
             <tr><td>MEL3003</td><td>Manufacturing and Service System Design</td></tr>
             <tr><td>MEL3025</td><td>Stochastic Modeling and Simulation</td></tr>
-            <tr><td>MEP3027</td><td>Operations Research Laboratory </td></tr>
+            <tr><td>MEP3027</td><td>Operations Research Laboratory</td></tr>
             <tr><td>MEP4021</td><td>Industrial Engineering Laboratory</td></tr>
+
         </table>
+
     </div>
+
 </div>
 
-
-    <div id="footer"></div> <!-- Footer will be loaded dynamically all the footer code is inside of components_hed_fot, footer.html -->
-
-    <!-- <footer class="footer" style="margin-top: 20px;">
-        <div class="container">
-            <p>&copy; 2024 Industrial Engineering & Operations Research. All rights reserved.</p>
-        </div>
-    </footer>    -->
-
+<div id="footer"></div>
 
 </body>
-
 </html>
-
-

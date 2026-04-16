@@ -1,0 +1,234 @@
+/* Global Styles */
+:root {
+    --primary-color: #c41e3a; /* Rich red for primary color */
+    --primary-dark: #8c0f24; /* Darker red for hover states */
+    --primary-light: #f0d0d5; /* Light red for backgrounds */
+    --secondary-color: #333333; /* Dark gray for text */
+    --light-gray: #f5f5f5; /* Light gray for sections */
+    --white: #ffffff;
+    --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    /* font-family: sans-serif; */
+}
+
+/* Contact Section */         /* doubt*/
+.contact-section {
+    margin: 10px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid  #C40C0C; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.contact-section h1 {
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.address {
+    width: 60%;
+}
+
+.contact-image img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid  #C40C0C;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Styles for the contact form */      /* doubt*/
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid  #C40C0C;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 10px 15px;
+    background-color: #C40C0C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #ECCA9C;
+    color: black;
+}
+
+/* -------------------------Project Section ---------------------*/       /* doubt*/
+.project-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.project-name {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    align-items: center;
+}
+
+.project-image {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+}
+
+.project-info {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.project-info h3 {
+    margin: 10px 0 5px;
+}
+
+.project-info p {
+    margin: 5px 0;
+}
+
+.project-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.project-info a:hover {
+    text-decoration: underline;
+}
+
+.section-heading {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 35px; 
+    color: #C40C0C;
+    font-weight: 1000;
+}
+
+
+/*---------------------- courses table Section ----------------------*/
+
+
+
+/*---------------------- Student Section ----------------------*/         /* doubt*/
+.student-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.student-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Add some space between rows */
+}
+
+.student-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.student-info {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.student-info h3 {
+    margin: 10px 0 5px;
+}
+
+.student-info p {
+    margin: 5px 0;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.student-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.student-info a:hover {
+    text-decoration: underline;
+}
+
+.header-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.header-title {
+    font-size: 2em;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-line {
+    flex: 1;
+    height: 1px;
+    background-color: #000;
+    margin: 0 70px;
+    /* margin: 0 10px; */
+    /* margin-left: 100px;  */
+    /* Add padding to the start and end */
+}

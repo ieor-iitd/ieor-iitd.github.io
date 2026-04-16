@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dr. Boli Chen Seminar - IEOR</title>
+    <meta name="description" content="Dr. Boli Chen's inaugural IEOR seminar on Intelligent Control for Smart and Sustainable Mobility at IIT Delhi">
+    <link href="../../resources/css/newsevents/block_news.css" rel="stylesheet">
+    <link href="../../resources/css/header_footer.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="images/icons/IITD_LOGO.svg" />
+    <base href="/">
+    <script src="../../resources/scripts/loadheaderfooter.js" defer></script>
+    <script src="./resources/scripts/herochange.js" ></script>
+    <link href="../../resources/css/DiffMediaStyle.css" rel="stylesheet">
+    
+</head>
+
+<body>
+    <div id="header"></div> 
+
+    <main class="main-container">
+        <article class="article-card">
+            <header class="article-header">
+                <h1>Prof. Navonil Mustafee presented his lecture on Hybrid Modelling and Simulation for Transdisciplinary Science</h1>
+                <div class="date-container">
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                    <time datetime="2025-02-13">August 29, 2025</time>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <section class="slider-section">
+                    <div class="image-slider">
+                        <div class="slider">
+                            <img id="img-1" src="../../resources/images/news/Prof. Navonil Mustafee2.jpg"
+                                alt="Dr. Boli Chen presenting his seminar on Intelligent Control for Smart and Sustainable Mobility at IIT Delhi"
+                                loading="eager">
+                            <img id="img-2" src="../../resources/images/news/Prof. Navonil Mustafee3.jpg"
+                                alt="Dr. Boli Chen discussing his research with attendees"
+                                loading="lazy">
+                            <img id="img-3" src="../../resources/images/news/Prof. Navonil Mustafee4.jpg"
+                                alt="Dr. Boli Chen discussing his research with attendees"
+                                loading="lazy">
+                            <img id="img-4" src="../../resources/images/news/Prof. Navonil Mustafee5.jpg"
+                                alt="Dr. Boli Chen discussing his research with attendees"
+                                loading="lazy">
+                            <img id="img-5" src="../../resources/images/news/Prof. Navonil Mustafee5.jpg"
+                                alt="Dr. Boli Chen discussing his research with attendees"
+                                loading="lazy">
+                        </div>
+
+                        <div class="navigation-button">
+                            <span class="dot active" onclick="changeSlide(0)"></span>
+                            <span class="dot" onclick="changeSlide(1)"></span>
+                            <span class="dot" onclick="changeSlide(2)"></span>
+                            <span class="dot" onclick="changeSlide(3)"></span>
+                            <span class="dot" onclick="changeSlide(4)"></span>
+                        </div>
+
+                        <button class="prev" onclick="prevSlide()">❮</button>
+                        <button class="next" onclick="nextSlide()">❯</button>
+                    </div>
+                </section>
+
+                <div class="bio-paragraph">
+                    <p>
+                       Modelling & Simulation (M&S) techniques such as discrete-event simulation (DES), agent-based simulation (ABS), and system dynamics (SD) enable the development of computational models that aid decision-making. With the growing complexity of systems being modelled, numerous studies deploy hybrid simulation (HS), combining multiple M&S techniques like DES and ABS to provide improved insights into the evolving system dynamics at different levels of resolution. Distinct from HS, hybrid modelling (HM) extends the M&S discipline by combining theories, frameworks, techniques and established research approaches that have existed as extant knowledge within various disciplines, and applying multi-, inter- and trans-disciplinary solutions to practice. Within M&S, there is limited evidence of using conjoined methods for building HMs. Where a stream of such research does exist, the integration of approaches is mostly at a technical level. The talk will motivate the need for a transdisciplinarity-enabling framework for M&S that supports the collaboration of research efforts from multiple disciplines, allowing them to grow into transdisciplinary research.
+
+                    <p>
+                       Nav Mustafee is a Professor in Analytics and Operations Management at the University of Exeter Business School. His research focuses on Modelling and Simulation methodologies and their application in healthcare, supply chain management and the circular economy. A particular area of interest is Hybrid Modelling. He is the Primary Investigator for an NHS Devon ICB-funded project related to urgent care (NHSquicker), a Co-Investigator for EU projects investigating systemic solutions for resilience to climate change (ARSINOE) and circular economy of water (ULTIMATE), a UKRI-funded project on healthcare redesign (SPHERE) and a new MRC/NIHR-funded project on sharing tools and artefacts for reproducible simulation (STARS) in healthcare. Nav is the recipient of the OR Society's Lyn Thomas Impact Medal for 2022 for developing a platform informing attendance choices for urgent care. He is a Joint Editor-in-Chief of the Journal of Simulation (JOS) and leads the JOS Africa Focus initiative for the UK OR Society. Nav is the General Chair for the 2026 Winter Simulation Conference, which will be held in Glasgow (Scotland) in December next year. 
+                    </p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <div id="footer"></div>
+
+     <script>
+        // Image Slider Module
+        (function() {
+            'use strict';
+
+            // Configuration
+            const CONFIG = {
+                slideInterval: 5000, // 5 seconds
+                transitionDuration: 800 // Should match CSS transition
+            };
+
+            // State
+            let state = {
+                currentSlide: 0,
+                slides: [],
+                dots: [],
+                totalSlides: 0,
+                intervalId: null,
+                isTransitioning: false
+            };
+
+            // Initialize slider when DOM is ready
+            function init() {
+                // Get all slider elements
+                state.slides = document.querySelectorAll('.slider img');
+                state.dots = document.querySelectorAll('.dot');
+                state.totalSlides = state.slides.length;
+
+                // Exit if no slides found
+                if (state.totalSlides === 0) {
+                    console.warn('No slides found for slider');
+                    return;
+                }
+
+                // Set up initial state
+                setupInitialSlide();
+                
+                // Start automatic slideshow
+                startAutoSlide();
+
+                // Pause slideshow on hover
+                const slider = document.querySelector('.image-slider');
+                if (slider) {
+                    slider.addEventListener('mouseenter', stopAutoSlide);
+                    slider.addEventListener('mouseleave', startAutoSlide);
+                }
+            }
+
+            // Setup initial slide
+            function setupInitialSlide() {
+                // Hide all slides
+                state.slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+
+                // Show first slide
+                state.currentSlide = 0;
+                state.slides[0].classList.add('active');
+                
+                // Update dots
+                updateDots();
+            }
+
+            // Start automatic slideshow
+            function startAutoSlide() {
+                // Clear any existing interval
+                if (state.intervalId) {
+                    clearInterval(state.intervalId);
+                }
+
+                // Set new interval
+                state.intervalId = setInterval(() => {
+                    nextSlide();
+                }, CONFIG.slideInterval);
+            }
+
+            // Stop automatic slideshow
+            function stopAutoSlide() {
+                if (state.intervalId) {
+                    clearInterval(state.intervalId);
+                    state.intervalId = null;
+                }
+            }
+
+            // Show specific slide
+            function showSlide(index) {
+                // Prevent rapid clicking
+                if (state.isTransitioning) return;
+                
+                state.isTransitioning = true;
+
+                // Normalize index
+                if (index >= state.totalSlides) {
+                    index = 0;
+                } else if (index < 0) {
+                    index = state.totalSlides - 1;
+                }
+
+                // Update current slide
+                state.currentSlide = index;
+
+                // Update slides
+                state.slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+
+                // Update dots
+                updateDots();
+
+                // Reset transition lock
+                setTimeout(() => {
+                    state.isTransitioning = false;
+                }, CONFIG.transitionDuration);
+
+                // Restart auto-slide timer
+                startAutoSlide();
+            }
+
+            // Update dot indicators
+            function updateDots() {
+                state.dots.forEach((dot, index) => {
+                    if (index === state.currentSlide) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+
+            // Navigate to next slide
+            function nextSlide() {
+                showSlide(state.currentSlide + 1);
+            }
+
+            // Navigate to previous slide
+            function prevSlide() {
+                showSlide(state.currentSlide - 1);
+            }
+
+            // Navigate to specific slide (for dot navigation)
+            function changeSlide(index) {
+                showSlide(index);
+            }
+
+            // Expose functions globally for inline onclick handlers
+            window.nextSlide = nextSlide;
+            window.prevSlide = prevSlide;
+            window.changeSlide = changeSlide;
+
+            // Initialize on DOM ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                // DOM already loaded
+                init();
+            }
+
+            // Cleanup on page unload
+            window.addEventListener('beforeunload', () => {
+                stopAutoSlide();
+            });
+
+        })();
+    </script>
+</body>
+</html>

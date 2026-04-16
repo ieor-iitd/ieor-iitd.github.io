@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dr. Boli Chen Seminar - IEOR</title>
+    <meta name="description" content="Dr. Boli Chen's inaugural IEOR seminar on Intelligent Control for Smart and Sustainable Mobility at IIT Delhi">
+    <link href="../../resources/css/newsevents/block_news.css" rel="stylesheet">
+    <link href="../../resources/css/header_footer.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="images/icons/IITD_LOGO.svg" />
+    <base href="/">
+    <script src="../../resources/scripts/loadheaderfooter.js" defer></script>
+    <script src="./resources/scripts/herochange.js" ></script>
+    <link href="../../resources/css/DiffMediaStyle.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="header"></div> 
+
+    <main class="main-container">
+        <article class="article-card">
+            <header class="article-header">
+                <h1>Dr. Boli Chen visited IIT Delhi for the inaugural IEOR seminar series for his talk on "Intelligent Control for Smart and Sustainable Mobility"</h1>
+                <div class="date-container">
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                    <time datetime="2025-02-13">February 13, 2025</time>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <section class="slider-section">
+                    <div class="image-slider">
+                        <div class="slider">
+                            <img id="img-1" src="../../resources/images/news/Boli_Chen_1.JPG"
+                                alt="Dr. Boli Chen presenting" loading="eager">
+                            <img id="img-2" src="../../resources/images/news/Boli_Chen_2.JPG"
+                                alt="Dr. Boli Chen discussing" loading="eager">
+                            <img id="img-3" src="../../resources/images/news/Boli_Chen_3.JPG"
+                                alt="Dr. Boli Chen with attendees" loading="eager">
+                        </div>
+
+                        <div class="navigation-button">
+                            <span class="dot active" onclick="changeSlide(0)"></span>
+                            <span class="dot" onclick="changeSlide(1)"></span>
+                            <span class="dot" onclick="changeSlide(2)"></span>
+                        </div>
+
+                        <button class="prev" onclick="prevSlide()">❮</button>
+                        <button class="next" onclick="nextSlide()">❯</button>
+                    </div>
+                </section>
+
+                <div class="bio-paragraph">
+                    <p>
+                        Recent advancements in AI, computation, and communication technologies have driven significant progress in 
+                        robotics and autonomous systems. Among these, connected and automated vehicles (CAVs) are ready to become 
+                        the first highly safety-critical autonomous systems available to the public. With broader adoption, 
+                        CAVs have the potential to make road transport greener, safer, and more efficient. However, 
+                        realizing these benefits depends on our ability to ensure system reliability, safety, and 
+                        efficiency—challenges that lie at the heart of control engineering. In particular, providing 
+                        safety guarantees remains a central concern for self-driving vehicles and other autonomous systems 
+                        increasingly integrated into society. This talk will explore some key control and decision-making challenges 
+                        in CAVs, such as real-time control and planning with enhanced situational awareness, coordinated platooning
+                        with traffic signal information, and smart charging technology that benefits both the grid and the vehicle.
+                    </p>
+
+                    <p>
+                        Boli Chen (IEEE SM'24) obtained his PhD degree in Control Systems from Imperial College London, UK in 2016. 
+                        He was a Post-Doc at Imperial college London, with the Control and Power Group from 2016 to 2019. 
+                        Since September 2019 , he is a Lecturer in the Department of Electronic and Electrical Engineering 
+                        at University College London, where he is associated with the Sensors Systems and Circuits research 
+                        group and the UCL Robotics Institute. His research focuses on the control, optimization, and estimation 
+                        of complex dynamical systems, with rich applications in smart cities, e.g., transportation, electric energy 
+                        systems, and sensor networks. Dr Boli Chen is a member of the IEEE Control Systems Society Technical Committee 
+                        on "Smart Cities". He serves as an Associate Editor for the IEEE Transactions on Intelligent Transportation Systems 
+                        and the European Journal of Control. Additionally, he is a member of the EUCA Conference Editorial Board and the IEEE 
+                        ITSC Editorial Board.
+                    </p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        // Image Slider Module
+        (function() {
+            'use strict';
+
+            // Configuration
+            const CONFIG = {
+                slideInterval: 5000, // 5 seconds
+                transitionDuration: 800 // Should match CSS transition
+            };
+
+            // State
+            let state = {
+                currentSlide: 0,
+                slides: [],
+                dots: [],
+                totalSlides: 0,
+                intervalId: null,
+                isTransitioning: false
+            };
+
+            // Initialize slider when DOM is ready
+            function init() {
+                // Get all slider elements
+                state.slides = document.querySelectorAll('.slider img');
+                state.dots = document.querySelectorAll('.dot');
+                state.totalSlides = state.slides.length;
+
+                // Exit if no slides found
+                if (state.totalSlides === 0) {
+                    console.warn('No slides found for slider');
+                    return;
+                }
+
+                // Set up initial state
+                setupInitialSlide();
+                
+                // Start automatic slideshow
+                startAutoSlide();
+
+                // Pause slideshow on hover
+                const slider = document.querySelector('.image-slider');
+                if (slider) {
+                    slider.addEventListener('mouseenter', stopAutoSlide);
+                    slider.addEventListener('mouseleave', startAutoSlide);
+                }
+            }
+
+            // Setup initial slide
+            function setupInitialSlide() {
+                // Hide all slides
+                state.slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+
+                // Show first slide
+                state.currentSlide = 0;
+                state.slides[0].classList.add('active');
+                
+                // Update dots
+                updateDots();
+            }
+
+            // Start automatic slideshow
+            function startAutoSlide() {
+                // Clear any existing interval
+                if (state.intervalId) {
+                    clearInterval(state.intervalId);
+                }
+
+                // Set new interval
+                state.intervalId = setInterval(() => {
+                    nextSlide();
+                }, CONFIG.slideInterval);
+            }
+
+            // Stop automatic slideshow
+            function stopAutoSlide() {
+                if (state.intervalId) {
+                    clearInterval(state.intervalId);
+                    state.intervalId = null;
+                }
+            }
+
+            // Show specific slide
+            function showSlide(index) {
+                // Prevent rapid clicking
+                if (state.isTransitioning) return;
+                
+                state.isTransitioning = true;
+
+                // Normalize index
+                if (index >= state.totalSlides) {
+                    index = 0;
+                } else if (index < 0) {
+                    index = state.totalSlides - 1;
+                }
+
+                // Update current slide
+                state.currentSlide = index;
+
+                // Update slides
+                state.slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+
+                // Update dots
+                updateDots();
+
+                // Reset transition lock
+                setTimeout(() => {
+                    state.isTransitioning = false;
+                }, CONFIG.transitionDuration);
+
+                // Restart auto-slide timer
+                startAutoSlide();
+            }
+
+            // Update dot indicators
+            function updateDots() {
+                state.dots.forEach((dot, index) => {
+                    if (index === state.currentSlide) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+
+            // Navigate to next slide
+            function nextSlide() {
+                showSlide(state.currentSlide + 1);
+            }
+
+            // Navigate to previous slide
+            function prevSlide() {
+                showSlide(state.currentSlide - 1);
+            }
+
+            // Navigate to specific slide (for dot navigation)
+            function changeSlide(index) {
+                showSlide(index);
+            }
+
+            // Expose functions globally for inline onclick handlers
+            window.nextSlide = nextSlide;
+            window.prevSlide = prevSlide;
+            window.changeSlide = changeSlide;
+
+            // Initialize on DOM ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                // DOM already loaded
+                init();
+            }
+
+            // Cleanup on page unload
+            window.addEventListener('beforeunload', () => {
+                stopAutoSlide();
+            });
+
+        })();
+    </script>
+</body>
+</html>
